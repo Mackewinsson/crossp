@@ -72,10 +72,10 @@ const EdinaHomeSidebar = () => {
       <div className="edina_tm_services" id="service">
         <div className="container">
           <div className="edina_tm_title">
-            <h3>What I Do</h3>
+            <h3>What We Do</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              ipsum sit nibh amet egestas tellus.
+              Cross-platform iOS and android apps using latest technologies and
+              best practices
             </p>
           </div>
           {/* End edian_tm_title */}
@@ -118,19 +118,19 @@ const EdinaHomeSidebar = () => {
       </div>
       {/* End Testimonial */}
 
-      <div className="edina_tm_news" id="blog">
-        <div className="container">
-          <div className="edina_tm_title">
-            <h3>Blog</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              ipsum sit nibh amet egestas tellus.
-            </p>
-          </div>
-          {/* End edian_tm_title */}
-          <Blog />
-        </div>
-      </div>
+      {/* <div className="edina_tm_news" id="blog"> */}
+      {/* <div className="container"> */}
+      {/* <div className="edina_tm_title">
+        <h3>Blog</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum
+          sit nibh amet egestas tellus.
+        </p>
+      </div> */}
+      {/* End edian_tm_title */}
+      {/* <Blog /> */}
+      {/* </div> */}
+      {/* </div> */}
       {/* End Blog */}
 
       <div className="edina_tm_contact" id="contact">
