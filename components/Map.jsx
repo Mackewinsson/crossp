@@ -7,7 +7,7 @@ const Map = () => {
         <iframe
           className="embed-responsive-item"
           title="my location"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3151.840107317064!2d144.955925!3d-37.817214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1520156366883"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51170.89540740967!2d-4.490466362193868!3d36.71821490104431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7259c44fdb212d%3A0x6025dc92c9ca32cf!2zTcOhbGFnYQ!5e0!3m2!1ses-419!2ses!4v1740834409772!5m2!1ses-419!2ses"
         ></iframe>
       </div>
       {/* End google-map */}

@@ -9,10 +9,9 @@ const Address = () => {
       info: (
         <>
           <li>
-            <a href="Tel: +452 666 386">+452 666 386</a>
-          </li>
-          <li>
-            <a href="Tel: +465 562 226">+465 562 226</a>
+            <a href="https://api.whatsapp.com/send/?phone=34654990421&text&type=phone_number&app_absent=0">
+              +34654990421
+            </a>
           </li>
         </>
       ),
@@ -25,10 +24,7 @@ const Address = () => {
       info: (
         <>
           <li>
-            <a href="mailto:ib-themes21@gmail.com">support@gmail.com</a>
-          </li>
-          <li>
-            <a href="mailto:ib-themes21@gmail.com">example@support.com</a>
+            <a href="mailto:info@mackewinsson.com">info@mackewinsson.com</a>
           </li>
         </>
       ),
@@ -41,11 +37,7 @@ const Address = () => {
       info: (
         <>
           <li>
-            <p>
-              Envato 121 King St,
-              <br />
-              Melbourne, Australia
-            </p>
+            <p>Santiago, Chile</p>
           </li>
         </>
       ),

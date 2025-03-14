@@ -137,10 +137,7 @@ const EdinaHomeSidebar = () => {
         <div className="container">
           <div className="edina_tm_title">
             <h3>Contact</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              ipsum sit nibh amet egestas tellus.
-            </p>
+            <p>There's many ways to contact me, here you have some of them</p>
           </div>
           <div className="extra_info">
             <Address />
