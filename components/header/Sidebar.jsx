@@ -5,6 +5,7 @@ import sidebarContent from "../../data/sidebar";
 import Image from "next/image";
 import logo from "../../public/img/logo/dark.png";
 import logo2 from "../../public/img/logo/light.png";
+import styled from "styled-components";
 
 // sidebar footer bottom content
 const sidebarFooterContent = {
@@ -89,14 +90,14 @@ const Sidebar = () => {
 
           <div className="author">
             <div className="inner">
-              <div className="image">
+              <RoundDiv className="image">
                 <div
                   className="main"
                   style={{
                     backgroundImage: "url(img/about/avatar.jpg)",
                   }}
                 ></div>
-              </div>
+              </RoundDiv>
               <div className="short">
                 <h3>{sidebarFooterContent.name}</h3>
                 <a href={sidebarFooterContent.emailRef}>
@@ -113,3 +114,9 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+const RoundDiv = styled.a`
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+`;
