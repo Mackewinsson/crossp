@@ -14,7 +14,7 @@ import Map from "../../Map";
 import HeaderMobile from "../../header/HeaderMobile";
 
 const EdinaHomeSidebar = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     document.querySelector("body").classList.remove("rtl");
@@ -68,8 +68,6 @@ const EdinaHomeSidebar = () => {
       <Sidebar />
       {/* End Header */}
       <Hero />
-      {/* End Hero */}
-      <About />
       {/* End Hero */}
       <div className="edina_tm_services" id="service">
         <div className="container">

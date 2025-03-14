@@ -72,11 +72,9 @@ const HeaderHorizontal = () => {
             <ScrollspyNav
               scrollTargetIds={[
                 "home",
-                "about",
                 "service",
                 "portfolio",
                 "testimonial",
-                "blog",
                 "contact",
               ]}
               activeNavClass="active"

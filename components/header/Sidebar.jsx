@@ -8,9 +8,9 @@ import logo2 from "../../public/img/logo/light.png";
 
 // sidebar footer bottom content
 const sidebarFooterContent = {
-  name: "Nelson",
-  email: "support@gmail.com",
-  emailRef: "mailto:ib-themes21@gmail.com",
+  name: "Mackewinsson P.",
+  email: "info@mackewinsson.com",
+  emailRef: "mailto:info@mackewinsson.com",
 };
 
 const Sidebar = () => {
@@ -36,18 +36,20 @@ const Sidebar = () => {
           <div className="logo">
             <Link href="/">
               <Image
-                width={92}
-                height={37}
+                width={200}
+                height={100}
                 className="logo_light"
                 src={logo}
                 alt="brand"
+                style={{ objectFit: "contain" }}
               />
               <Image
-                width={92}
-                height={37}
+                width={200}
+                height={100}
                 className="logo_dark"
                 src={logo2}
                 alt="brand"
+                style={{ objectFit: "contain" }}
               />
             </Link>
           </div>
@@ -57,11 +59,9 @@ const Sidebar = () => {
             <ScrollspyNav
               scrollTargetIds={[
                 "home",
-                "about",
                 "service",
                 "portfolio",
                 "testimonial",
-                "blog",
                 "contact",
               ]}
               activeNavClass="active"
@@ -77,13 +77,6 @@ const Sidebar = () => {
                         className={val.activeClass}
                         onClick={handleClick}
                       >
-                        <Image
-                          width={18}
-                          height={18}
-                          className="svg custom"
-                          src={`img/svg/${val.icon}.svg`}
-                          alt="icon"
-                        />
                         {val.itemName}
                       </a>
                     </div>
