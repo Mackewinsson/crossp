@@ -1,6 +1,6 @@
 import React from "react";
 import Social from "../Social";
-import ReactTyped from "react-typed";
+import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
 import shapeImage from "../../public/img/hero/1.jpg";
 import heroImage from "../../public/img/hero/2.jpg";
@@ -35,19 +35,20 @@ const Hero = () => {
             data-aos-delay="200"
           >
             <span className="typer-toper">
-              <ReactTyped
-                loop
-                typeSpeed={150}
-                backSpeed={60}
-                strings={["iOS", "Android", "Web"]}
-                smartBackspace
-                shuffle={false}
-                backDelay={1}
-                fadeOut={false}
-                fadeOutDelay={100}
-                loopCount={0}
-                showCursor
-                cursorChar="|"
+              <TypeAnimation
+                sequence={[
+                  "iOS",
+                  2000,
+                  "Android", 
+                  2000,
+                  "Web",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{ display: 'inline-block' }}
+                repeat={Infinity}
+                cursor={true}
               />
             </span>
           </h1>

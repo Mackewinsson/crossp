@@ -106,16 +106,6 @@ const Blog = () => {
 
             <div className="box_inner">
               <div className="description_wrap scrollable">
-                <div className="image">
-                  <div
-                    className="main"
-                    style={{
-                      backgroundImage: `url(${singleData?.img})`,
-                    }}
-                  ></div>
-                </div>
-                {/* End image */}
-
                 <div className="news_details">
                   <span>
                     {singleData?.date} <a href="#">{singleData?.meta}</a>
