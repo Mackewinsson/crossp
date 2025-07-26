@@ -11,15 +11,15 @@ export const HeroSection: React.FC = () => {
       
       <Container>
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight select-text">
             {heroData.title}
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed select-text">
             {heroData.subtitle}
           </p>
           
-          <p className="text-lg text-gray-700 mb-10 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 mb-10 max-w-3xl mx-auto select-text">
             {heroData.description}
           </p>
           
