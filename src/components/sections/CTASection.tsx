@@ -27,6 +27,7 @@ export const CTASection: React.FC = () => {
             </Button>
             
             <Button 
+              href="https://calendly.com/mackewinsson/exploring-call"
               variant="outline" 
               size="lg"
               className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-blue-600"
