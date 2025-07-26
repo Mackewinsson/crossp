@@ -63,5 +63,54 @@ export const testimonials: Testimonial[] = [
     author: "Michael Chen",
     position: "CEO",
     company: "InnovateCorp"
+  },
+  {
+    id: "testimonial-9",
+    quote: "Exceptional work! Mackewinsson delivered a sophisticated AI chatbot that perfectly integrates with our existing systems. Communication was excellent throughout the project, and the final product exceeded our expectations. Will definitely hire again for future AI projects.",
+    author: "Alex Thompson",
+    position: "Product Manager",
+    company: "TechStartup Inc"
+  },
+  {
+    id: "testimonial-10",
+    quote: "Mackewinsson is a true professional. He built a comprehensive machine learning pipeline for our data analytics platform. His expertise in Python, TensorFlow, and cloud deployment was invaluable. The project was completed on time and within budget.",
+    author: "Maria Rodriguez",
+    position: "Data Scientist",
+    company: "AnalyticsPro Solutions"
+  },
+  {
+    id: "testimonial-11",
+    quote: "Outstanding developer with deep knowledge of AI and software development. Mackewinsson created a custom recommendation system that increased our conversion rates by 35%. His attention to detail and problem-solving skills are top-notch.",
+    author: "David Chen",
+    position: "CTO",
+    company: "E-commerce Platform"
+  },
+  {
+    id: "testimonial-12",
+    quote: "Working with Mackewinsson was a pleasure. He developed a full-stack web application with React and Node.js that perfectly met our requirements. His code is clean, well-documented, and production-ready. Highly recommended!",
+    author: "Sarah Williams",
+    position: "Project Manager",
+    company: "Digital Agency"
+  },
+  {
+    id: "testimonial-13",
+    quote: "Mackewinsson delivered an excellent AI-powered automation system that saved us 20 hours per week. His understanding of business processes and technical implementation was impressive. Great communication and timely delivery.",
+    author: "James Anderson",
+    position: "Operations Director",
+    company: "Manufacturing Corp"
+  },
+  {
+    id: "testimonial-14",
+    quote: "Fantastic experience working with Mackewinsson. He built a custom CRM system with AI features that transformed our sales process. His expertise in both frontend and backend development is exceptional. Will hire again!",
+    author: "Lisa Park",
+    position: "Sales Director",
+    company: "B2B Services"
+  },
+  {
+    id: "testimonial-15",
+    quote: "Mackewinsson is an expert in AI and machine learning. He developed a predictive analytics model that helped us identify market trends with 90% accuracy. His technical skills and business acumen are outstanding.",
+    author: "Robert Kim",
+    position: "VP of Technology",
+    company: "Financial Services"
   }
 ]; 
