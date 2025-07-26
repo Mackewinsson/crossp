@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-blue-600">ConaiSoft</div>
+            <div className="text-2xl font-bold text-blue-600">conAIsoft</div>
           </div>
 
           {/* Desktop Navigation */}

@@ -7,7 +7,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20 lg:py-32 overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
       
       <Container>
         <div className="text-center max-w-4xl mx-auto">
