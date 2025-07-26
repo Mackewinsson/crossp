@@ -49,18 +49,35 @@ export const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-gray-200 bg-white">
             <nav className="flex flex-col space-y-4">
-              <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <a 
+                href="#services" 
+                className="text-gray-700 hover:text-blue-600 transition-colors py-3 px-4 rounded-lg hover:bg-gray-50 active:bg-gray-100 min-h-[44px] flex items-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Services
               </a>
-              <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <a 
+                href="#features" 
+                className="text-gray-700 hover:text-blue-600 transition-colors py-3 px-4 rounded-lg hover:bg-gray-50 active:bg-gray-100 min-h-[44px] flex items-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Why Us
               </a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <a 
+                href="#testimonials" 
+                className="text-gray-700 hover:text-blue-600 transition-colors py-3 px-4 rounded-lg hover:bg-gray-50 active:bg-gray-100 min-h-[44px] flex items-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Testimonials
               </a>
-              <Button href="https://calendly.com/mackewinsson/exploring-call" size="sm" className="w-full">
+              <Button 
+                href="https://calendly.com/mackewinsson/exploring-call" 
+                size="sm" 
+                className="w-full mt-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Get Started
               </Button>
             </nav>
