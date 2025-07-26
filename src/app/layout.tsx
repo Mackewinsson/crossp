@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI & Software Consultancy - Transform Your Business",
+  title: "ConaiSoft - AI & Software Consultancy - Transform Your Business",
   description: "Expert AI and software consulting services to accelerate your digital transformation. Custom solutions, machine learning, and cloud migration expertise.",
 };
 

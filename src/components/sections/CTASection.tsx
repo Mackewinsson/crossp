@@ -18,7 +18,7 @@ export const CTASection: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
-              href="https://calendly.com/your-consultancy"
+              href="https://calendly.com/conaisoft"
               variant="secondary"
               size="lg"
               className="w-full sm:w-auto bg-white text-blue-600 hover:bg-gray-100"

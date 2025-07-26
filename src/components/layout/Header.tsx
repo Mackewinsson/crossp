@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-blue-600">AI Consultancy</div>
+            <div className="text-2xl font-bold text-blue-600">ConaiSoft</div>
           </div>
 
           {/* Desktop Navigation */}
@@ -27,7 +27,7 @@ export const Header: React.FC = () => {
             <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">
               Testimonials
             </a>
-            <Button href="https://calendly.com/your-consultancy" size="sm">
+            <Button href="https://calendly.com/conaisoft" size="sm">
               Get Started
             </Button>
           </nav>
@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
               <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">
                 Testimonials
               </a>
-              <Button href="https://calendly.com/your-consultancy" size="sm" className="w-full">
+              <Button href="https://calendly.com/conaisoft" size="sm" className="w-full">
                 Get Started
               </Button>
             </nav>
