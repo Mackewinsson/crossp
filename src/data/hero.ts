@@ -10,6 +10,6 @@ export const heroData: HeroData = {
   title: "Transform Your Business with AI & Software Solutions",
   subtitle: "Expert consulting to accelerate your digital transformation",
   ctaText: "Schedule Free Consultation",
-  ctaLink: "https://calendly.com/conaisoft",
+  ctaLink: "https://calendly.com/mackewinsson/exploring-call",
   description: "We help businesses leverage cutting-edge AI and software technologies to drive growth, efficiency, and competitive advantage. From strategy to implementation, we're your trusted partner in digital innovation."
 }; 

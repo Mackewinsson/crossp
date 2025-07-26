@@ -27,7 +27,7 @@ export const Header: React.FC = () => {
             <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">
               Testimonials
             </a>
-            <Button href="https://calendly.com/conaisoft" size="sm">
+            <Button href="https://calendly.com/mackewinsson/exploring-call" size="sm">
               Get Started
             </Button>
           </nav>
@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
               <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">
                 Testimonials
               </a>
-              <Button href="https://calendly.com/conaisoft" size="sm" className="w-full">
+              <Button href="https://calendly.com/mackewinsson/exploring-call" size="sm" className="w-full">
                 Get Started
               </Button>
             </nav>
