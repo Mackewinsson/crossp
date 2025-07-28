@@ -1,5 +1,6 @@
 import { Header } from '@/components/layout/Header';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { PortfolioSection } from '@/components/sections/PortfolioSection';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
@@ -11,6 +12,9 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <div id="portfolio">
+          <PortfolioSection />
+        </div>
         <div id="services">
           <ServicesSection />
         </div>
