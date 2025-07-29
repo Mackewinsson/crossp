@@ -19,27 +19,66 @@ export default function CreaTuSoftwarePage() {
     script.async = true;
     document.head.appendChild(script);
 
-    // Tracking de conversiones
+    // Tracking de conversiones con mejor manejo
     const trackConversion = () => {
+      console.log('🎯 Conversion event triggered');
+      
       // Google Ads
       if (typeof window.gtag !== "undefined") {
+        const conversionId = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID;
+        const conversionLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
+        
+        console.log('📊 Google Ads conversion:', `${conversionId}/${conversionLabel}`);
+        
         window.gtag("event", "conversion", {
-          send_to: `${process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID}/${process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL}`
+          send_to: `${conversionId}/${conversionLabel}`
         });
+      } else {
+        console.warn('⚠️ Google Ads gtag not available');
       }
+      
       // Meta Pixel
       if (typeof window.fbq !== "undefined") {
+        console.log('📘 Meta Pixel Lead event');
         window.fbq("track", "Lead");
+      } else {
+        console.warn('⚠️ Meta Pixel fbq not available');
       }
     };
 
-    const btn = document.getElementById("reservar-consultoria");
-    const btnMobile = document.getElementById("reservar-consultoria-mobile");
-    const btnFinal = document.getElementById("reservar-consultoria-final");
+    // Función para configurar event listeners con retry
+    const setupEventListeners = () => {
+      const btn = document.getElementById("reservar-consultoria");
+      const btnMobile = document.getElementById("reservar-consultoria-mobile");
+      const btnFinal = document.getElementById("reservar-consultoria-final");
 
-    if (btn) btn.addEventListener("click", trackConversion);
-    if (btnMobile) btnMobile.addEventListener("click", trackConversion);
-    if (btnFinal) btnFinal.addEventListener("click", trackConversion);
+      if (btn) {
+        btn.addEventListener("click", trackConversion);
+        console.log('✅ Main CTA event listener added');
+      }
+      if (btnMobile) {
+        btnMobile.addEventListener("click", trackConversion);
+        console.log('✅ Mobile CTA event listener added');
+      }
+      if (btnFinal) {
+        btnFinal.addEventListener("click", trackConversion);
+        console.log('✅ Final CTA event listener added');
+      }
+    };
+
+    // Esperar a que los scripts de Google se carguen
+    const waitForGoogleScripts = () => {
+      if (typeof window.gtag !== "undefined") {
+        console.log('✅ Google scripts loaded');
+        setupEventListeners();
+      } else {
+        console.log('⏳ Waiting for Google scripts...');
+        setTimeout(waitForGoogleScripts, 100);
+      }
+    };
+
+    // Iniciar el proceso después de un pequeño delay
+    setTimeout(waitForGoogleScripts, 500);
 
     return () => {
       // Cleanup script on unmount
@@ -47,10 +86,6 @@ export default function CreaTuSoftwarePage() {
       if (existingScript) {
         existingScript.remove();
       }
-      // Cleanup event listeners
-      if (btn) btn.removeEventListener("click", trackConversion);
-      if (btnMobile) btnMobile.removeEventListener("click", trackConversion);
-      if (btnFinal) btnFinal.removeEventListener("click", trackConversion);
     };
   }, []);
 
