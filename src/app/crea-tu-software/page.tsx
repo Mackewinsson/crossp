@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import Head from 'next/head';
+import LeadEmailForm from '@/components/LeadEmailForm';
 
 // Declaraciones de tipos para tracking
 declare global {
@@ -323,6 +324,9 @@ export default function CreaTuSoftwarePage() {
           </div>
         </div>
       </section>
+
+      {/* Email Capture Form */}
+      <LeadEmailForm />
     </div>
     </>
   );

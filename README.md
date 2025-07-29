@@ -2,6 +2,23 @@
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) for ConaiSoft's modern landing page.
 
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```bash
+# N8N Webhook URL for email leads capture
+# Payload format: { "nombre": "User Name", "email": "user@email.com" }
+NEXT_PUBLIC_N8N_WEBHOOK_URL=https://n8n-service-2978.onrender.com/webhook-test/6c87f17f-0b40-4b54-8019-a24d24cc6539
+
+# Site URL for meta tags
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# Google Ads conversion tracking (optional)
+NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID=your-google-ads-conversion-id
+NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL=your-google-ads-conversion-label
+```
+
 ## Getting Started
 
 First, run the development server:
