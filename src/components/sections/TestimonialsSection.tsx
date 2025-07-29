@@ -1,17 +1,22 @@
+"use client";
+
 import React from 'react';
 import { testimonials } from '@/data/testimonials';
 import { Container } from '@/components/ui/Container';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 export const TestimonialsSection: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 bg-white" id="testimonials">
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            What Our Clients Say
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don&apos;t just take our word for it - hear from the businesses we&apos;ve helped transform
+            {t('testimonials.subtitle')}
           </p>
         </div>
         

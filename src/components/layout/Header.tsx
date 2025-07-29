@@ -3,9 +3,12 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { useTranslations } from '@/hooks/useTranslations';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { header } = useTranslations();
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -19,16 +22,17 @@ export const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Services
+              {header.services()}
             </a>
             <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Why Us
+              {header.whyUs()}
             </a>
             <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Testimonials
+              {header.testimonials()}
             </a>
+            <LanguageSwitcher />
             <Button href="https://calendly.com/mackewinsson/exploring-call" size="sm">
-              Get Started
+              {header.getStarted()}
             </Button>
           </nav>
 
@@ -56,29 +60,32 @@ export const Header: React.FC = () => {
                 className="text-gray-700 hover:text-blue-600 transition-colors py-3 px-4 rounded-lg hover:bg-gray-50 active:bg-gray-100 min-h-[44px] flex items-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                {header.services()}
               </a>
               <a 
                 href="#features" 
                 className="text-gray-700 hover:text-blue-600 transition-colors py-3 px-4 rounded-lg hover:bg-gray-50 active:bg-gray-100 min-h-[44px] flex items-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Why Us
+                {header.whyUs()}
               </a>
               <a 
                 href="#testimonials" 
                 className="text-gray-700 hover:text-blue-600 transition-colors py-3 px-4 rounded-lg hover:bg-gray-50 active:bg-gray-100 min-h-[44px] flex items-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Testimonials
+                {header.testimonials()}
               </a>
+              <div className="px-4">
+                <LanguageSwitcher />
+              </div>
               <Button 
                 href="https://calendly.com/mackewinsson/exploring-call" 
                 size="sm" 
                 className="w-full mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get Started
+                {header.getStarted()}
               </Button>
             </nav>
           </div>

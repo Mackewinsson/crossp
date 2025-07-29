@@ -1,17 +1,48 @@
+"use client";
+
 import React from 'react';
-import { features } from '@/data/features';
 import { Container } from '@/components/ui/Container';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 export const FeaturesSection: React.FC = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      id: "expertise",
+      title: t('features.expertise.title'),
+      description: t('features.expertise.description'),
+      icon: "🎯",
+    },
+    {
+      id: "innovation",
+      title: t('features.innovation.title'),
+      description: t('features.innovation.description'),
+      icon: "🚀",
+    },
+    {
+      id: "quality",
+      title: t('features.quality.title'),
+      description: t('features.quality.description'),
+      icon: "✨",
+    },
+    {
+      id: "support",
+      title: t('features.support.title'),
+      description: t('features.support.description'),
+      icon: "🛠️",
+    },
+  ];
+
   return (
-    <section className="py-16 sm:py-20 lg:py-32 bg-gray-50">
+    <section className="py-16 sm:py-20 lg:py-32 bg-gray-50" id="features">
       <Container>
         <div className="text-center mb-12 sm:mb-16 px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Why Choose Us
+            {t('features.title')}
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            We combine technical excellence with business acumen to deliver exceptional results
+            {t('features.subtitle')}
           </p>
         </div>
         

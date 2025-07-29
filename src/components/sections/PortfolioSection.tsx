@@ -5,9 +5,11 @@ import { portfolioData } from '@/data/portfolio';
 import { Container } from '@/components/ui/Container';
 import { PortfolioModal } from '@/components/ui/PortfolioModal';
 import { PortfolioProject } from '@/data/portfolio';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 export const PortfolioSection: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
+  const { t } = useTranslation();
 
   return (
     <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 sm:py-20 lg:py-32 overflow-hidden" id="portfolio">
@@ -17,16 +19,11 @@ export const PortfolioSection: React.FC = () => {
       <Container>
         <div className="text-center max-w-4xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
-              Innovative
-            </span>{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-300">
-              Projects
-            </span>
+            {t('portfolio.title')}
           </h2>
           
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Discover how we&apos;ve transformed businesses with cutting-edge technological solutions
+            {t('portfolio.subtitle')}
           </p>
         </div>
         
