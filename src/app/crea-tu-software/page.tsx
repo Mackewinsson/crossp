@@ -70,12 +70,12 @@ export default function CreaTuSoftwarePage() {
         <meta property="og:title" content="Crea tu software a medida | Consultoría gratuita - ConAIsoft" />
         <meta property="og:description" content="Lanza tu software sin errores técnicos ni gastos innecesarios. Consultoría gratuita para emprendedores y empresas." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://conaisoft.com/crea-tu-software" />
-        <meta property="og:image" content="https://conaisoft.com/og-image.jpg" />
+        <meta property="og:url" content="https://crossp.vercel.app/crea-tu-software" />
+        <meta property="og:image" content="https://crossp.vercel.app/hero-shape.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Crea tu software a medida | Consultoría gratuita - ConAIsoft" />
         <meta name="twitter:description" content="Reserva tu consultoría gratuita para lanzar software personalizado sin errores técnicos ni gastos innecesarios." />
-        <meta name="twitter:image" content="https://conaisoft.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://crossp.vercel.app/hero-shape.svg" />
       </Head>
       <div className="min-h-screen bg-white">
       {/* Hero Section */}
