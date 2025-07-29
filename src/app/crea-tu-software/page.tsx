@@ -1,6 +1,15 @@
 'use client';
 
 import { useEffect } from 'react';
+import Head from 'next/head';
+
+// Declaraciones de tipos para tracking
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+    fbq: (...args: any[]) => void;
+  }
+}
 
 export default function CreaTuSoftwarePage() {
   useEffect(() => {
@@ -10,12 +19,38 @@ export default function CreaTuSoftwarePage() {
     script.async = true;
     document.head.appendChild(script);
 
+    // Tracking de conversiones
+    const trackConversion = () => {
+      // Google Ads
+      if (typeof window.gtag !== "undefined") {
+        window.gtag("event", "conversion", {
+          send_to: "AW-CONVERSION_ID/CONVERSION_LABEL"
+        });
+      }
+      // Meta Pixel
+      if (typeof window.fbq !== "undefined") {
+        window.fbq("track", "Lead");
+      }
+    };
+
+    const btn = document.getElementById("reservar-consultoria");
+    const btnMobile = document.getElementById("reservar-consultoria-mobile");
+    const btnFinal = document.getElementById("reservar-consultoria-final");
+
+    if (btn) btn.addEventListener("click", trackConversion);
+    if (btnMobile) btnMobile.addEventListener("click", trackConversion);
+    if (btnFinal) btnFinal.addEventListener("click", trackConversion);
+
     return () => {
       // Cleanup script on unmount
       const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
       if (existingScript) {
         existingScript.remove();
       }
+      // Cleanup event listeners
+      if (btn) btn.removeEventListener("click", trackConversion);
+      if (btnMobile) btnMobile.removeEventListener("click", trackConversion);
+      if (btnFinal) btnFinal.removeEventListener("click", trackConversion);
     };
   }, []);
 
@@ -27,7 +62,22 @@ export default function CreaTuSoftwarePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Head>
+        <title>Crea tu software a medida | Consultoría gratuita - ConAIsoft</title>
+        <meta name="description" content="Reserva una sesión gratuita y descubre cómo lanzar tu software personalizado en menos de 30 días sin errores técnicos ni equipos caros. Una consultoría directa contigo, sin compromiso." />
+        <meta name="keywords" content="desarrollo de software, software a medida, automatización, crear app, MVP, consultoría tecnológica, conaisoft" />
+        <meta property="og:title" content="Crea tu software a medida | Consultoría gratuita - ConAIsoft" />
+        <meta property="og:description" content="Lanza tu software sin errores técnicos ni gastos innecesarios. Consultoría gratuita para emprendedores y empresas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://conaisoft.com/crea-tu-software" />
+        <meta property="og:image" content="https://conaisoft.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Crea tu software a medida | Consultoría gratuita - ConAIsoft" />
+        <meta name="twitter:description" content="Reserva tu consultoría gratuita para lanzar software personalizado sin errores técnicos ni gastos innecesarios." />
+        <meta name="twitter:image" content="https://conaisoft.com/og-image.jpg" />
+      </Head>
+      <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -49,6 +99,7 @@ export default function CreaTuSoftwarePage() {
           {/* Mobile-first CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
+              id="reservar-consultoria"
               onClick={scrollToCalendly}
               className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
             >
@@ -166,6 +217,7 @@ export default function CreaTuSoftwarePage() {
             {/* Mobile-friendly CTA above Calendly */}
             <div className="sm:hidden mb-6">
               <button
+                id="reservar-consultoria-mobile"
                 onClick={scrollToCalendly}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
               >
@@ -195,10 +247,10 @@ export default function CreaTuSoftwarePage() {
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
             </svg>
             <blockquote className="text-lg sm:text-xl lg:text-2xl text-gray-900 font-medium mb-4">
-              "La mejor inversión que hice fue consultar antes de empezar. Me ahorré meses de desarrollo y miles de euros."
+              "Trabajar con Mackewinsson fue lo mejor que hice para lanzar mi app sin gastar de más."
             </blockquote>
             <p className="text-gray-600 font-medium text-sm sm:text-base">
-              — Cliente satisfecho, proyecto lanzado en 25 días
+              — Cliente satisfecho
             </p>
           </div>
         </div>
@@ -217,6 +269,7 @@ export default function CreaTuSoftwarePage() {
           {/* Mobile-first CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
+              id="reservar-consultoria-final"
               onClick={scrollToCalendly}
               className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
             >
@@ -236,5 +289,6 @@ export default function CreaTuSoftwarePage() {
         </div>
       </section>
     </div>
+    </>
   );
 } 
