@@ -7,9 +7,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 Create a `.env.local` file in the root directory with the following variables:
 
 ```bash
-# N8N Webhook URL for email leads capture
+# N8N Webhook URL for email leads capture (main site)
 # Payload format: { "nombre": "User Name", "email": "user@email.com" }
 NEXT_PUBLIC_N8N_WEBHOOK_URL=https://n8n-service-2978.onrender.com/webhook-test/6c87f17f-0b40-4b54-8019-a24d24cc6539
+
+# N8N Webhook URL for workshop leads capture
+# Payload format: { "nombre": "User Name", "email": "user@email.com", "source": "workshop" }
+NEXT_PUBLIC_WORKSHOP_N8N_WEBHOOK_URL=https://n8n-service-2978.onrender.com/webhook-test/your-workshop-webhook-id
 
 # Site URL for meta tags
 NEXT_PUBLIC_SITE_URL=http://localhost:3000

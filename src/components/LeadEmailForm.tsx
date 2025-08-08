@@ -4,9 +4,10 @@ import { useState } from 'react';
 
 interface LeadEmailFormProps {
   className?: string;
+  webhookUrl?: string;
 }
 
-export default function LeadEmailForm({ className = '' }: LeadEmailFormProps) {
+export default function LeadEmailForm({ className = '', webhookUrl }: LeadEmailFormProps) {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,16 +40,16 @@ export default function LeadEmailForm({ className = '' }: LeadEmailFormProps) {
     setMessage(null);
 
     try {
-      const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
+      const finalWebhookUrl = webhookUrl || process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
       
-      if (!webhookUrl) {
+      if (!finalWebhookUrl) {
         throw new Error('Webhook URL no configurada');
       }
 
-      console.log('🌐 Sending to webhook:', webhookUrl);
+      console.log('🌐 Sending to webhook:', finalWebhookUrl);
       console.log('📦 Payload:', { nombre: nombre.trim(), email: email.trim() });
 
-      const response = await fetch(webhookUrl, {
+      const response = await fetch(finalWebhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

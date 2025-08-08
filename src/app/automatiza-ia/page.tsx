@@ -501,7 +501,7 @@ export default function AutomatizaIAPage() {
 
         {/* Lead Form */}
         <div id="lead-section">
-          <LeadEmailForm />
+          <LeadEmailForm webhookUrl={process.env.NEXT_PUBLIC_WORKSHOP_N8N_WEBHOOK_URL} />
         </div>
 
         {/* Sticky CTA for Mobile */}
