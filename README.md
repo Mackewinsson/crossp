@@ -14,6 +14,9 @@ NEXT_PUBLIC_N8N_WEBHOOK_URL=https://n8n-service-2978.onrender.com/webhook-test/6
 # Site URL for meta tags
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
+# Stripe Payment Link for workshop purchases
+NEXT_PUBLIC_STRIPE_PAYMENT_LINK=https://buy.stripe.com/your-payment-link
+
 # Google Ads conversion tracking (optional)
 NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID=your-google-ads-conversion-id
 NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL=your-google-ads-conversion-label
