@@ -404,7 +404,7 @@ export default function AutomatizaIAPage() {
                       <p className="text-sm text-gray-600">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-gray-700 italic">"{testimonial.text}"</p>
+                  <p className="text-gray-700 italic">&ldquo;{testimonial.text}&rdquo;</p>
                 </div>
               ))}
             </div>
