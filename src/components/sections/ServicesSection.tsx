@@ -18,7 +18,6 @@ export const ServicesSection: React.FC = () => {
         t('services.aiIntegration.features.1'),
         t('services.aiIntegration.features.2'),
         t('services.aiIntegration.features.3'),
-        t('services.aiIntegration.features.4'),
       ],
     },
     {
@@ -30,7 +29,6 @@ export const ServicesSection: React.FC = () => {
         t('services.customSoftware.features.0'),
         t('services.customSoftware.features.1'),
         t('services.customSoftware.features.2'),
-        t('services.customSoftware.features.3'),
       ],
     },
     {
@@ -42,7 +40,6 @@ export const ServicesSection: React.FC = () => {
         t('services.mobileApps.features.0'),
         t('services.mobileApps.features.1'),
         t('services.mobileApps.features.2'),
-        t('services.mobileApps.features.3'),
       ],
     },
     {
@@ -54,7 +51,6 @@ export const ServicesSection: React.FC = () => {
         t('services.cloudAutomation.features.0'),
         t('services.cloudAutomation.features.1'),
         t('services.cloudAutomation.features.2'),
-        t('services.cloudAutomation.features.3'),
       ],
     },
   ];
@@ -86,11 +82,11 @@ export const ServicesSection: React.FC = () => {
               className="glass-panel-interactive rounded-2xl p-6 sm:p-8 flex flex-col justify-between group"
             >
               <div>
-                <div className="flex items-center space-x-4 mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-start gap-3 sm:gap-4 mb-5">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-400 transition-colors leading-snug">
                     {service.title}
                   </h3>
                 </div>

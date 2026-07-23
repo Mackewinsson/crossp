@@ -43,6 +43,9 @@ export const en = {
     badge: 'COMMON DEVELOPMENT BLOCKERS',
     title: 'Stuck between slow agencies, risky freelancers, and costly hiring?',
     subtitle: 'Most teams lose months to the wrong delivery model. We remove the friction that delays products and inflates cost:',
+    viewCards: 'Problems',
+    viewMatrix: 'Compare',
+    scrollHint: 'Swipe sideways to compare all models →',
     cards: [
       {
         id: 'agencies',

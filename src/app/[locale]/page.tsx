@@ -32,8 +32,8 @@ export default async function LocalePage({ params }: LocalePageProps) {
         <TestimonialsSection />
         <CTASection />
       </main>
-      <footer className="py-8 bg-[#05070a] border-t border-slate-800/80 text-center text-xs text-slate-500 font-mono">
-        <p>© 2026 ConaiSoft AI Engine. Enterprise AI Software Delivery. All rights reserved.</p>
+      <footer className="py-8 px-4 bg-[#05070a] border-t border-slate-800/80 text-center text-xs text-slate-500 font-mono">
+        <p className="leading-relaxed text-balance">© 2026 ConaiSoft. All rights reserved.</p>
       </footer>
     </div>
   );

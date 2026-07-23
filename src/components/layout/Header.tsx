@@ -12,28 +12,28 @@ export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 bg-[#07090e]/85 backdrop-blur-xl border-b border-white/10 transition-all duration-200">
       {/* Top operational status banner */}
-      <div className="bg-gradient-to-r from-blue-950/80 via-slate-900/90 to-blue-950/80 border-b border-blue-500/20 py-1.5 px-4 text-center text-xs font-mono text-cyan-300 flex items-center justify-center space-x-2">
-        <span className="relative flex h-2 w-2">
+      <div className="bg-gradient-to-r from-blue-950/80 via-slate-900/90 to-blue-950/80 border-b border-blue-500/20 px-3 py-1.5 text-center text-[10px] leading-snug sm:text-xs font-mono text-cyan-300 flex items-center justify-center gap-2">
+        <span className="relative flex h-2 w-2 flex-shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
         </span>
-        <span className="tracking-wide">{header.status()}</span>
+        <span className="tracking-wide text-balance">{header.status()}</span>
       </div>
 
       <Container>
         <div className="flex items-center justify-between py-3.5">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-indigo-600 p-0.5 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
+          <a href="#" className="flex min-w-0 items-center space-x-2.5 group">
+            <div className="w-9 h-9 flex-shrink-0 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-indigo-600 p-0.5 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
               <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
                 <span className="text-cyan-400 font-extrabold text-lg tracking-tighter">C</span>
               </div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-extrabold text-white tracking-tight flex items-center">
+            <div className="flex min-w-0 flex-col">
+              <span className="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center">
                 Conai<span className="text-cyan-400">Soft</span>
               </span>
-              <span className="text-[10px] font-mono text-slate-400 tracking-wider uppercase -mt-1">AI Software Engine</span>
+              <span className="text-[10px] font-mono text-slate-400 tracking-wider uppercase -mt-1 truncate">AI Software Engine</span>
             </div>
           </a>
 
@@ -73,12 +73,13 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex items-center space-x-3 lg:hidden">
+          <div className="flex items-center space-x-2 sm:space-x-3 lg:hidden">
             <LanguageSwitcher />
             <button
-              className="p-2 rounded-lg text-slate-300 hover:text-white bg-slate-900 border border-slate-800"
+              className="min-h-11 min-w-11 p-2 rounded-lg text-slate-300 hover:text-white bg-slate-900 border border-slate-800"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle Navigation Menu"
+              aria-expanded={isMenuOpen}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (

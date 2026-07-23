@@ -16,7 +16,7 @@ export const LanguageSwitcher: React.FC = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-lg bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40"
+        className="flex items-center space-x-2 px-3 py-2 min-h-11 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-lg bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40"
         aria-label="Switch language"
       >
         <span className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0">

@@ -41,8 +41,8 @@ export const TestimonialsSection: React.FC = () => {
                 </blockquote>
               </div>
               
-              <div className="border-t border-slate-800/80 pt-4 flex items-center justify-between">
-                <div>
+              <div className="border-t border-slate-800/80 pt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-w-0">
                   <div className="font-bold text-white text-sm">
                     {testimonial.author}
                   </div>
@@ -50,7 +50,7 @@ export const TestimonialsSection: React.FC = () => {
                     {testimonial.position}
                   </div>
                 </div>
-                <div className="text-xs font-mono text-cyan-400 font-bold bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-500/20">
+                <div className="text-xs font-mono text-cyan-400 font-bold bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-500/20 w-fit max-w-full truncate">
                   {testimonial.company}
                 </div>
               </div>

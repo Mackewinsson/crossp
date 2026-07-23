@@ -43,6 +43,9 @@ export const es = {
     badge: 'BLOQUEOS HABITUALES EN DESARROLLO',
     title: '¿Entre agencias lentas, freelancers riesgosos y contratación costosa?',
     subtitle: 'La mayoría de los equipos pierde meses con el modelo de entrega equivocado. Eliminamos la fricción que retrasa productos y dispara costos:',
+    viewCards: 'Dolores',
+    viewMatrix: 'Comparar',
+    scrollHint: 'Desliza hacia el lado para comparar todos los modelos →',
     cards: [
       {
         id: 'agencies',

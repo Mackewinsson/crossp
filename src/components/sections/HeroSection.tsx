@@ -49,13 +49,13 @@ export const HeroSection: React.FC = () => {
           <div className="lg:col-span-7 text-left">
             
             {/* Status Pill */}
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-6 shadow-lg shadow-cyan-500/10">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              <span className="font-semibold tracking-wider uppercase">{hero.badge()}</span>
+            <div className="inline-flex max-w-full items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-cyan-400 text-[10px] sm:text-xs font-mono mb-6 shadow-lg shadow-cyan-500/10">
+              <span className="w-2 h-2 flex-shrink-0 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span className="font-semibold tracking-wider uppercase leading-snug text-balance">{hero.badge()}</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6 select-text">
+            <h1 className="text-[1.75rem] leading-tight sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 select-text text-balance">
               {hero.title()}{' '}
               <span className="gradient-text-cyan block mt-2">
                 {hero.titleHighlight()}
@@ -63,48 +63,48 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl select-text">
+            <p className="text-sm sm:text-lg lg:text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl select-text">
               {hero.subtitle()}
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10">
               <a
                 href="https://calendly.com/mackewinsson/exploring-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 active:scale-95 transition-all duration-200 border border-cyan-400/40 min-h-[54px]"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-4 text-sm sm:text-base font-bold text-white rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 active:scale-95 transition-all duration-200 border border-cyan-400/40 min-h-[48px] w-full sm:w-auto"
               >
-                <span>{hero.ctaPrimary()}</span>
-                <svg className="w-5 h-5 ml-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-center">{hero.ctaPrimary()}</span>
+                <svg className="w-5 h-5 ml-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
 
               <a
                 href="#velocity"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-200 hover:text-white rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-500/40 transition-all duration-200 min-h-[54px]"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-4 text-sm sm:text-base font-bold text-slate-200 hover:text-white rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-500/40 transition-all duration-200 min-h-[48px] w-full sm:w-auto"
               >
-                <span>{hero.ctaSecondary()}</span>
-                <svg className="w-5 h-5 ml-2 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-center">{hero.ctaSecondary()}</span>
+                <svg className="w-5 h-5 ml-2 flex-shrink-0 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </a>
             </div>
 
             {/* Key Trust Metrics Row */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">{t('hero.metrics.delivery')}</div>
-                <div className="text-xs text-slate-400 mt-1 font-medium">{t('hero.metrics.deliveryLabel')}</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-6 border-t border-slate-800/80">
+              <div className="min-w-0">
+                <div className="text-xl sm:text-3xl font-extrabold text-cyan-400 font-mono">{t('hero.metrics.delivery')}</div>
+                <div className="text-[10px] sm:text-xs text-slate-400 mt-1 font-medium leading-snug">{t('hero.metrics.deliveryLabel')}</div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">{t('hero.metrics.uptime')}</div>
-                <div className="text-xs text-slate-400 mt-1 font-medium">{t('hero.metrics.uptimeLabel')}</div>
+              <div className="min-w-0">
+                <div className="text-xl sm:text-3xl font-extrabold text-blue-400 font-mono">{t('hero.metrics.uptime')}</div>
+                <div className="text-[10px] sm:text-xs text-slate-400 mt-1 font-medium leading-snug">{t('hero.metrics.uptimeLabel')}</div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">{t('hero.metrics.codeOwnership')}</div>
-                <div className="text-xs text-slate-400 mt-1 font-medium">{t('hero.metrics.codeOwnershipLabel')}</div>
+              <div className="min-w-0">
+                <div className="text-xl sm:text-3xl font-extrabold text-emerald-400 font-mono">{t('hero.metrics.codeOwnership')}</div>
+                <div className="text-[10px] sm:text-xs text-slate-400 mt-1 font-medium leading-snug">{t('hero.metrics.codeOwnershipLabel')}</div>
               </div>
             </div>
 
@@ -115,21 +115,21 @@ export const HeroSection: React.FC = () => {
             <div className="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-800 relative group">
               
               {/* Terminal Window Header */}
-              <div className="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                <div className="flex items-center space-x-2">
+              <div className="bg-slate-900/90 px-3 sm:px-4 py-3 border-b border-slate-800 flex items-center justify-between gap-2">
+                <div className="flex items-center space-x-2 flex-shrink-0">
                   <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 </div>
-                <div className="text-xs font-mono text-slate-400 flex items-center space-x-1.5">
-                  <svg className="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="text-[10px] sm:text-xs font-mono text-slate-400 flex items-center space-x-1.5 min-w-0">
+                  <svg className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
-                  <span>{t('hero.terminal.title')}</span>
+                  <span className="truncate">{t('hero.terminal.title')}</span>
                 </div>
                 <button
                   onClick={handleRestartTerminal}
-                  className="text-xs text-slate-400 hover:text-cyan-400 font-mono transition-colors focus:outline-none"
+                  className="text-xs text-slate-400 hover:text-cyan-400 font-mono transition-colors focus:outline-none flex-shrink-0 min-h-8 px-1"
                   title="Re-run terminal preview"
                 >
                   ↻ run
@@ -137,11 +137,11 @@ export const HeroSection: React.FC = () => {
               </div>
 
               {/* Terminal Body */}
-              <div className="p-5 font-mono text-xs sm:text-sm space-y-3 bg-[#090d16] text-slate-200 min-h-[310px]">
+              <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-sm space-y-3 bg-[#090d16] text-slate-200 min-h-[280px] sm:min-h-[310px] overflow-x-auto">
                 {/* Command Prompt */}
-                <div className="flex items-center space-x-2 text-cyan-400">
-                  <span>❯</span>
-                  <span className="text-emerald-400 font-semibold">{t('hero.terminal.prompt')}</span>
+                <div className="flex items-start gap-2 text-cyan-400">
+                  <span className="flex-shrink-0">❯</span>
+                  <span className="text-emerald-400 font-semibold break-all">{t('hero.terminal.prompt')}</span>
                 </div>
 
                 {/* Simulated Log Output Lines */}
@@ -149,7 +149,7 @@ export const HeroSection: React.FC = () => {
                   {terminalLines.slice(0, terminalLineIndex).map((line, idx) => (
                     <div
                       key={idx}
-                      className={`leading-relaxed transition-all duration-300 ${
+                      className={`leading-relaxed break-words transition-all duration-300 ${
                         idx === terminalLines.length - 1
                           ? 'text-cyan-300 font-bold bg-cyan-950/40 p-2 rounded border border-cyan-500/30'
                           : 'text-slate-300'
@@ -167,7 +167,7 @@ export const HeroSection: React.FC = () => {
 
                 {/* Terminal Footer Badge */}
                 {!isTyping && (
-                  <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                  <div className="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[10px] sm:text-xs text-slate-400">
                     <span className="text-emerald-400 flex items-center">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
                       Build Verified & Deployed

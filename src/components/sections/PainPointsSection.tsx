@@ -104,26 +104,26 @@ export const PainPointsSection: React.FC = () => {
           </p>
 
           {/* View Mode Toggle Switch */}
-          <div className="mt-8 inline-flex p-1 bg-slate-900/90 rounded-xl border border-slate-800">
+          <div className="mt-8 w-full max-w-md mx-auto inline-flex p-1 bg-slate-900/90 rounded-xl border border-slate-800">
             <button
               onClick={() => setActiveTab('cards')}
-              className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 ${
+              className={`flex-1 px-3 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 min-h-11 ${
                 activeTab === 'cards'
                   ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Dolores y Soluciones
+              {t('painPoints.viewCards')}
             </button>
             <button
               onClick={() => setActiveTab('matrix')}
-              className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 ${
+              className={`flex-1 px-3 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 min-h-11 ${
                 activeTab === 'matrix'
                   ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Matriz Comparativa
+              {t('painPoints.viewMatrix')}
             </button>
           </div>
         </div>
@@ -138,9 +138,9 @@ export const PainPointsSection: React.FC = () => {
               >
                 {/* Pain side */}
                 <div>
-                  <div className="flex items-center space-x-3 mb-4">
-                    <span className="text-3xl p-2 rounded-xl bg-slate-900 border border-slate-800">{card.icon}</span>
-                    <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  <div className="flex items-start gap-3 mb-4">
+                    <span className="text-2xl sm:text-3xl p-2 rounded-xl bg-slate-900 border border-slate-800 flex-shrink-0">{card.icon}</span>
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-400 transition-colors leading-snug">
                       {card.painTitle}
                     </h3>
                   </div>
@@ -151,9 +151,9 @@ export const PainPointsSection: React.FC = () => {
 
                 {/* ConaiSoft Solution side */}
                 <div className="bg-gradient-to-r from-blue-950/40 via-cyan-950/30 to-slate-900/50 rounded-xl p-4 border border-cyan-500/20">
-                  <div className="flex items-center space-x-2 text-cyan-400 text-xs font-mono font-bold mb-1.5 uppercase">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-                    <span>{card.solutionTitle}</span>
+                  <div className="flex items-start gap-2 text-cyan-400 text-[11px] sm:text-xs font-mono font-bold mb-1.5 uppercase">
+                    <span className="w-2 h-2 mt-1 rounded-full bg-cyan-400 flex-shrink-0"></span>
+                    <span className="leading-snug">{card.solutionTitle}</span>
                   </div>
                   <p className="text-slate-200 text-xs sm:text-sm leading-relaxed">
                     {card.solutionDesc}
@@ -167,25 +167,28 @@ export const PainPointsSection: React.FC = () => {
         {/* Tab 2: Comparison Matrix Table */}
         {activeTab === 'matrix' && (
           <div className="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
+            <p className="px-4 py-2 text-[11px] text-slate-400 border-b border-slate-800 sm:hidden">
+              {t('painPoints.scrollHint')}
+            </p>
+            <div className="overflow-x-auto overscroll-x-contain touch-pan-x">
+              <table className="w-full min-w-[640px] text-left border-collapse">
                 <thead>
                   <tr className="bg-slate-900/90 text-xs font-mono text-slate-300 border-b border-slate-800 uppercase tracking-wider">
-                    <th className="py-4 px-6">{t('painPoints.tableHeaders.feature')}</th>
-                    <th className="py-4 px-6 text-slate-400">{t('painPoints.tableHeaders.agency')}</th>
-                    <th className="py-4 px-6 text-slate-400">{t('painPoints.tableHeaders.inHouse')}</th>
-                    <th className="py-4 px-6 text-slate-400">{t('painPoints.tableHeaders.freelance')}</th>
-                    <th className="py-4 px-6 bg-cyan-950/60 text-cyan-300 font-bold border-l border-cyan-500/30">{t('painPoints.tableHeaders.conaiSoft')}</th>
+                    <th className="sticky left-0 z-10 bg-slate-900 py-3 px-4 sm:py-4 sm:px-6">{t('painPoints.tableHeaders.feature')}</th>
+                    <th className="py-3 px-4 sm:py-4 sm:px-6 text-slate-400">{t('painPoints.tableHeaders.agency')}</th>
+                    <th className="py-3 px-4 sm:py-4 sm:px-6 text-slate-400">{t('painPoints.tableHeaders.inHouse')}</th>
+                    <th className="py-3 px-4 sm:py-4 sm:px-6 text-slate-400">{t('painPoints.tableHeaders.freelance')}</th>
+                    <th className="py-3 px-4 sm:py-4 sm:px-6 bg-cyan-950/60 text-cyan-300 font-bold border-l border-cyan-500/30">{t('painPoints.tableHeaders.conaiSoft')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-800 text-sm">
                   {tableRows.map((row, idx) => (
                     <tr key={idx} className="hover:bg-slate-900/40 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-white">{row.feature}</td>
-                      <td className="py-4 px-6 text-slate-400">{row.agency}</td>
-                      <td className="py-4 px-6 text-slate-400">{row.inHouse}</td>
-                      <td className="py-4 px-6 text-slate-400">{row.freelance}</td>
-                      <td className="py-4 px-6 font-bold text-cyan-300 bg-cyan-950/30 border-l border-cyan-500/30">{row.conaiSoft}</td>
+                      <td className="sticky left-0 z-10 bg-[#0b1220] py-3 px-4 sm:py-4 sm:px-6 font-semibold text-white whitespace-nowrap">{row.feature}</td>
+                      <td className="py-3 px-4 sm:py-4 sm:px-6 text-slate-400">{row.agency}</td>
+                      <td className="py-3 px-4 sm:py-4 sm:px-6 text-slate-400">{row.inHouse}</td>
+                      <td className="py-3 px-4 sm:py-4 sm:px-6 text-slate-400">{row.freelance}</td>
+                      <td className="py-3 px-4 sm:py-4 sm:px-6 font-bold text-cyan-300 bg-cyan-950/30 border-l border-cyan-500/30">{row.conaiSoft}</td>
                     </tr>
                   ))}
                 </tbody>
