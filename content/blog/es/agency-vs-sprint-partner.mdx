@@ -3,33 +3,53 @@ title: "Por qué las agencias tardan 6–12 meses (y qué exigir en su lugar)"
 description: "Si tu partner de software no puede mostrar producto funcionando cada semana, estás comprando una caja negra. Cómo evaluar modelos de entrega."
 excerpt: "Descubrimiento eterno y presupuestos rígidos retrasan el lanzamiento. Así debe verse una entrega por sprints semanales."
 publishedAt: 2026-07-01
-readingMinutes: 7
+readingMinutes: 12
 tags:
   - agencies
   - delivery
   - buying-software
 ---
 
-Si eres founder u operador y vas a contratar desarrollo, el primer riesgo no es la tecnología: es el modelo de entrega. Muchas agencias venden un discovery largo, un presupuesto cerrado y una fecha a meses vista. Pagas, esperas y cruzas los dedos.
+Si eres founder u operador y estás a punto de contratar a alguien para construir software, el mayor riesgo no es la elección de tecnología. Es el modelo de entrega que aceptas antes de que se escriba una sola línea de código. Muchas agencias tradicionales todavía venden la misma forma de engagement: un discovery largo, un presupuesto cerrado que cubre todo el proyecto, y una fecha de lanzamiento cómodamente a seis o doce meses. Pagas un anticipo, esperas, y en gran parte cruzas los dedos.
 
-## Qué suele fallar
+No decimos que toda agencia que trabaja así lo haga con mala intención. Buena parte es simplemente cómo se organizó la industria hace una década, antes de que entregar semanalmente se volviera práctica normal en el resto del software. Pero el modelo tiene costos reales para ti como comprador, incluso cuando todos los involucrados tienen buenas intenciones.
 
-- Ves presentaciones y mockups durante semanas antes de ver software real.
-- El alcance se congela pronto y cada cambio se convierte en un extra.
-- Pruebas, CI/CD y documentación son opcionales o se cobran aparte.
-- No detectas bloqueos hasta que la fecha ya se movió.
+## Qué suele salir mal con esta forma de engagement
 
-## Cómo se ve un mejor partner
+- Ves presentaciones, mockups y wireframes "casi definitivos" durante semanas — a veces meses — antes de que exista software en producción que un usuario real pueda tocar.
+- El alcance se congela pronto, justo cuando todos sabían menos sobre lo que el producto realmente necesitaba. Cada cambio después de ese punto se convierte en un change order formal, con su propia negociación.
+- El trabajo de calidad — pruebas, CI/CD, documentación real — se vuelve opcional en silencio, o aparece después como un extra facturado que no presupuestaste.
+- Genuinamente no puedes saber si el equipo está atascado, avanzando lento o haciendo un gran trabajo, porque no hay nada funcionando que puedas revisar tú mismo. Solo te dicen que "va bien".
 
-Pide entregables semanales usables: algo que puedas probar, revisar y rechazar. Exige acceso al repositorio desde el día uno. Prefiere sprints flexibles frente a un presupuesto rígido cuando el producto todavía está evolucionando.
+Ese último punto es el asesino silencioso. Los reportes de estado son palabras. Una demo funcionando es evidencia. La mayoría de las agencias te dan lo primero y lo llaman transparencia.
 
-> Si no ves progreso cada semana, no estás gestionando un producto: estás financiando una promesa.
+Hemos hablado con founders a tres meses de un engagement así que genuinamente no podían decir si el proyecto iba bien — no porque alguien les mintiera, sino porque "ir bien" nunca se definió contra algo visible. Eso no se arregla con mejores notas de reunión. Es un problema estructural, incorporado en el modelo desde antes de firmar el contrato.
 
-## Preguntas antes de contratar
+## Cómo se ve un mejor partner en realidad
 
-- ¿Qué podré usar después del primer sprint?
-- ¿Quién es dueño del código, las credenciales y la nube?
-- ¿Las pruebas automatizadas y el CI vienen incluidos?
-- ¿Cómo cambiamos prioridades sin reiniciar el contrato?
+Pide entregables semanales usables — algo que puedas probar, revisar y rechazar si está mal. No una llamada de estado donde alguien describe un avance que no puedes verificar tú mismo. Exige acceso abierto y continuo al repositorio desde el día uno, no "te damos acceso al cerrar el proyecto". Y cuando los requisitos todavía están evolucionando — que, siendo honestos, casi siempre es el caso — prefiere un precio por sprints flexible en lugar de un número inflado pensado para cubrir cualquier sorpresa posible.
 
-En ConaiSoft trabajamos por sprints cortos con arquitectura senior, progreso visible y propiedad total del código — para validar más rápido sin atarte a una agencia.
+> Si no ves progreso cada semana, no estás gestionando un producto. Estás financiando una promesa, y esperando que la promesa se sostenga.
+
+Hay una versión de esto que suena dura pero no busca serlo: las agencias que necesitan seis meses de "discovery" antes de mostrar algo real muchas veces se están protegiendo de una incertidumbre que no resolvieron, y te pasan el costo de esa incertidumbre directo a ti en forma de un número más grande y una espera más larga.
+
+## Por qué el modelo viejo todavía se vende, aunque sea más lento
+
+Vale la pena entender por qué la forma de seis a doce meses persiste, porque no es pura incompetencia lo que la mantiene viva. Un número fijo grande, entregado después de meses de discovery, se siente genuinamente reconfortante de presentar internamente — es una sola línea, fácil de explicar a una junta o a finanzas, y da la sensación de que el riesgo se transfirió por completo al vendor. En realidad el riesgo no se fue a ningún lado. Solo quedó escondido detrás de una cortina hasta la fecha de revelación, y ahí descubres cuánto de ese riesgo era real.
+
+Hay casos donde un engagement más largo y estructurado sí tiene sentido — industrias muy reguladas con puntos de aprobación de compliance, o un sistema con tantas integraciones existentes que una auditoría técnica seria tiene que pasar antes de que alguien pueda comprometerse responsablemente a un plan de sprints. Aun así, la auditoría misma debería ser un trabajo corto, visible y con tiempo definido — no una caja negra que también toma seis meses.
+
+## Lo que la entrega semanal te cuesta a cambio, en la práctica
+
+Para ser justos con el modelo tradicional, la entrega por sprints tampoco está libre de trade-offs. Vas a tener que aparecer cada semana, revisar output real, y decidir más rápido de lo que permite un ritmo de "te contactamos el próximo mes". A algunos compradores eso les incomoda al principio — es más visible, lo que significa que no hay dónde esconderse si tus propias prioridades no están claras. Nosotros diríamos que esa incomodidad es justamente el punto. Saca los problemas a la luz en la semana dos en vez del mes ocho, cuando todavía son baratos de arreglar.
+
+## Preguntas que vale la pena hacer antes de contratar a nadie
+
+- ¿Qué voy a poder usar yo mismo, de verdad, después del primer sprint — no que me lo describan, sino usarlo?
+- ¿Quién es dueño del código, las credenciales y las cuentas cloud, desde cuándo?
+- ¿Las pruebas automatizadas y un pipeline de CI vienen incluidos por defecto, o eso es otra conversación aparte?
+- ¿Cómo cambiamos prioridades a mitad de camino sin reiniciar todo el contrato y renegociar desde cero?
+
+Si las respuestas llegan específicas y rápidas, es buena señal de cómo va a ir el engagement real. Si llegan vagas o se desvían hacia "eso lo vemos en el kickoff", esa vaguedad ya es información útil por sí misma.
+
+En ConaiSoft trabajamos por sprints cortos con arquitectura senior desde el día uno, progreso semanal visible, y propiedad total del código que es tuya desde el inicio en lugar de entregarse al final — para que puedas validar lo que construyes más rápido, sin el lock-in de meses con una agencia que hizo necesaria esta conversación en primer lugar.

@@ -1,35 +1,54 @@
 ---
-title: "¿Quién es dueño del código si contratas desarrolladores o una agencia?"
-description: "Guía clara de propiedad intelectual de software para compradores — contractors, agencias, freelancers y cómo no perder tu producto."
-excerpt: "Si la propiedad no es explícita, puedes estar alquilando tu propio producto. Arréglalo antes de empezar."
+title: "¿Quién es dueño del código cuando contratas desarrolladores o una agencia?"
+description: "Guía clara de propiedad intelectual de software para compradores — contractors, agencias, freelancers, y cómo evitar perder en silencio tu propio producto."
+excerpt: "Si la propiedad no está explícita por escrito, puede que solo estés alquilando tu propio producto. Arréglalo antes de que alguien escriba una línea de código."
 publishedAt: 2026-07-29
-readingMinutes: 6
+readingMinutes: 12
 tags:
   - ip
   - ownership
   - contracts
 ---
-“¿Quién es dueño del código?” debe responderse antes de escribir una línea. Los defaults cambian por país y tipo de contrato — no confíes en sensaciones.
 
-## Qué deberías poseer
+"¿Quién es dueño del código?" suena como una pregunta tan básica que no debería hacer falta hacerla. Debería responderse, por escrito, antes de que alguien escriba una línea — porque la respuesta por defecto no es la misma en todos lados, y no siempre es la que asumirías. Los defaults de propiedad cambian según el país, el tipo de contrato, y si alguien es técnicamente empleado, contractor, o una agencia trabajando a través de su propia empresa. Asumir "obviamente es mío porque yo lo pago" es exactamente la suposición que lleva a disputas.
 
-- Código fuente de la aplicación producido para ti.
-- Infraestructura como código y configs de deploy del proyecto.
-- Credenciales, dominios y recursos cloud para operar el producto.
-- Documentación para operar y extender el sistema.
+Esto importa más de lo que la mayoría de los compradores se dan cuenta hasta que se vuelve un problema. Un producto construido sobre código que no posees legalmente es un producto al que puedes perder acceso, o por el que te pueden forzar a negociar, en el peor momento posible — normalmente justo cuando está funcionando lo suficientemente bien como para que perderlo realmente duela.
+
+## Qué deberías poseer, específicamente
+
+La propiedad no es solo "el código". Un reclamo real y usable sobre tu producto incluye varias cosas distintas, y un contrato que solo menciona una de ellas deja huecos.
+
+- **Código fuente de la aplicación** producido específicamente para ti, incluyendo cualquier módulo personalizado, script o herramienta interna construida en el camino.
+- **Infraestructura como código y configuración de deploy** creada para el proyecto — los scripts y ajustes que realmente hacen que funcione, no solo la lógica de la aplicación.
+- **Credenciales, dominios y recursos cloud** usados para operar el producto. Deberían estar registrados bajo tus cuentas, no prestados por las de un proveedor.
+- **Documentación necesaria para operar y extender el sistema** — sin esto, la propiedad del código es teórica. Eres dueño de archivos que no puedes cambiar con seguridad.
+
+Faltar cualquiera de estos puede significar que, en la práctica, no controlas completamente tu propio producto aunque el contrato diga que el código es "tuyo".
 
 ## Fallos comunes
 
-- Código en el GitHub personal del freelancer sin transferencia.
-- “Framework propietario” de la agencia que te atrapa.
-- Sin cesión de IP escrita en el statement of work.
+Un puñado de patrones aparece una y otra vez en las disputas, y ninguno requiere mala intención para ocurrir — solo falta de un acuerdo explícito desde el inicio.
 
-## Protección práctica
+- **Código viviendo en la cuenta personal de GitHub de un freelancer**, sin que ninguna transferencia se complete formalmente. Funciona bien hasta que el freelancer se vuelve inalcanzable, y entonces estás negociando para acceder a algo que ya pagaste.
+- **El "framework propietario" de una agencia** sobre el que tu producto está silenciosamente construido. Puedes ser dueño de tu código de aplicación, pero si no puede correr sin sus herramientas internas, no eres dueño completo del producto — eres dueño de una dependencia hacia ellos.
+- **Sin cesión de IP escrita en el statement of work**, confiando en cambio en una sensación general de que "claro que es tuyo". Las sensaciones generales no aguantan cuando una relación termina mal, y no son exigibles de la forma en que sí lo es una cláusula explícita.
+- **Trabajo subcontratado sin visibilidad.** La agencia que contrataste puede haber subcontratado partes del build a otra persona por completo, cuya relación con la IP nunca te fue explicada.
 
-- Crea el repositorio bajo tu org desde el día uno.
-- Incluye lenguaje de cesión de IP en el contrato.
-- Exige handover de secretos vía tu password manager / cloud — no por chats.
+## Protección práctica, antes de empezar a trabajar
 
-> Si no puedes clonar el repo y redesplegar sin el vendor, todavía no eres dueño del producto.
+Las soluciones aquí son más sobre secuencia y hábito que sobre complejidad legal — la mayoría de esto no requiere un abogado, solo disciplina para hacerlo en el orden correcto.
 
-En ConaiSoft construimos en tus repositorios con propiedad que se queda contigo desde el primer commit.
+- **Crea el repositorio bajo tu organización desde el día uno**, antes de que exista código. Es mucho más fácil darle acceso a un proveedor a tu repo que transferir la propiedad del suyo después.
+- **Incluye lenguaje explícito de cesión de IP en el contrato**, no una referencia vaga a "todo el work product". Especifica que el código fuente, el código de infraestructura y la documentación se transfieren a ti al pagar.
+- **Exige que los secretos y credenciales se entreguen a través de tu propio password manager o cuenta cloud**, no por mensajes de chat o documentos compartidos que viven fuera de cualquier control de acceso real.
+- **Pregunta, directamente, si alguna parte del build depende de herramientas o frameworks que el proveedor considera propios.** Si la respuesta es sí, aclara específicamente qué significa eso para tu capacidad de operar de forma independiente.
+
+> Si no puedes clonar el repositorio y redesplegar el producto sin la ayuda del proveedor, todavía no eres dueño completo — eres dueño de una relación de trabajo con ellos que resulta producir tu producto.
+
+## Una prueba rápida que puedes hacer hoy
+
+Si ya tienes un producto construido por un equipo externo, vale la pena correr esta prueba sin importar qué diga el contrato en papel: ¿podría un equipo diferente, partiendo de lo que tienes acceso hoy, clonar el repositorio, leer la documentación y tener una versión funcionando sin llamar al proveedor original? Si la respuesta honesta es no, eso es un hueco que vale la pena cerrar ahora, mientras la relación presumiblemente sigue bien — no durante una disputa, cuando el poder de negociación ya cambió de lado.
+
+Esto no es sobre desconfiar de ningún proveedor en particular. Incluso relaciones de buena fe terminan por razones comunes — un proveedor cierra, las prioridades cambian, los presupuestos se ajustan. La claridad de propiedad es lo que hace que esas transiciones ordinarias sean sobrevivibles en lugar de catastróficas.
+
+En ConaiSoft construimos dentro de tus repositorios y tus cuentas cloud desde el primer commit, con una propiedad que nunca está en duda porque nunca se estructuró para ser ambigua desde el principio.

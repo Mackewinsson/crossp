@@ -1,33 +1,72 @@
 ---
-title: "Cuándo rehacer software legacy (y cuándo dejarlo en paz)"
-description: "Señales de que un sistema legacy necesita modernización — y alternativas más seguras que un rewrite completo."
-excerpt: "Los rewrites totales fallan a menudo. Moderniza primero las partes riesgosas y conserva lo que aún genera dinero."
+title: "Cuándo reconstruir software legacy (y cuándo dejarlo en paz)"
+description: "Las señales reales de que un sistema legacy necesita modernización — y alternativas más seguras a un rewrite completo para líderes bajo presión de 'modernizar'."
+excerpt: "Los rewrites completos fallan más de lo que tienen éxito. Moderniza primero las partes riesgosas y deja en paz lo que todavía te está generando dinero en silencio."
 publishedAt: 2026-07-28
-readingMinutes: 7
+readingMinutes: 13
 tags:
   - legacy
   - rebuild
   - architecture
 ---
-El software legacy duele, y el instinto es “reconstruir”. Los rewrites totales fallan a menudo porque intentan recrear años de edge cases en un solo proyecto.
+
+El software legacy duele mucho antes de que alguien pueda probar que realmente le está costando dinero al negocio. Las pantallas se ven anticuadas, el código tiene una reputación que nadie puede explicar del todo, y cada persona nueva pregunta "¿por qué funciona así?" en su primera semana. El instinto que sigue casi siempre es la misma palabra: reconstruir.
+
+Vale la pena resistir ese instinto, al menos hasta hacerte algunas preguntas más duras. Los rewrites completos fallan más seguido de lo que la industria admite, y el patrón de fallo es predecible: un equipo intenta recrear años de edge cases acumulados, workarounds y reglas de negocio no documentadas dentro de un solo proyecto con fecha límite. El sistema viejo, con todos sus defectos, codifica muchas decisiones que se tomaron por razones reales — razones que muchas veces solo viven en el código mismo, no en ningún documento.
+
+Eso no significa que los sistemas legacy deban quedarse intactos para siempre. Significa que la decisión de reconstruir merece el mismo rigor que aplicarías a cualquier otro compromiso de capital importante, no solo alivio de la molestia.
+
+## Qué significa realmente "legacy"
+
+La antigüedad no es el problema. Muchos sistemas de diez años funcionan bien y cuestan poco de mantener. Los sistemas que realmente necesitan atención comparten otro tipo de rasgos:
+
+- Cambios que deberían tomar días toman meses, porque nadie entiende del todo el efecto dominó de tocar una parte del código.
+- Las personas que entienden el sistema son una o dos — y perder a cualquiera sería un riesgo de negocio serio, no solo una molestia.
+- No se pueden aplicar parches de seguridad, actualizaciones de dependencias o requisitos de compliance sin una cantidad desproporcionada de pruebas y miedo.
+- La tecnología misma ya no se mantiene ni se puede contratar — no encuentras ingenieros que quieran trabajar en ella, a ningún precio.
+
+Si nada de esto aplica, probablemente estás ante un sistema que se ve viejo pero funciona bien. Eso no es una crisis. Eso es un sistema haciendo su trabajo.
 
 ## Reconstruye (o reemplaza módulos) cuando…
 
-- El riesgo de seguridad o compliance es inaceptable.
-- Pocas personas entienden el sistema (bus factor).
-- Las features nuevas tardan meses por la arquitectura.
-- El lock-in del vendor o la tecnología muerta bloquea hiring y mantenimiento.
+- **El riesgo de seguridad o compliance es genuinamente inaceptable** — no "nos sentiríamos mejor", sino una exposición real que podría costarle al negocio en una auditoría, un breach o una acción regulatoria.
+- **El bus factor es peligrosamente bajo.** Si que una persona se vaya te deja incapaz de cambiar el sistema con seguridad, eso es un riesgo de continuidad de negocio que vale la pena financiar, no solo una queja de ingeniería.
+- **Las features nuevas rutinariamente tardan meses** por cómo está estructurada la arquitectura, y esa lentitud ya te está costando posición de mercado, no solo paciencia de desarrolladores.
+- **El lock-in del proveedor o tecnología muerta está bloqueando hiring y mantenimiento,** y el costo de encontrar especialistas raros sube cada año que esperas.
 
 ## No reescribas cuando…
 
-- El dolor es solo gusto de UI, no resultados de negocio.
-- No hay documentación de los flujos reales.
-- Liderazgo quiere un “stack moderno” sin dueño de la migración.
+- **El dolor es sobre todo estético.** Una UI anticuada es un problema real, pero es un problema mucho más barato de arreglar que la arquitectura de fondo, y confundir ambas cosas lleva a proyectos sobre-alcanzados.
+- **Nadie ha documentado los flujos reales que el sistema realmente soporta.** Reconstruir sin este conocimiento significa redescubrir la lógica de negocio de la forma difícil — rompiendo cosas en producción y enterándote por los usuarios.
+- **Liderazgo quiere "un stack moderno" como meta en sí misma**, sin un resultado de negocio específico asociado y sin nadie claramente responsable de que la migración tenga éxito.
+- **El sistema, a pesar de sus defectos, todavía genera ingresos de forma confiable.** Un rewrite empeora las cosas temporalmente antes de mejorarlas — planea honestamente esa caída, o no empieces.
 
-## Caminos de modernización más seguros
+> El rewrite más caro es el que silenciosamente se convierte en dos sistemas: el viejo, que sigue corriendo porque nadie se atrevió a apagarlo, y el nuevo, que todavía no está del todo terminado.
 
-- Patrón strangler: módulos nuevos alrededor del core viejo.
-- Reemplaza primero el flujo de mayor riesgo.
-- Agrega APIs y pruebas antes de rediseños cosméticos.
+## Caminos más seguros que un rewrite completo
 
-En ConaiSoft abordamos la modernización legacy como product engineering incremental — progreso semanal, menos riesgo y propiedad retenida.
+Entre "déjalo en paz" y "reconstruye todo" hay mucho terreno intermedio útil, y la mayor parte es menos riesgosa y más barata de lo que la gente asume.
+
+### El patrón strangler
+
+Construye módulos nuevos alrededor del core viejo, y enruta el tráfico hacia las piezas nuevas un flujo a la vez. El sistema viejo sigue corriendo las partes que nadie ha reemplazado todavía, así que nunca estás en una posición donde nada funciona. Con el tiempo, el core viejo se reduce hasta ser lo suficientemente pequeño para retirarlo con seguridad — o lo suficientemente pequeño como para que ya no importe mantenerlo.
+
+### Reemplaza primero el flujo de mayor riesgo
+
+En lugar de tocar todo, identifica el único flujo que carga el mayor riesgo de seguridad, compliance o confiabilidad, y modernízalo primero. Esto te da una victoria real y medible temprano, y prueba tu nueva arquitectura contra la realidad de producción antes de comprometerte a reemplazar todo lo demás.
+
+### Agrega pruebas y APIs antes de rediseños cosméticos
+
+Es tentador empezar un proyecto de modernización con un refresh visual, porque es la victoria más visible. Normalmente es el primer paso equivocado. Construir primero un suite de pruebas y APIs limpias alrededor del sistema existente significa que cualquier rediseño posterior — cosmético o estructural — tiene una red de seguridad debajo.
+
+## Un diagnóstico corto antes de comprometerte
+
+Antes de aprobar un rewrite, vale la pena responder esto en voz alta con tu equipo:
+
+1. ¿Qué resultado de negocio específico mejora si hacemos esto — no "se va a sentir más limpio", sino un número, un riesgo o una capacidad que hoy nos falta?
+2. ¿Quién es dueño de esta migración de principio a fin, y qué pasa con sus otras responsabilidades mientras la hace?
+3. ¿Cuál es nuestro plan B si el rewrite tarda el doble de lo planeado — porque normalmente tarda?
+
+Si no puedes responder las tres con claridad, eso no es razón para abandonar la modernización. Es razón para empezar con la pieza más pequeña y de mayor riesgo en lugar de todo el sistema, y probar que el enfoque funciona antes de apostar el presupuesto completo.
+
+En ConaiSoft tratamos la modernización legacy como ingeniería de producto incremental, no como un rewrite único de alto riesgo — progreso semanal que puedes ver, riesgo reducido en el orden que realmente importa, y propiedad del resultado que se queda contigo todo el camino.

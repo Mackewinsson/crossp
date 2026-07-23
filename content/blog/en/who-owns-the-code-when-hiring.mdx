@@ -1,35 +1,54 @@
 ---
-title: "Who owns the code when you hire developers or an agency?"
-description: "Clear guidance on software IP ownership for buyers — contractors, agencies, freelancers, and how to avoid losing your product."
-excerpt: "If ownership is not explicit, you may be renting your own product. Fix this before work starts."
+title: "Who Owns the Code When You Hire Developers or an Agency?"
+description: "Clear guidance on software IP ownership for business buyers — contractors, agencies, freelancers, and how to avoid quietly losing your own product."
+excerpt: "If ownership isn't explicit in writing, you may just be renting your own product. Fix this before anyone writes a line of code."
 publishedAt: 2026-07-29
-readingMinutes: 6
+readingMinutes: 12
 tags:
   - ip
   - ownership
   - contracts
 ---
-“Who owns the code?” should be answered before anyone writes a line. Default assumptions differ by country and contract type — so do not rely on vibes.
 
-## What you should own
+"Who owns the code?" sounds like a question so basic it shouldn't need asking. It should be answered, in writing, before anyone writes a line — because the default answer isn't the same everywhere, and it isn't always the one you'd assume. Ownership defaults differ by country, by contract type, and by whether someone is technically an employee, a contractor, or an agency working through their own company. Assuming "obviously it's mine because I'm paying for it" is exactly the assumption that leads to disputes.
 
-- Application source code produced for you.
-- Infrastructure-as-code and deployment configs created for the project.
-- Credentials, domains, and cloud resources used to run the product.
-- Documentation required to operate and extend the system.
+This matters more than most buyers realize until it becomes a problem. A product built on code you don't legally own is a product you can lose access to, or be forced to negotiate for, at the worst possible moment — usually right when it's working well enough that losing it would actually hurt.
+
+## What you should own, specifically
+
+Ownership isn't just "the code." A real, usable claim to your product includes several distinct things, and a contract that only mentions one of them leaves gaps.
+
+- **Application source code** produced specifically for you, including any custom modules, scripts, or internal tools built along the way.
+- **Infrastructure-as-code and deployment configuration** created for the project — the scripts and settings that actually make the thing run, not just the application logic.
+- **Credentials, domains, and cloud resources** used to operate the product. These should be registered under your accounts, not lent to you by a vendor's.
+- **Documentation required to operate and extend the system** — without this, code ownership is theoretical. You own files you can't safely change.
+
+Missing any one of these can mean that, in practice, you don't fully control your own product even if the contract says the code is "yours."
 
 ## Common failure modes
 
-- Code in a freelancer’s personal GitHub with no transfer.
-- Agency “proprietary framework” that traps you.
-- No written IP assignment in the statement of work.
+A handful of patterns show up again and again in disputes, and none of them require bad intent to happen — just a lack of an explicit agreement at the start.
 
-## Practical protection
+- **Code sitting in a freelancer's personal GitHub account**, with no transfer ever formally completed. It works fine until the freelancer becomes unreachable, and then you're negotiating for access to something you already paid for.
+- **An agency's "proprietary framework"** that your product is quietly built on top of. You may own your application code, but if it can't run without their internal tooling, you don't fully own the product — you own a dependency on them.
+- **No written IP assignment in the statement of work**, relying instead on a general sense that "of course it's yours." General senses don't hold up when a relationship ends badly, and they're not enforceable in the way an explicit clause is.
+- **Subcontracted work with no visibility.** The agency you hired may have subcontracted parts of the build to someone else entirely, whose relationship to the IP was never spelled out to you.
 
-- Create the repository under your org on day one.
-- Include IP assignment language in the contract.
-- Require handover of secrets via your password manager / cloud — not chat apps.
+## Practical protection, before work starts
 
-> If you cannot clone the repo and redeploy without the vendor, you do not own the product yet.
+The fixes here are more about sequencing and habit than legal complexity — most of this doesn't require a lawyer, just discipline about doing it in the right order.
 
-ConaiSoft builds in your repositories with ownership that stays with you from the first commit.
+- **Create the repository under your organization on day one**, before any code exists. It's far easier to grant a vendor access to your repo than to transfer ownership of theirs later.
+- **Include explicit IP assignment language in the contract**, not a vague reference to "all work product." Specify that source code, infrastructure code, and documentation transfer to you upon payment.
+- **Require secrets and credentials to be handed over through your own password manager or cloud account**, not through chat messages or shared documents that live outside any real access control.
+- **Ask, directly, whether any part of the build depends on tooling or frameworks the vendor considers their own IP.** If the answer is yes, get specific about what that means for your ability to operate independently.
+
+> If you cannot clone the repository and redeploy the product without the vendor's help, you don't fully own it yet — you own a working relationship with them that happens to produce your product.
+
+## A quick test you can run today
+
+If you already have a product built by an outside team, it's worth running this test regardless of what the contract says on paper: could a different team, starting from what you currently have access to, clone the repository, read the documentation, and get a working version running without calling the original vendor? If the honest answer is no, that's a gap worth closing now, while the relationship is presumably still fine — not during a dispute, when leverage has already shifted.
+
+This isn't about distrust of any particular vendor. Even good-faith relationships end for ordinary reasons — a vendor shuts down, priorities shift, budgets change. Ownership clarity is what makes those ordinary transitions survivable instead of catastrophic.
+
+ConaiSoft builds inside your repositories and your cloud accounts from the very first commit, with ownership that's never in question because it was never structured to be ambiguous in the first place.

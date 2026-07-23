@@ -1,54 +1,72 @@
 ---
-title: "How long does an MVP take (and what “done” means)?"
-description: "Realistic MVP timelines for business buyers — what belongs in v1, what “done” should mean, and how to avoid fake launch dates."
+title: "How long does an MVP take (and what \"done\" means)?"
+description: "Realistic MVP timelines for business buyers — what belongs in v1, what \"done\" should mean, and how to avoid fake launch dates."
 excerpt: "An MVP is not a date on a slide. It is a shippable slice you can put in front of users. Here is how to set a timeline that survives contact with reality."
 publishedAt: 2026-07-21
-readingMinutes: 7
+readingMinutes: 12
 tags:
   - mvp
   - delivery
   - timeline
 ---
 
-Buyers ask “How long does an MVP take?” because they have a fundraising deadline, a sales window, or a board update. The honest answer: it depends on what you call an MVP — and most teams inflate the label until it means “almost the full product.”
+Every founder asks this in roughly the same tone: half hopeful, half bracing for bad news. "How long does an MVP take?" Usually there's a fundraising deadline behind it, or a sales demo already booked, or a board meeting where someone will ask "so, where's the product?" The honest answer is unsatisfying: it depends entirely on what you're calling an MVP. And most teams, without meaning to, inflate that label until it quietly means "the whole product, but rushed."
 
-## What an MVP is (and is not)
+We've sat in enough of these conversations to notice the pattern. Someone starts with "just the basics" and by the third planning call, "the basics" includes a referral system, three user roles, and an admin dashboard with export-to-PDF. None of that is wrong to want eventually. It's wrong to call it an MVP.
 
-An MVP is the **smallest production slice** that lets a real user complete one valuable job. It is not:
+## What an MVP actually is
 
-- a clickable prototype with no backend,
-- a full multi-role platform “because we will need it later,”
-- or a feature list copied from a competitor.
+Strip away the buzzword and an MVP is just the **smallest production-grade slice** that lets one real user complete one valuable job, start to finish, without someone from your team quietly fixing things behind the scenes.
 
-If your “MVP” includes every edge case, every admin report, and every integration, you are building v2 with an MVP label.
+It is not:
 
-## Timeline bands that are usually honest
+- a clickable prototype with no real backend behind it,
+- a full multi-role platform justified by "we'll need it eventually,"
+- or a feature checklist copied from whoever you consider your biggest competitor.
 
-Again: bands, not guarantees.
+Here's a test we use with clients: if your "MVP" spec covers every edge case, every admin report, and every third-party integration you can imagine needing, you're not scoping an MVP. You're scoping v2 and calling it v1 out of habit.
 
-- **2–4 weeks:** very narrow slice (auth + one core flow + deploy) when scope is already clear and integrations are light.
-- **4–8 weeks:** typical focused MVP with admin basics, staging, and production readiness.
-- **8–12+ weeks:** payments, complex roles, AI features, or messy legacy integrations enter the picture.
+## Timeline bands that tend to hold up
 
-Anything “done in 10 days” that claims full product quality usually skips tests, handover, or real production hardening.
+We'll give you bands, not a promise — because a promise from a stranger on the internet is worth exactly nothing.
 
-## What “done” should mean
+- **2–4 weeks.** This is a genuinely narrow slice: auth, one core flow, a deploy pipeline. It only happens this fast when scope was already clear going in and integrations are light or nonexistent.
+- **4–8 weeks.** The more typical focused MVP — core workflow plus admin basics, a staging environment, and something that's actually production-ready rather than a demo that breaks if you click the wrong thing.
+- **8–12+ weeks.** Payments, several user roles with different permissions, AI features that need real evaluation, or legacy integrations that nobody fully documented — any of these push you here, sometimes past it.
 
-Agree this in writing before the clock starts:
+A quick pattern worth knowing: anything advertised as "done in 10 days" while promising full production quality is usually skipping something. Often it's tests. Sometimes it's the handover documentation. Occasionally it's both, and you find out three months later when the original developer is unreachable.
 
-- Users can complete the primary workflow end to end.
-- Code lives in **your** repository; credentials and cloud are under **your** accounts.
-- Staging exists; production deploy is documented and repeatable.
-- Critical paths have automated tests or at least a clear QA checklist.
-- You can demo weekly progress, not just receive status emails.
+### Why timelines slip more than teams admit
 
-> A launch date without a definition of done is just a rumor with a calendar invite.
+It's rarely the coding that's slow. It's usually decision latency on the buyer's side — waiting three days for a Slack reply about button copy, or a stakeholder who wants to see "one more option" before approving a flow that was already agreed on. We don't say this to blame anyone; fast decisions are genuinely hard when you're juggling five other things. But it's worth naming, because it's the schedule killer nobody puts in the Gantt chart.
 
-## How to compress time without destroying quality
+## What "done" should actually mean
 
-- Cut scope before you cut quality.
-- Sequence: core workflow → admin essentials → secondary integrations.
-- Prefer weekly shippable increments over a big-bang reveal.
-- Make decisions fast — buyer delay is often the real schedule killer.
+Whatever timeline you land on, agree on this in writing before the clock starts — not after week six, when it becomes a negotiation instead of a checklist:
 
-ConaiSoft plans MVPs as short sprints with a clear first demo. If you need a timeline for your idea, we will tell you what fits in the first shippable slice — and what should wait.
+- Users can complete the primary workflow end to end, not just click through a happy path with fake data.
+- Code lives in **your** repository. Credentials and cloud accounts are under **your** accounts, not a personal account someone will "transfer later."
+- A staging environment exists, and the production deploy process is documented well enough that someone other than the original builder could run it.
+- Critical paths have automated tests, or at minimum a QA checklist specific enough that "it works" means something.
+- You can watch weekly demos of working software — not just receive status update emails that describe progress you can't verify.
+
+> A launch date without a written definition of "done" is just a rumor with a calendar invite attached.
+
+## How to compress the timeline without wrecking quality
+
+If the deadline is real and non-negotiable — fundraising rounds don't wait for anyone — here's where the actual leverage is:
+
+- Cut scope before you cut quality. Fewer features done properly beats more features held together with duct tape.
+- Sequence deliberately: core workflow first, admin essentials second, secondary integrations last. Nobody's first real user needs the CSV export.
+- Prefer weekly shippable increments over one big-bang reveal at the end. It's less dramatic, but it's how you catch a wrong assumption in week two instead of week nine.
+- Make decisions fast on your end. Seriously — this one is mostly in your control, and it moves the needle more than almost any technical choice.
+
+We've watched teams shave two or three weeks off a schedule just by getting faster at saying yes or no to a mockup, without touching the actual build.
+
+## A timeline is a scope decision wearing a calendar
+
+Here's the thing worth internalizing: when someone asks "can you do this in four weeks?", they're really asking two questions at once, and only one of them is about speed. The other is "what are you willing to cut to hit that date?" A partner who says yes to any timeline without renegotiating scope is either about to disappoint you, or about to quietly skip the parts you won't notice until they matter — the tests, the documentation, the edge cases nobody demoed.
+
+The better version of that conversation sounds like: "Four weeks gets you the core flow and basic admin. Payments and the second role wait for sprint two." That's not a worse answer. It's a more honest one, and it's the answer that actually protects your launch date instead of just naming one.
+
+ConaiSoft plans MVPs as short sprints with a clear first demo, usually within the first week or two. If you need a real timeline for your idea rather than a guess, tell us what you're trying to ship — we'll tell you honestly what fits in the first shippable slice, and what should wait for round two.

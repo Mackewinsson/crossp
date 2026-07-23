@@ -1,47 +1,78 @@
 ---
-title: "Cómo construir un MVP para tu startup (sin quemar runway)"
-description: "Guía práctica de MVP para founders — qué incluir, qué cortar y cómo lanzar una primera versión que usuarios e inversores puedan usar de verdad."
-excerpt: "Construir un MVP no es hacer una mini versión de todo. Camino práctico de la idea a los primeros usuarios."
+title: "Cómo construir un MVP para tu startup sin quemar el runway"
+description: "Guía de MVP pensada para founders — qué pertenece de verdad a la v1, qué cortar sin culpa, y cómo lanzar algo que usuarios reales puedan tocar."
+excerpt: "Un MVP no es una versión más chica de toda tu visión. Es la prueba más rápida y honesta de si alguien lo quiere."
 publishedAt: 2026-07-24
-readingMinutes: 8
+readingMinutes: 12
 tags:
   - mvp
   - startups
   - product
 ---
-La mayoría de startups no fallan porque no sepan programar. Fallan porque pasan meses construyendo features que nadie pidió. Un MVP debe comprar aprendizaje — no decorar un pitch deck.
 
-## Empieza por un job-to-be-done
+Un founder llegó con un spec de once páginas: cuentas multi-tenant, cuatro roles de usuario, un motor de facturación con tres planes, un centro de notificaciones y un dashboard admin con gráficos. Cero usuarios. Cero ingresos. Cero validación de que alguien quisiera la idea central. Ese documento representaba unos cinco meses de trabajo. La idea real debajo de todo eso se podía probar en tres semanas.
 
-Escribe una frase: *Para [usuario], mi producto le ayuda a [trabajo] para lograr [resultado].* Si necesitas tres frases, tienes tres productos. Elige uno para la v1.
+Esto pasa todo el tiempo, y no es porque los founders sean descuidados. Es porque un MVP se siente más seguro cuando se ve completo. Mostrarle a alguien un producto a medio construir da miedo. Pero la completitud es exactamente el objetivo equivocado en esta etapa — el objetivo es llegar rápido a una respuesta real.
 
-## Corta sin piedad
+## Qué significa realmente "mínimo viable"
 
-Mantén en la primera versión:
-- autenticación (solo si el trabajo la requiere),
-- el flujo core de punta a punta,
-- un admin simple para no quedar atrapado en la base de datos,
-- despliegue en producción con staging.
+La mayoría lee "mínimo" y "viable" como si estuvieran en tensión, así que transan en un punto medio y terminan sin ninguno de los dos. Una forma más limpia de pensarlo: viable significa que una persona real puede completar el trabajo real, de principio a fin, sin que tú estés al lado explicando qué click hacer. Mínimo significa que todo lo que no sea necesario para que ese trabajo suceda queda afuera — sin importar qué tan bien se vería en una demo.
 
-Deja para después:
-- complejidad multi-rol,
-- cada integración “que vamos a necesitar algún día”,
-- pulido de edge cases,
-- dashboards de analytics que nadie abrirá en la primera semana.
+Un MVP no es una versión más chica de tu producto. Es una prueba más filosa de tu suposición más riesgosa.
 
-## Secuencia que protege el runway
+## Empieza por una frase, no por un roadmap
 
-1. Alcance de la rebanada entregable por escrito.
-2. Demos semanales de software funcionando.
-3. Usuarios reales antes de expandir.
-4. Solo entonces financia la siguiente rebanada.
+Antes de cualquier conversación de alcance, le pedimos a los founders que escriban esto:
 
-## Trampas frecuentes del MVP
+*Para [tipo de usuario], mi producto le ayuda a [hacer este trabajo específico], para lograr [este resultado].*
 
-- Confundir un prototipo en Figma con un producto.
-- Contratar por velocidad y olvidar la propiedad del repositorio.
-- Pedir un presupuesto fijo de 6 meses antes de hablar con usuarios.
+Si necesitas tres frases para describirlo, estás describiendo tres productos. Elige aquel donde el dolor es más agudo y la disposición a pagar — o al menos a cambiar de herramienta — es más clara. Todo lo demás espera.
 
-> Un MVP que un cliente real no puede usar es un proyecto de ciencia con branding.
+## Qué pertenece de verdad a la versión uno
 
-En ConaiSoft ayudamos a founders a lanzar MVPs enfocados por sprints cortos con arquitectura senior y propiedad total del código — para que tu próxima ronda o ciclo comercial se base en evidencia, no en slides.
+Mantén:
+
+- Autenticación, pero solo si el trabajo realmente requiere saber quién es el usuario.
+- El flujo core, construido de punta a punta — no cada paso pulido, pero cada paso presente.
+- Una forma mínima de ver y corregir datos sin tocar la base de datos directamente (incluso una tabla interna básica cuenta).
+- Un despliegue real con staging, para que "funciona en mi laptop" no sea tu estándar de calidad.
+
+Corta, por ahora:
+
+- Sistemas de permisos multi-rol, salvo que el trabajo sea literalmente gestionar permisos.
+- Cada integración "que obviamente vamos a necesitar en algún momento". Ese momento no es este sprint.
+- Pulido de casos límite — los estados vacíos, los mensajes de error raros, la animación del botón.
+- Dashboards de analytics. Nadie los abre en la primera semana; en su lugar vas a estar hablando directo con usuarios.
+
+## Una secuencia de construcción que protege tu runway
+
+1. Escribe el alcance — literalmente, en un documento que todos acuerden — antes de escribir una línea de código.
+2. Lanza una demo funcional cada semana, aunque sea fea. La cadencia semanal es lo que mantiene el alcance honesto.
+3. Pon la cosa frente a usuarios reales antes de expandirla. No amigos. No inversores. El comprador real.
+4. Financia la siguiente rebanada de trabajo solo cuando la actual te haya enseñado algo.
+
+Ese orden importa más que cualquier paso individual. Los founders que se saltan el paso 3 — que sigue construyendo porque construir se siente como progreso — suelen ser los que se quedan sin plata sosteniendo una respuesta hermosamente diseñada a una pregunta que nadie hizo.
+
+## Las trampas que más runway se comen
+
+- **Confundir un prototipo clickeable con un producto.** Un flujo en Figma prueba que la idea se entiende. No prueba que alguien la vaya a usar cuando sea real, con fricción real y consecuencias reales.
+- **Contratar solo por velocidad y perder propiedad.** Un freelancer rápido que deja el repositorio en su cuenta personal, o se salta los tests por completo, puede entregarte un MVP veloz sobre el que no podrás construir seis meses después.
+- **Encerrarte en un presupuesto fijo de seis meses antes de hablar con un solo usuario.** El alcance fijo asume que ya sabes qué construir. En esta etapa no lo sabes — y está bien, siempre que tu modelo de trabajo lo admita.
+
+> Un MVP que un cliente real no puede usar no es un MVP. Es un proyecto de ciencia con buen logo.
+
+## Cómo se ve un buen engagement de construcción desde afuera
+
+Si alguien más está construyendo esto por ti — un freelancer, una agencia, un partner — la versión sana de esa relación tiene una forma reconocible: sprints cortos, una demo funcional cada semana, y un documento de alcance que todos esperan que cambie en cuanto llegue feedback real. Si un vendor insiste en cerrar toda la lista de features antes de escribir una sola línea de código, normalmente es señal de que está optimizando para facturación predecible, no para tu velocidad real de aprendizaje.
+
+Pregunta qué pasa después de la semana dos si el feedback de usuarios contradice el plan original. Un buen partner trata eso como el punto entero de construir un MVP en primer lugar — no como scope creep que hay que frenar. Un vendor que se pone defensivo ante revisar el plan temprano te está diciendo algo sobre cómo va a ir el resto del engagement.
+
+También vale la pena preguntar, sin rodeos, quién es dueño del repositorio y de la infraestructura mientras esto se construye. Hemos visto founders lanzar un MVP rápido, solo para descubrir después que el código vivía en la cuenta personal de un contratista sin documentación — es decir, "rápido" silenciosamente se convirtió en "difícil de volver a tocar sin empezar de cero".
+
+## Cómo saber si de verdad terminaste la v1
+
+La señal no es un producto que se sienta terminado. Es una de estas dos cosas: un puñado de usuarios reales completó el trabajo core y te dijo con claridad qué falta después, o no lo usaron para nada y ahora sabes por qué. Ambos resultados son victorias. El único resultado que pierde es pasar tres meses más pulyendo antes de conseguir cualquiera de las dos respuestas.
+
+Una vez que tienes esa señal, la siguiente rebanada de trabajo se financia con evidencia — una petición específica de un usuario específico, no una suposición hecha en una reunión de planning hace seis semanas.
+
+En ConaiSoft ayudamos a founders a lanzar MVPs enfocados en sprints cortos y visibles, con arquitectura senior por debajo y propiedad total del código desde el día uno — para que tu próxima conversación con inversores o tu ciclo comercial corran sobre evidencia, no sobre slides.

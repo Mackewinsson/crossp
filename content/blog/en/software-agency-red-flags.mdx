@@ -3,34 +3,69 @@ title: "Software agency red flags every business buyer should catch early"
 description: "Early warning signs when evaluating agencies — sales theater, staffing bait-and-switch, ownership traps, and fake urgency."
 excerpt: "Most bad agency engagements show warning signs in the first two meetings. Here is what to walk away from."
 publishedAt: 2026-08-01
-readingMinutes: 7
+readingMinutes: 13
 tags:
   - agencies
   - risk
   - buying-software
 ---
-You can avoid most disasters by treating the sales process as a preview of delivery.
+By the time a bad agency engagement becomes obviously bad — a missed launch, a security incident, a codebase nobody can safely touch — the signs were almost always visible months earlier, in the sales process. Buyers just did not know what to look for, because the sales process is designed to look reassuring, not honest.
+
+You can avoid most disasters by treating the sales process itself as a preview of delivery. How a company sells you is a reasonably good predictor of how it will build for you.
 
 ## Red flags in the pitch
 
-- Guaranteed dates with no discovery of integrations.
-- Refusal to show who will actually build.
-- “Proprietary platform” that you cannot leave.
-- Pressure to sign this week with incomplete assumptions.
+- **Guaranteed dates before any real discovery of your integrations, data, or edge cases.** Nobody can honestly promise a launch date for a system they have not yet examined. Confidence this early is either inexperience or a sales tactic.
+- **Refusal to show you who will actually build the thing.** If every call features a polished account executive and a solutions architect who "oversees delivery," but you never meet an engineer, ask why. You are buying engineering, not a relationship with sales.
+- **A "proprietary platform" you cannot leave.** Some agencies build everything on top of an internal framework that only they can maintain. That is not innovation on your behalf — it is a retention strategy disguised as a technical choice.
+- **Pressure to sign this week, based on incomplete assumptions.** Urgency manufactured before scope is clear usually protects the vendor's pipeline, not your outcome.
 
 ## Red flags in the proposal
 
-- One big number, zero definition of done.
-- No mention of repository ownership.
-- Quality (tests, CI, staging) listed as optional extras.
-- All communication through account managers, never builders.
+- **One big number, with no definition of done attached to it.** A price without a description of what you actually get for it is not a quote — it is a placeholder.
+- **No mention of who owns the repository, the cloud account, or the domain once the project ends.** If ownership is not addressed in writing before you sign, assume it defaults to the vendor's favor, because it usually does.
+- **Quality practices — tests, CI, staging environments — listed as optional add-ons.** These are not luxury features. A proposal that treats them as extras is telling you, in advance, how corners will get cut when the schedule gets tight.
+- **All communication routed through account managers, never the people actually building.** This adds a translation layer between you and the truth about progress, and it usually means the account manager's job is to keep you calm, not informed.
 
 ## Red flags after kickoff
 
-- Week three still only wireframes.
-- Staffing changes without notice.
-- You cannot access staging or the repo.
+- **Week three arrives and there are still only wireframes**, with no working, clickable software — even something rough. Design exploration matters, but it should not consume the entire early runway of a project.
+- **Staffing changes without notice.** The senior engineer from the sales deck quietly becomes "the team," and nobody tells you when or why the substitution happened.
+- **You cannot access staging or the repository yourself.** If you have to ask permission to see your own product in progress, you do not have visibility — you have a dependency.
+- **The person you talk to changes every meeting**, and each new person re-explains context you already gave, suggesting nothing is being tracked internally on their side.
+- **Your specific questions get answered with general reassurance.** "It's going great!" is not an answer to "which of the three integrations is done?"
 
 > If the sales motion feels opaque, delivery will too.
 
-ConaiSoft invites scrutiny: weekly demos, your repos, senior architecture visible — use the same bar on every agency you meet.
+## What this looks like from the inside, briefly
+
+A mid-sized retailer once told us their previous agency's demos always looked great — smooth animations, polished screens — but nothing actually connected to real data until week twelve. By then, half the budget was spent and the "polish" had to be redone once real data exposed edge cases the mockups had conveniently skipped. The lesson was not that demos are bad. It is that a demo with fake data proves the design team can design. It proves nothing about whether the system actually works.
+
+## Green flags worth weighing against the red ones
+
+Not every unfamiliar pattern is a warning sign. A few things should reassure you, not worry you:
+
+- A team that pushes back on your scope and asks "why" before saying yes to everything.
+- A proposal that says "we don't know yet" about something genuinely uncertain, instead of guessing confidently.
+- Engineers who show up in calls and can answer technical questions directly, without routing through someone else.
+- A willingness to start smaller than you asked for, if that reduces risk on both sides.
+
+## Red flags in the renewal conversation
+
+The sales process is not the only preview worth watching. How a vendor behaves at renewal time — three, six, twelve months in — tells you just as much:
+
+- **The scope of "maintenance" quietly grows** to include things that were previously part of the original build, with no clear explanation of what changed.
+- **Renewal pricing arrives with urgency attached** ("this offer expires Friday"), mirroring the same manufactured pressure from the original sales pitch.
+- **Your questions about switching vendors are met with vague warnings** about how fragile or undocumented the system supposedly is — which, if true, is itself the red flag, since it means ownership was never really transferred to you.
+
+A healthy vendor relationship survives you asking, calmly, "what would it take for us to move this in-house or to another partner?" If that question causes visible discomfort rather than a straightforward answer, you have learned something important about how replaceable you actually are in this relationship — and how replaceable you should be.
+
+## A short pre-signing checklist
+
+- Have I spoken directly with someone who will write the code?
+- Does the proposal define what "done" means for the first release?
+- Is repository and cloud ownership addressed in writing?
+- Are tests, staging, and CI part of the baseline, not an upsell?
+- Can I get a working demo within the first two to three weeks?
+
+ConaiSoft invites this exact scrutiny: weekly demos, your repositories from day one, and senior architecture visible on every call — use the same bar on every agency you meet, including us.

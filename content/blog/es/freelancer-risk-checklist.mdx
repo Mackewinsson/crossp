@@ -3,30 +3,52 @@ title: "Checklist de riesgo al contratar freelancers"
 description: "Los freelancers pueden avanzar rápido — hasta que fallan la calidad, la propiedad y la continuidad. Checklist antes de entregar tu producto."
 excerpt: "Código inconsistente, sin pruebas y IP ambigua son comunes. Protege tu negocio con estos no negociables."
 publishedAt: 2026-07-10
-readingMinutes: 6
+readingMinutes: 12
 tags:
   - freelancers
   - quality
   - risk
 ---
 
-Contratar freelancers es atractivo: tarifa más baja, inicio rápido, menos proceso. Para una landing puede servir. Para un producto con datos de clientes, pagos o flujos de IA, el riesgo cambia.
+Contratar a un freelancer es genuinamente atractivo: tarifa más baja, inicio rápido, casi nada de proceso entre tú y alguien escribiendo código. Para una landing page o un script puntual, ese intercambio suele estar perfectamente bien — poco en juego, poco daño si algo sale mal. En el momento en que el producto toca datos de clientes, pagos o un flujo de IA, el perfil de riesgo cambia por completo, y los mismos atajos que antes eran inofensivos empiezan a importar mucho.
 
-## Señales de alerta
+Para que quede claro: no somos anti-freelancer — algunos de los mejores ingenieros que conocemos trabajan de forma independiente por elección propia. El riesgo no es la persona. Es la ausencia de la estructura que normalmente viene incluida con un equipo, y si alguien está revisando esa ausencia antes de que se vuelva un problema.
 
-- Sin pruebas automatizadas y sin pipeline de CI.
-- El código vive solo en su laptop o en una cuenta personal.
-- Sin propiedad escrita del código y las credenciales.
-- Bus factor 1: si desaparecen, nadie puede continuar.
-- “En mi máquina funciona” sin entorno de staging.
+## Señales de alerta que vale la pena tomar en serio
 
-## No negociables en el contrato
+- Sin pruebas automatizadas, sin pipeline de CI — lo que significa que cada cambio es un pequeño acto de fe de que nada más se rompió.
+- El código vive solo en su laptop personal, o en una cuenta de GitHub personal a la que tú no tienes acceso. Si esa laptop muere o esa cuenta se elimina, también se va la historia de tu producto.
+- Sin acuerdo escrito sobre quién es dueño del código fuente y las credenciales una vez terminado el trabajo. "Obviamente es tuyo" no es lo mismo que tenerlo por escrito.
+- Bus factor de uno. Si se enferma, recibe una mejor oferta, o simplemente desaparece — y a veces los freelancers desaparecen, la vida pasa — nadie más puede continuar donde lo dejó.
+- "En mi máquina funciona", sin un entorno de staging que demuestre que funciona en cualquier otro lado. Suena a chiste hasta que es tu producto cayéndose frente a un cliente.
 
-- Repositorio bajo tu organización desde el día uno.
-- Entrega documentada de dominios, cloud y API keys.
-- Definition of done que incluya pruebas de flujos críticos.
-- Demos semanales con software usable, no solo emails de status.
+Ninguna de estas es necesariamente un motivo automático para cortar. Un freelancer junior sin pipeline de CI construyendo una herramienta interna para tres personas es un riesgo muy distinto al mismo setup corriendo tu flujo de checkout.
 
-> El desarrollo barato sale caro cuando no puedes mantener lo que compraste.
+## No negociables para poner en el contrato
 
-En ConaiSoft construimos con estándares de arquitectura, pruebas automatizadas, documentación y entrega total del repositorio — para que tu equipo nunca quede atrapado.
+- Repositorio bajo la cuenta de tu organización desde el día uno — no transferido después, no "al cerrar el proyecto".
+- Entrega documentada de dominios, cuentas cloud y API keys, escrita con suficiente claridad para que alguien más pueda seguirla sin necesitar una llamada.
+- Una definición de "listo" que incluya explícitamente pruebas para los flujos críticos — pagos, auth, cualquier cosa que toque dinero o datos personales.
+- Demos semanales de software funcionando, no solo emails de status que describen un avance que estás confiando y no viendo.
+
+> El desarrollo barato se vuelve caro rápido en el momento en que no puedes mantener lo que pagaste.
+
+Esa frase suena a eslogan, pero la hemos visto cumplirse literalmente — un founder ahorra unos pocos miles de dólares al inicio, y luego gasta el triple dieciocho meses después pagándole a otra persona para entender y desenredar un código que nadie documentó, porque quien lo escribió ya no responde.
+
+## Una prueba rápida de sentido común antes de firmar
+
+Pregúntate: si este freelancer desapareciera mañana sin avisar, ¿alguien más — tú, una nueva contratación, otro freelancer — podría tomar el repositorio y entender qué hay ahí en uno o dos días? Si la respuesta honesta es "ni idea", ese es el riesgo real que estás cargando, lo mencione el contrato o no.
+
+Esto en realidad no es sobre desconfianza. La mayoría de los freelancers son perfectamente capaces de hacerlo bien — pruebas, documentación, handover limpio — cuando un cliente lo pide explícitamente y lo trata como parte del entregable en lugar de una idea de último momento. El checklist de arriba no busca tanto atrapar malos actores como asegurarse de que las buenas intenciones se conviertan en algo con lo que realmente puedas contar.
+
+## Lo que hacen los buenos freelancers sin que se lo pidan
+
+Los freelancers que volveríamos a contratar sin dudar suelen ofrecer todo esto antes de que se te ocurra pedirlo. Mencionan las pruebas sin que nadie las pida. Configuran el repo bajo tu organización desde el inicio porque simplemente así trabajan, no porque una cláusula del contrato los obligó. Escriben un README corto explicando decisiones que tomaron, asumiendo — correctamente — que alguien más podría leer ese código después.
+
+Eso es una señal útil en sí misma durante la conversación de contratación: pregúntale a un candidato cómo manejaría el handover en un proyecto que terminó de golpe. Los que ya pensaron en eso responden con especificidad. Los que no, improvisan algo que suena bien pero en realidad no es una respuesta.
+
+## Ajustando el riesgo al proyecto real
+
+Un freelancer construyendo tu sitio de marketing no necesita el mismo escrutinio que uno construyendo el sistema que guarda métodos de pago de clientes. Ajusta la intensidad del checklist a lo que realmente está en juego — una suite de pruebas faltante en un sitio estático es una molestia; en lógica de facturación es un pasivo. Gastar una hora extra negociando términos de propiedad en un engagement de cinco cifras claramente vale la pena. Gastar esa misma hora en una landing de $400 probablemente no, y tratar cada engagement de forma idéntica suele hacer que la gente termine saltándose el checklist por cansancio.
+
+En ConaiSoft construimos con estos estándares como default y no como upsell — disciplina de arquitectura, pruebas automatizadas, documentación real y entrega total del repositorio desde el inicio — para que tu equipo nunca sea el que se queda con un bus factor de uno.

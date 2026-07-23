@@ -1,35 +1,61 @@
 ---
-title: "Qué incluir en un contrato de desarrollo de software (checklist)"
-description: "Checklist práctico de contrato para compradores — IP, pagos, entrega, control de cambios y salida, sin jerga legal innecesaria."
-excerpt: "Tu contrato debe proteger entrega y propiedad — no solo fechas de pago. Usa este checklist antes de firmar."
+title: "Qué incluir en un contrato de desarrollo de software: checklist del comprador"
+description: "Un checklist práctico de contrato para compradores de negocio — IP, pago, entrega, control de cambios y términos de salida, sin sobrecarga de jerga legal."
+excerpt: "Tu contrato debe proteger la entrega y la propiedad, no solo las fechas de pago. Usa este checklist antes de firmar, no después de que algo salga mal."
 publishedAt: 2026-07-29
-readingMinutes: 8
+readingMinutes: 13
 tags:
   - contracts
   - legal
   - buying-software
 ---
-Un contrato vago es cómo los buenos proyectos se vuelven disputas. No necesitas ser abogado para exigir claridad.
 
-## No negociables
+Un contrato vago es cómo buenas relaciones de trabajo se convierten en disputas. No porque alguien haya actuado de mala fe — sino porque ambas partes asumieron en silencio cosas distintas sobre qué significa "listo", quién es dueño de qué, y qué pasa si los planes cambian, y nadie lo escribió. Para cuando el desacuerdo sale a la superficie, ambos lados genuinamente creen tener la razón.
 
-- **Cesión de IP:** el código fuente que pagas es tuyo.
-- **Cuentas:** cloud, dominios y repos bajo tu organización.
-- **Entregables:** qué significa “listo” en cada fase o sprint.
-- **Acceso:** repositorio y staging de forma continua.
-- **Confidencialidad** y manejo de datos de clientes.
+No necesitas un título de abogado para prevenir esto. Necesitas saber qué términos realmente importan en un proyecto de software, e insistir en claridad en esos puntos específicos antes de firmar nada. La mayoría de lo que sigue es sentido común una vez que se explica — el problema es que rara vez se explica a menos que el comprador lo pida.
+
+## Los no negociables
+
+Un puñado de términos nunca debería quedar vago, sin importar qué tan pequeño sea el proyecto o cuánto confíes en el equipo que contratas.
+
+- **Cesión de IP.** El código fuente que estás pagando debería ser tuyo — explícitamente, por escrito, al pagar o al completar, no "eventualmente" o "una vez que todo se resuelva". La ambigüedad aquí es la fuente más común de disputas feas después de que termina un proyecto.
+- **Cuentas bajo tu organización.** La infraestructura cloud, los dominios y los repositorios de código deberían vivir bajo cuentas que tú controlas, no las del proveedor. Si el proveedor insiste en alojar todo bajo sus propias cuentas "por comodidad", esa comodidad es suya, no tuya.
+- **Una definición clara de "listo" por fase o sprint.** Entregables vagos como "construir el dashboard" invitan al desacuerdo. "Listo" debería ser suficientemente específico como para que un tercero pudiera ver el resultado y estar de acuerdo en si se cumplió.
+- **Acceso continuo.** Deberías poder ver el repositorio y un ambiente de staging durante todo el proyecto, no solo en el handover final. Si solo tienes acceso al final, no hay forma de detectar problemas a tiempo.
+- **Confidencialidad y manejo de datos.** Especialmente relevante si el proveedor va a tocar datos de tus clientes — especifica qué puede y qué no puede hacer con ellos, y por cuánto tiempo sobreviven esas obligaciones después de terminar el contrato.
 
 ## Entrega y dinero
 
-- Cadencia de sprints o hitos con expectativas de demo.
-- Pago ligado a trabajo aceptado, no solo al calendario.
-- Proceso de change control que no reinicie todo el trato.
-- Cláusula de salida: qué te quedas si pausas o paras.
+Una vez cubiertos los no negociables, la siguiente capa es mantener la entrega y el pago ligados entre sí, para que el dinero y el progreso se muevan juntos en lugar de separarse.
 
-## Cláusulas de calidad que vale pedir
+- **Una cadencia de sprints o hitos con expectativas de demo.** Los calendarios de pago puramente basados en tiempo ("neto 30 mensual") desconectan el dinero del progreso. Ligar el pago a trabajo que realmente viste y aceptaste mantiene los incentivos alineados.
+- **Pago ligado a trabajo aceptado**, no solo al tiempo transcurrido. Esta única cláusula hace más para prevenir proyectos lentos y sin rendición de cuentas que casi cualquier otro término del contrato.
+- **Un proceso de control de cambios que no reinicie todo el trato.** El alcance va a cambiar — eso es normal en cualquier proyecto real. Lo que importa es tener una forma acordada y ligera de manejarlo, en lugar de que cada cambio se convierta en una negociación desde cero.
+- **Una cláusula de salida.** Especifica, antes de necesitarla, qué te quedas y qué pasa con el trabajo en curso si cualquiera de las partes quiere pausar o parar. Es la cláusula que todos se saltan porque se siente pesimista negociarla al inicio de lo que se supone es una buena relación — y justo por eso importa.
 
-- Pruebas de caminos críticos incluidas por defecto.
-- Documentación y checklist de handover al salir.
-- Lead nombrado / contacto de escalado.
+## Cláusulas de calidad que vale la pena pedir
 
-En ConaiSoft contratamos alrededor de sprints claros, propiedad que se queda contigo y demos que puedes aceptar o rechazar — exige el mismo estándar en todas partes.
+No son estándar en todo contrato, pero es razonable pedirlas, y un proveedor serio no se va a resistir mucho a ninguna de ellas.
+
+- **Pruebas de los caminos críticos, incluidas por defecto**, no facturadas como una línea aparte que tienes que pedir específicamente y pagar extra.
+- **Un checklist de documentación y handover**, acordado desde el inicio, que describa exactamente qué vas a recibir si la relación termina — credenciales, notas de arquitectura y cualquier cosa que un equipo nuevo necesitaría para continuar donde quedó el anterior.
+- **Un lead o contacto de escalado nombrado.** En cualquier equipo de más de una o dos personas, necesitas saber a quién llamar cuando algo necesita una decisión rápida, en lugar de esperar a que un mensaje se abra paso por una cadena.
+
+> Un contrato que solo protege las fechas de pago está protegiendo el flujo de caja del proveedor, no tu producto. Léelo con esa distinción en mente.
+
+## Señales de alerta que vale la pena detenerse a revisar
+
+Algunos patrones de contrato vale la pena tratarlos como una señal real, no como una formalidad para negociar rápido y seguir adelante:
+
+- Cláusulas que otorgan al proveedor la propiedad de "trabajos derivados" o "frameworks propietarios" construidos durante tu relación — esto puede significar en silencio que partes de tu producto legalmente le pertenecen a ellos.
+- Ninguna mención de qué pasa con tus datos o tu código si dejas de pagar a mitad de proyecto.
+- Términos de pago cargados al inicio mucho más allá del trabajo entregado hasta ese momento, sin un compromiso de entrega correspondiente.
+- Lenguaje vago específicamente alrededor de IP y propiedad mientras es extremadamente preciso sobre los términos de pago — esa asimetría normalmente no es accidental.
+
+## Cómo usar esto sin convertirlo en una pelea
+
+Nada de esto requiere una negociación adversarial. La mayoría de los proveedores legítimos ya han visto contratos como este y simplemente van a aceptar versiones razonables de cada punto. Si un proveedor se resiste a claridad básica sobre propiedad de IP, pago por trabajo entregado o términos de salida, esa resistencia en sí misma es información útil — te dice algo sobre cómo probablemente van a ir las disputas con ellos más adelante, cuando lo que está en juego sea mayor que durante la negociación del contrato.
+
+Trae esta lista a la conversación temprano, antes de que ya se haya redactado una propuesta alrededor de supuestos distintos. Es mucho más fácil incorporar estos términos desde el inicio que renegociarlos cuando todos ya se comprometieron mentalmente con un trato.
+
+En ConaiSoft contratamos alrededor de sprints claros, propiedad que se queda contigo desde el día uno, y demos que puedes aceptar o rechazar con una cadencia regular — pide a cualquier proveedor que estés evaluando el mismo estándar, y trata la duda como una respuesta en sí misma.

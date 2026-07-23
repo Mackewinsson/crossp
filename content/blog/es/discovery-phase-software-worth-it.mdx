@@ -3,35 +3,58 @@ title: "¿Vale la pena una fase de discovery en desarrollo de software?"
 description: "Cuándo el discovery de pago es una buena inversión — qué debe producir, cuánto debería durar y cuándo saltártelo."
 excerpt: "El discovery vale cuando reduce builds caros y equivocados. Es desperdicio cuando solo produce slides."
 publishedAt: 2026-08-02
-readingMinutes: 7
+readingMinutes: 13
 tags:
   - discovery
   - estimates
   - process
 ---
-Los compradores preguntan si vale pagar discovery. La respuesta depende de qué recibes a cambio.
+“¿Deberíamos pagar por una fase de discovery, o eso es solo una forma de que el vendor nos cobre antes de hacer trabajo real?” es una pregunta justa, y la respuesta honesta es: depende completamente de qué recibes a cambio del dinero, no de si “discovery” aparece como una línea en la factura.
+
+Algunos engagements de discovery salvan a una empresa de un build caro y equivocado. Otros producen un deck bellamente diseñado, una ronda de aplausos en un workshop, y nada sobre lo que alguien pueda actuar de verdad. La palabra “discovery” cubre ambos casos, que es exactamente por qué los compradores tienen razón en ser escépticos por defecto.
 
 ## El discovery vale cuando produce
 
-- Una rebanada de MVP priorizada.
-- Lista de riesgos técnicos (integraciones, datos, IA, compliance).
-- Opciones de arquitectura con trade-offs.
-- Un plan de sprints y banda de presupuesto financiable.
+- **Una rebanada de MVP priorizada** — una primera versión específica y construible, no una wishlist reorganizada en tres columnas.
+- **Una lista de riesgos técnicos.** ¿Qué integraciones son incertas? ¿Qué fuentes de datos están desordenadas? ¿Dónde podrían complicar las cosas la IA o los requisitos de compliance? Nombrar esto temprano es el punto entero de pagar por discovery en lugar de descubrirlo a mitad de construcción.
+- **Opciones de arquitectura con trade-offs reales**, no una sola elección incuestionada presentada como el único camino. “Podríamos construir esto como un monolito para ir rápido ahora, o dividirlo temprano si esperas crecimiento rápido de equipo — esto es lo que cuesta cada opción” es útil. Una sola recomendación de tecnología sin razonamiento no lo es.
+- **Un plan de sprints y una banda de presupuesto que realmente puedas financiar**, atada a la lista de riesgos de arriba — no un número que apareció de la nada al final de un deck.
+
+Si una fase de discovery produce las cuatro cosas, se ganó su tarifa aunque todavía no se haya escrito código. Compraste claridad, y la claridad es lo que evita el error caro de construir cuidadosamente lo equivocado.
 
 ## No vale cuando solo produce
 
-- Personas genéricas y workshops de sticky notes.
-- Decks bonitos sin camino a repo o prototipo.
-- Un ejercicio de ventas para justificar un presupuesto fijo enorme.
+- **Personas genéricas y workshops de sticky notes** que podrían describir casi cualquier negocio, sin conexión de vuelta a tus decisiones reales de producto.
+- **Decks bonitos sin camino a un repositorio o un prototipo funcionando.** Si el discovery termina y nadie puede mostrarte algo que corra, pregunta específicamente por qué pagaste.
+- **Un ejercicio de ventas disfrazado de análisis**, usado principalmente para justificar una cotización fija enorme que probablemente ya se había decidido antes de que empezara el discovery.
+
+Una prueba de sentido común útil: si quitaras la palabra “discovery” de la factura, ¿este output se seguiría sintiendo digno del precio por sus propios méritos? Si la respuesta honesta es no, la etiqueta era la que estaba vendiendo, no el trabajo.
 
 ## Timeboxes honestos
 
-Muchos discoveries enfocados caben en días o un par de semanas — no meses — si los stakeholders deciden rápido.
-
-## Camino alternativo
-
-Si el alcance ya es estrecho y el riesgo es bajo, sáltate un discovery largo y empieza con un sprint corto de pago que entregue software funcionando.
+El discovery no necesita ser largo para ser bueno, y un discovery largo no es automáticamente más exhaustivo — a veces solo es menos decisivo. Muchos discoveries enfocados caben en cuestión de días a un par de semanas, no meses, cuando los stakeholders involucrados están dispuestos a tomar decisiones reales en lugar de agendar otra ronda de revisión.
 
 > Paga por decisiones y reducción de riesgo — no por teatro.
 
-En ConaiSoft el discovery está atado a una primera rebanada construible. Si solo necesitas un rango, empieza con una llamada exploratoria gratis; si el riesgo es alto, definimos un discovery de pago con outputs claros.
+Compara dos versiones del mismo ejercicio: un discovery de dos semanas para una herramienta interna de operaciones, donde tres stakeholders se comprometen a check-ins diarios de media hora y salen con una primera rebanada clara y una lista de riesgos — versus un “discovery” de tres meses para un problema de tamaño similar, alargado por reuniones mensuales de comité directivo, stakeholders indecisos y un vendor feliz de cobrar por semana sin importar cuán poco se converge. La diferencia en tiempo de calendario no tiene que ver con la complejidad del problema. Tiene que ver con qué tan decidida se presentó la gente.
+
+## Cuándo saltarte el discovery por completo
+
+Si tu alcance ya es genuinamente estrecho y el riesgo técnico es bajo — una herramienta interna bien entendida sin integraciones inusuales, por ejemplo — una fase de discovery separada puede ser más proceso del que necesitas. En ese caso, sáltate la fase independiente y empieza con un sprint corto de pago que entregue software funcionando directamente. Aprendes tanto de una primera rebanada real como de un documento de discovery, y de paso te queda software en lugar de un reporte.
+
+La señal a observar es la complejidad, no el tamaño de la empresa. Una empresa de cinco personas construyendo algo con tres integraciones complicadas y un requisito de compliance probablemente se beneficia de un discovery real. Una empresa de cien personas automatizando algo simple y bien entendido internamente probablemente no necesita mucho de eso.
+
+## Quién debería estar realmente en la sala
+
+La calidad del discovery sigue la seniority de las personas que lo dirigen más que casi cualquier otro factor. Un analista junior dirigiendo un workshop de discovery va a producir un documento bien organizado. Un ingeniero o arquitecto senior dirigiendo el mismo workshop va a producir un documento que también señala la integración que a nadie se le ocurrió mencionar, porque ya ha visto ese modo de falla específico en otros proyectos.
+
+Esto vale la pena preguntarlo directamente: ¿quién, específicamente, va a dirigir nuestro discovery, y ha construido personalmente algo parecido a lo que estamos describiendo? “Nuestro equipo tiene experiencia en este espacio” es una afirmación a nivel empresa. “Construí algo similar para un cliente con la misma integración de facturación que estás describiendo” es una afirmación personal, y es la que predice si el discovery va a sacar a la luz tus riesgos reales en lugar de riesgos genéricos.
+
+## Preguntas antes de aceptar pagar por discovery
+
+- ¿Cuáles son los cuatro outputs concretos que tendremos al final — por escrito, antes de empezar?
+- ¿Quién de tu lado necesita estar en la sala, y con qué frecuencia?
+- ¿Qué pasa si el discovery revela que el proyecto es más chico (o más grande) de lo que asumíamos?
+- ¿La tarifa de discovery aplica como crédito hacia el build, o es completamente separada?
+
+En ConaiSoft el discovery está atado a una primera rebanada construible, no a un entregable independiente desconectado de la construcción real. Si solo necesitas un rango aproximado, empieza con una llamada exploratoria gratis. Si hay riesgo técnico real de por medio, definiremos un discovery corto y de pago con outputs claros y nombrados antes de que alguien escriba una línea de código de producción.

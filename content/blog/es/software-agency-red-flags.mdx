@@ -3,34 +3,69 @@ title: "Señales de alerta en agencias de software que todo comprador debe detec
 description: "Alertas tempranas al evaluar agencias — teatro de ventas, bait-and-switch de staffing, trampas de propiedad y urgencia falsa."
 excerpt: "La mayoría de malos engagements muestran señales en las primeras dos reuniones. De esto debes alejarte."
 publishedAt: 2026-08-01
-readingMinutes: 7
+readingMinutes: 13
 tags:
   - agencies
   - risk
   - buying-software
 ---
-Puedes evitar la mayoría de desastres tratando el proceso de ventas como un preview de la entrega.
+Para cuando un mal engagement con una agencia se vuelve obviamente malo — un lanzamiento perdido, un incidente de seguridad, un código que nadie puede tocar con seguridad — las señales casi siempre estuvieron visibles meses antes, en el proceso de ventas. Los compradores simplemente no sabían qué buscar, porque el proceso de ventas está diseñado para verse tranquilizador, no honesto.
+
+Puedes evitar la mayoría de desastres tratando el proceso de ventas en sí mismo como un preview de la entrega. Cómo te vende una empresa es un predictor razonablemente bueno de cómo va a construir para ti.
 
 ## Red flags en el pitch
 
-- Fechas garantizadas sin discovery de integraciones.
-- Negarse a mostrar quién construirá de verdad.
-- “Plataforma propietaria” de la que no puedes salir.
-- Presión para firmar esta semana con supuestos incompletos.
+- **Fechas garantizadas antes de cualquier discovery real de tus integraciones, datos o edge cases.** Nadie puede prometer honestamente una fecha de lanzamiento para un sistema que todavía no ha examinado. Tanta confianza tan temprano es inexperiencia o una táctica de ventas.
+- **Negarse a mostrar quién va a construir realmente el producto.** Si cada llamada presenta a un account executive pulido y a un arquitecto de soluciones que “supervisa la entrega”, pero nunca conoces a un ingeniero, pregunta por qué. Estás comprando ingeniería, no una relación con ventas.
+- **Una “plataforma propietaria” de la que no puedes salir.** Algunas agencias construyen todo sobre un framework interno que solo ellas pueden mantener. Eso no es innovación a tu favor — es una estrategia de retención disfrazada de decisión técnica.
+- **Presión para firmar esta semana, con supuestos incompletos.** La urgencia fabricada antes de que el alcance esté claro suele proteger el pipeline del vendor, no tu resultado.
 
 ## Red flags en la propuesta
 
-- Un número grande, cero definición de “listo”.
-- Cero mención de propiedad del repositorio.
-- Calidad (pruebas, CI, staging) como extras opcionales.
-- Toda la comunicación vía account managers, nunca builders.
+- **Un número grande, sin una definición de “listo” asociada.** Un precio sin descripción de qué recibes a cambio no es una cotización — es un placeholder.
+- **Cero mención de quién es dueño del repositorio, la cuenta en la nube o el dominio cuando el proyecto termine.** Si la propiedad no se aborda por escrito antes de firmar, asume que por defecto favorece al vendor, porque suele ser así.
+- **Prácticas de calidad — pruebas, CI, ambientes de staging — listadas como extras opcionales.** Esto no son lujos. Una propuesta que las trata como extras te está diciendo, de antemano, dónde se van a recortar esquinas cuando el schedule se apriete.
+- **Toda la comunicación pasa por account managers, nunca por quienes de verdad construyen.** Esto agrega una capa de traducción entre tú y la verdad sobre el progreso, y suele significar que el trabajo del account manager es mantenerte tranquilo, no informado.
 
 ## Red flags después del kickoff
 
-- En la semana tres solo hay wireframes.
-- Cambios de staffing sin aviso.
-- No puedes acceder a staging o al repo.
+- **Llega la semana tres y todavía solo hay wireframes**, sin software funcionando y navegable — aunque sea algo tosco. La exploración de diseño importa, pero no debería consumir todo el runway inicial de un proyecto.
+- **Cambios de staffing sin aviso.** El ingeniero senior del deck de ventas se convierte silenciosamente en “el equipo”, y nadie te dice cuándo ni por qué ocurrió el cambio.
+- **No puedes acceder tú mismo a staging o al repositorio.** Si tienes que pedir permiso para ver tu propio producto en construcción, no tienes visibilidad — tienes una dependencia.
+- **La persona con la que hablas cambia en cada reunión**, y cada nueva persona re-explica contexto que ya diste, lo que sugiere que nada se está registrando internamente de su lado.
+- **Tus preguntas específicas se responden con tranquilidad genérica.** “¡Va muy bien!” no es una respuesta a “¿cuál de las tres integraciones está lista?”
 
 > Si el motion de ventas se siente opaco, la entrega también lo será.
 
-En ConaiSoft invitamos el escrutinio: demos semanales, tus repos, arquitectura senior visible — usa la misma vara con cada agencia que conozcas.
+## Cómo se ve esto desde dentro, brevemente
+
+Un retailer mediano nos contó una vez que las demos de su agencia anterior siempre se veían geniales — animaciones suaves, pantallas pulidas — pero nada se conectaba realmente a datos reales hasta la semana doce. Para entonces, la mitad del presupuesto ya se había gastado, y el “pulido” hubo que rehacerlo cuando los datos reales expusieron edge cases que los mockups convenientemente habían saltado. La lección no es que las demos sean malas. Es que una demo con datos falsos prueba que el equipo de diseño sabe diseñar. No prueba nada sobre si el sistema realmente funciona.
+
+## Green flags que vale la pena sopesar contra las rojas
+
+No todo patrón poco familiar es una señal de alerta. Algunas cosas deberían tranquilizarte, no preocuparte:
+
+- Un equipo que cuestiona tu alcance y pregunta “por qué” antes de decir sí a todo.
+- Una propuesta que dice “todavía no lo sabemos” sobre algo genuinamente incierto, en lugar de adivinar con confianza.
+- Ingenieros que aparecen en las llamadas y pueden responder preguntas técnicas directamente, sin pasar por otra persona.
+- Disposición a empezar más chico de lo que pediste, si eso reduce el riesgo de ambos lados.
+
+## Red flags en la conversación de renovación
+
+El proceso de ventas no es el único preview que vale la pena observar. Cómo se comporta un vendor al momento de renovar — a los tres, seis, doce meses — te dice tanto como el proceso inicial:
+
+- **El alcance del “mantenimiento” crece en silencio** para incluir cosas que antes eran parte de la construcción original, sin una explicación clara de qué cambió.
+- **El precio de renovación llega con urgencia adjunta** (“esta oferta expira el viernes”), reflejando la misma presión fabricada del pitch de ventas original.
+- **Tus preguntas sobre cambiar de vendor se reciben con advertencias vagas** sobre qué tan frágil o indocumentado supuestamente es el sistema — lo cual, si es cierto, es en sí mismo la señal de alerta, porque significa que la propiedad nunca se te transfirió de verdad.
+
+Una relación sana con un vendor sobrevive que preguntes, con calma, “¿qué se necesitaría para mover esto in-house o a otro partner?” Si esa pregunta causa incomodidad visible en lugar de una respuesta directa, aprendiste algo importante sobre qué tan reemplazable eres en realidad en esta relación — y qué tan reemplazable deberías ser.
+
+## Un checklist corto antes de firmar
+
+- ¿He hablado directamente con alguien que va a escribir el código?
+- ¿La propuesta define qué significa “listo” para la primera release?
+- ¿La propiedad del repositorio y la nube se aborda por escrito?
+- ¿Las pruebas, el staging y el CI son parte de la base, no un upsell?
+- ¿Puedo tener una demo funcionando dentro de las primeras dos o tres semanas?
+
+En ConaiSoft invitamos exactamente este escrutinio: demos semanales, tus repositorios desde el día uno y arquitectura senior visible en cada llamada — usa la misma vara con cada agencia que conozcas, incluyéndonos a nosotros.

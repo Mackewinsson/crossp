@@ -3,30 +3,52 @@ title: "The freelancer risk checklist for business buyers"
 description: "Freelancers can move fast — until quality, ownership, and continuity break. Use this checklist before you hand over your product."
 excerpt: "Inconsistent code, missing tests, and unclear IP are common. Protect your business with these non-negotiables."
 publishedAt: 2026-07-10
-readingMinutes: 6
+readingMinutes: 12
 tags:
   - freelancers
   - quality
   - risk
 ---
 
-Hiring freelancers is attractive: lower rate, quick start, less process. For a landing page, that can be fine. For a product that holds customer data, payments, or AI workflows, the risk profile changes.
+Hiring a freelancer is genuinely attractive: lower rate, quick start, almost no process standing between you and someone typing code. For a landing page or a one-off script, that trade-off is often perfectly fine — low stakes, low blast radius if something's off. The moment the product touches customer data, payments, or an AI workflow, though, the risk profile changes completely, and the same shortcuts that were harmless before start to matter a lot.
 
-## Red flags
+We're not anti-freelancer, to be clear — some of the best engineers we know work independently by choice. The risk isn't the person. It's the absence of the structure that usually comes bundled with a team, and whether anyone's checking for that absence before it becomes a problem.
 
-- No automated tests and no CI pipeline.
-- Code lives only on their laptop or a personal account.
-- No written ownership of source code and credentials.
-- Bus factor of one: if they disappear, nobody can continue.
-- “It works on my machine” with no staging environment.
+## Red flags worth taking seriously
 
-## Non-negotiables in the contract
+- No automated tests, no CI pipeline — meaning every change is a small act of faith that nothing else broke.
+- Code lives only on their personal laptop, or in a personal GitHub account you don't have access to. If that laptop dies or that account gets deleted, so does your product's history.
+- No written agreement about who owns the source code and the credentials once the work is done. "Obviously it's yours" is not the same as it being written down.
+- Bus factor of one. If they get sick, get a better offer, or simply disappear — and freelancers do sometimes disappear, life happens — nobody else can pick up where they left off.
+- "It works on my machine," with no staging environment to prove it works anywhere else. This one sounds like a joke until it's your product going down in front of a customer.
 
-- Repository under your organization from day one.
-- Documented handover of domains, cloud, and API keys.
-- Definition of done that includes tests for critical flows.
-- Weekly demos with working software, not just status emails.
+None of these are dealbreakers on their own, necessarily. A junior freelancer with no CI pipeline building an internal tool for three people is a very different risk than the same setup running your checkout flow. Context changes what's acceptable — the checklist is a starting point for judgment, not a pass/fail test applied identically everywhere.
 
-> Cheap development is expensive when you cannot maintain what you bought.
+## Non-negotiables to put in the contract
 
-ConaiSoft builds with architecture standards, automated testing, documentation, and full repository handover — so your team is never trapped.
+- Repository under your organization's account from day one — not transferred later, not "at project close."
+- A documented handover of domains, cloud accounts, and API keys, written clearly enough that someone else could follow it without a phone call.
+- A definition of done that explicitly includes tests for the critical flows — payment, auth, anything touching money or personal data.
+- Weekly demos of working software, not just status emails describing progress you're trusting rather than seeing.
+
+> Cheap development gets expensive fast the moment you can't maintain what you paid for.
+
+That line sounds like a slogan, but we've watched it play out literally — a founder saves a few thousand dollars upfront, then spends triple that eighteen months later paying someone else to understand and untangle code nobody documented, because the person who wrote it is unreachable.
+
+## A quick gut-check before you sign anything
+
+Ask yourself: if this freelancer vanished tomorrow with no notice, could someone else — you, a new hire, another freelancer — pick up the repository and understand what's there within a day or two? If the honest answer is "no idea," that's the risk you're actually carrying, whether or not the contract mentions it.
+
+This isn't really about distrust. Most freelancers are perfectly capable of doing this properly — tests, docs, clean handover — when a client asks for it explicitly and treats it as part of the deliverable rather than an afterthought. The checklist above is less about catching bad actors and more about making sure good intentions turn into things you can actually rely on.
+
+## What good freelancers do without being asked
+
+The freelancers we'd hire again, without hesitation, tend to volunteer this stuff before you think to ask. They mention testing unprompted. They set up the repo under your org from the start because it's just how they work, not because a contract clause forced it. They write a short README explaining decisions they made, assuming — correctly — that someone else might read the code later.
+
+That's a useful signal in itself during the hiring conversation: ask a candidate how they'd handle handover on a project that ended suddenly. The ones who've thought about it before will answer specifically. The ones who haven't will improvise something that sounds fine but isn't really an answer.
+
+## Sizing the risk to the actual project
+
+A freelancer building your marketing site doesn't need the same scrutiny as one building the system that stores customer payment methods. Match the checklist's intensity to what's actually at stake — a missing test suite on a static site is an inconvenience; a missing test suite on billing logic is a liability. Spending an extra hour negotiating ownership terms on a five-figure engagement is obviously worth it. Spending that same hour on a $400 landing page probably isn't, and treating every engagement identically tends to make people skip the checklist entirely out of fatigue.
+
+ConaiSoft builds with these standards as the default rather than the upsell — architecture discipline, automated testing, real documentation, and full repository handover from the start — so your team is never the one left holding a bus factor of one.

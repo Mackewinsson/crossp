@@ -1,35 +1,61 @@
 ---
-title: "What to include in a software development contract (buyer checklist)"
-description: "A practical contract checklist for business buyers — IP, payment, delivery, change control, and exit terms without legal jargon overload."
-excerpt: "Your contract should protect delivery and ownership — not just payment dates. Use this checklist before you sign."
+title: "What to Include in a Software Development Contract: A Buyer's Checklist"
+description: "A practical contract checklist for business buyers — IP, payment, delivery, change control, and exit terms, without legal jargon overload."
+excerpt: "Your contract should protect delivery and ownership, not just payment dates. Use this checklist before you sign, not after something goes wrong."
 publishedAt: 2026-07-29
-readingMinutes: 8
+readingMinutes: 13
 tags:
   - contracts
   - legal
   - buying-software
 ---
-A vague contract is how good projects turn into disputes. You do not need to be a lawyer to demand clarity.
 
-## Non-negotiables
+A vague contract is how good working relationships turn into disputes. Not because anyone set out to act in bad faith — but because two parties quietly assumed different things about what "done" means, who owns what, and what happens if plans change, and nobody wrote any of it down. By the time the disagreement surfaces, both sides genuinely believe they're right.
 
-- **IP assignment:** source code you pay for is yours.
-- **Accounts:** cloud, domains, and repos under your organization.
-- **Deliverables:** what “done” means for each phase or sprint.
-- **Access:** continuous repository and staging access.
-- **Confidentiality** and data handling for customer information.
+You don't need a law degree to prevent this. You need to know which terms actually matter for a software project, and to insist on clarity on those specific points before you sign anything. Most of what follows is common sense once it's spelled out — the problem is that it rarely gets spelled out unless the buyer asks.
+
+## The non-negotiables
+
+A handful of terms should never be vague, regardless of how small the project or how much you trust the team you're hiring.
+
+- **IP assignment.** The source code you're paying for should become yours — explicitly, in writing, upon payment or completion, not "eventually" or "once everything is settled." Ambiguity here is the single most common source of ugly disputes after a project ends.
+- **Accounts under your organization.** Cloud infrastructure, domains, and code repositories should live under accounts you control, not the vendor's. If the vendor insists on hosting everything under their own accounts "for convenience," that convenience is theirs, not yours.
+- **A clear definition of "done" per phase or sprint.** Vague deliverables like "build the dashboard" invite disagreement. "Done" should be specific enough that a third party could look at the result and agree whether it was met.
+- **Continuous access.** You should be able to see the repository and a staging environment throughout the project, not just at the final handover. If you only get access at the end, you have no way to catch problems early.
+- **Confidentiality and data handling.** Especially relevant if the vendor will touch customer data — spell out what they can and can't do with it, and for how long those obligations survive after the contract ends.
 
 ## Delivery and money
 
-- Sprint or milestone cadence with demo expectations.
-- Payment tied to accepted work, not only calendar time.
-- Change-control process that does not reset the whole deal.
-- Exit clause: what you keep if you pause or stop.
+Once the non-negotiables are covered, the next layer is about keeping delivery and payment tied to each other, so that money and progress move together instead of drifting apart.
+
+- **A sprint or milestone cadence with demo expectations.** Payment schedules that are purely calendar-based ("net 30 monthly") disconnect money from progress. Tying payment to work you've actually seen and accepted keeps incentives aligned.
+- **Payment tied to accepted work**, not just to elapsed time. This single clause does more to prevent slow, unaccountable projects than almost any other term in the contract.
+- **A change-control process that doesn't reset the whole deal.** Scope will change — that's normal on any real project. What matters is having an agreed, lightweight way to handle it, instead of every change becoming a fresh negotiation from scratch.
+- **An exit clause.** Spell out, before you need it, what you keep and what happens to in-progress work if either side wants to pause or stop. This is the clause everyone skips because it feels pessimistic to negotiate at the start of what's supposed to be a good relationship — and it's exactly why it matters.
 
 ## Quality clauses worth asking for
 
-- Tests for critical paths included by default.
-- Documentation and handover checklist on exit.
-- Named lead / escalation contact.
+These aren't standard in every contract, but they're reasonable to request, and a serious vendor won't push back hard on any of them.
 
-ConaiSoft contracts around clear sprints, ownership that stays with you, and demos you can accept or reject — ask for the same standard everywhere.
+- **Testing for critical paths, included by default**, not billed as a separate line item you have to specifically request and pay extra for.
+- **A documentation and handover checklist**, agreed at the start, describing exactly what you'll receive if the engagement ends — credentials, architecture notes, and anything a new team would need to pick up where the last one left off.
+- **A named lead or escalation contact.** On any team larger than one or two people, you need to know who to call when something needs a decision quickly, rather than waiting for a message to work its way through a chain.
+
+> A contract that only protects payment dates is protecting the vendor's cash flow, not your product. Read it with that distinction in mind.
+
+## Red flags worth pausing on
+
+A few contract patterns are worth treating as a real signal, not a formality to negotiate away quickly:
+
+- Clauses that grant the vendor ownership of "derivative works" or "proprietary frameworks" built during your engagement — this can quietly mean parts of your product legally belong to them.
+- No mention of what happens to your data or codebase if you stop paying mid-project.
+- Payment terms that are front-loaded far beyond the work delivered so far, with no corresponding delivery commitment.
+- Language that's vague specifically around IP and ownership while being extremely precise about payment terms — that asymmetry usually isn't accidental.
+
+## How to use this without turning it into a fight
+
+None of this requires an adversarial negotiation. Most legitimate vendors have seen contracts like this before and will simply agree to reasonable versions of each point. If a vendor resists basic clarity on IP ownership, payment-for-work-delivered, or exit terms, that resistance is itself useful information — it tells you something about how disputes with them are likely to go later, when the stakes are higher than they are during contract negotiation.
+
+Bring this list to the conversation early, before a proposal has already been drafted around different assumptions. It's much easier to build these terms in from the start than to renegotiate them once everyone has already mentally committed to a deal.
+
+ConaiSoft contracts around clear sprints, ownership that stays with you from day one, and demos you can accept or reject on a regular cadence — ask any vendor you're evaluating for the same standard, and treat hesitation as an answer in itself.

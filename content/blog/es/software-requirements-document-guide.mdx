@@ -3,32 +3,82 @@ title: "Cómo escribir un documento de requisitos de software del que se pueda c
 description: "Guía ligera de SRS / requisitos para compradores no técnicos — suficiente claridad para estimar y arrancar sin un tomo de 80 páginas."
 excerpt: "Los vendors no pueden estimar niebla. Captura resultados, usuarios, flujos y restricciones — no cada color de botón."
 publishedAt: 2026-08-02
-readingMinutes: 8
+readingMinutes: 13
 tags:
   - requirements
   - mvp
   - process
 ---
-No necesitas una especificación de 80 páginas para empezar. Sí necesitas suficiente claridad para que un ingeniero senior desafíe el alcance y proponga una primera rebanada.
+Un mito común frena muchos proyectos de software antes de que empiecen: la creencia de que necesitas una especificación exhaustiva de 80 páginas antes de que alguien pueda darte un estimado real. Algunos compradores pasan meses escribiendo ese documento. Otros se rinden y le entregan a un vendor dos párrafos y un tono esperanzado, lo cual produce un resultado igual de poco confiable, solo que más rápido.
+
+Ningún extremo funciona. No necesitas especificar el color de cada botón. Sí necesitas suficiente claridad para que un ingeniero senior pueda desafiar tu alcance de forma inteligente y proponer una primera rebanada creíble. Eso es un documento mucho más corto de lo que la mayoría de compradores espera.
 
 ## Qué incluir
 
-- Problema y resultado de negocio deseado.
-- Usuarios principales y sus trabajos.
-- Flujo happy-path paso a paso.
-- Must-have vs después.
-- Integraciones y fuentes de datos.
-- Restricciones: seguridad, compliance, deadline, banda de presupuesto.
-- Definición de “listo” para la v1.
+### El problema y el resultado de negocio deseado
 
-## Qué saltarte al inicio
+Empieza por explicar por qué esto necesita existir, en términos de negocio. “Reducir el tiempo para aprobar una orden de compra de tres días a el mismo día” es un resultado real. “Construir un sistema de órdenes de compra” es una descripción de feature sin forma de juzgar el éxito.
 
-- Specs de UI al píxel antes de probar el flujo.
-- Edge cases de escenarios que nunca viste en la realidad.
-- Mandatos de tecnología salvo que haya una restricción real.
+### Usuarios principales y sus trabajos
 
-## Cómo usan un buen brief los vendors
+Nombra los dos o tres roles que realmente importan, y describe qué está tratando de lograr cada uno — no un documento completo de persona con hobbies y citas, solo lo suficiente para saber de quién es el problema que resuelves en cada pantalla.
 
-Un brief claro produce mejores estimados, menos change orders y demos más rápidas. Un brief vago produce cotizaciones acolchadas.
+### El flujo happy-path, paso a paso
 
-En ConaiSoft ayudamos a convertir una idea difusa en una primera rebanada construible — y la entregamos en sprints con progreso visible.
+Recorre el camino más común que sigue un usuario de principio a fin, en lenguaje simple. “Un rep crea una cotización, un gerente la aprueba si supera un umbral, el cliente la recibe por email” es un flujo que un vendor puede estimar. Una lista de features desconectadas no lo es.
+
+### Must-have versus después
+
+Sé explícito y no tengas miedo de ser breve aquí. Una lista de tres must-haves con una lista de “después” claramente separada es mucho más útil para un vendor que una wishlist de cuarenta items donde todo está marcado igual de importante, porque igual de importante suele significar que nadie decidió en realidad.
+
+### Integraciones y fuentes de datos
+
+Enumera los sistemas con los que esto necesita hablar — aunque sea de forma general, aunque todavía no estés seguro de los detalles técnicos. “Necesita traer datos de clientes de nuestro sistema de facturación” es suficiente para empezar una conversación real; el trabajo del vendor es hacer las preguntas de seguimiento.
+
+### Restricciones
+
+Requisitos de seguridad, obligaciones de compliance (HIPAA, SOC 2, GDPR o reglas específicas de la industria), un deadline real si existe, y una banda de presupuesto aproximada. Restricciones vagas producen estimados vagos; restricciones específicas — incluso incómodas — producen estimados precisos.
+
+### Una definición de “listo” para la v1
+
+Describe, en resultados, qué significa realmente “la primera versión funciona”. Esto se vuelve la vara con la que todos van a medir después, y evita el scope creep lento y silencioso que convierte un MVP de cuatro semanas en una discusión de cuatro meses sobre qué se prometió en realidad.
+
+## Qué saltarte, al menos al inicio
+
+- **Specs de UI al píxel antes de probar el flujo.** El pulido visual sobre un flujo que nadie ha validado es esfuerzo puesto en el riesgo equivocado.
+- **Edge cases de escenarios que nunca has visto pasar en realidad.** Si no ha pasado en tres años operando el negocio de la forma vieja, no necesita bloquear la primera release.
+- **Mandatos de tecnología sin una restricción real detrás.** A menos que tengas un equipo existente, un requisito de compliance o una necesidad genuina de integración que dicte el stack, deja que el vendor recomiende según lo que puede soportar bien y mantener a largo plazo.
+
+> Los vendors no pueden estimar niebla. Un brief claro y un honesto “todavía no lo sabemos” son mucho más útiles que una adivinanza segura disfrazada de spec.
+
+## Una plantilla corta que puedes usar de una vez
+
+Si una página en blanco es el obstáculo, un esquema simple es suficiente para empezar:
+
+1. **Resultado:** ¿qué cambia para el negocio si esto funciona?
+2. **Usuarios:** ¿quién toca esto, y qué están tratando de hacer?
+3. **Flujo:** el camino principal, paso a paso, en lenguaje simple.
+4. **Must-have vs después:** una lista corta de cada uno.
+5. **Integraciones:** sistemas con los que esto necesita conectarse.
+6. **Restricciones:** seguridad, compliance, deadline, banda de presupuesto.
+7. **Definición de “listo”:** cómo se ve “la v1 funciona” en la práctica.
+
+Una página y media cubriendo estas siete secciones vence a un tomo de 80 páginas bellamente formateado que, de todas formas, nadie del lado del vendor lee de tapa a tapa.
+
+## De dónde sale esta información en realidad
+
+La mayoría de compradores no tiene esta información ya en un documento — vive repartida en la cabeza de la gente, en hilos de email viejos y en el proceso workaround que actualmente cojea. Reunirla es menos sobre escribir y más sobre hacerle las preguntas correctas a las personas correctas:
+
+- Siéntate con quien hace el trabajo hoy, manualmente, y míralo hacerlo una vez. Vas a notar pasos que olvidaron mencionar porque para ellos son demasiado obvios como para decirlos en voz alta.
+- Pregunta qué sale mal actualmente, de forma específica — un handoff perdido, una entrada duplicada, una queja de cliente que se repite. Las quejas reales son una mejor fuente de requisitos que una wishlist armada en una sala de conferencias.
+- Habla con quien controla el presupuesto para esto, por separado de quien va a usar el sistema día a día. Sus definiciones de éxito a veces son distintas, y ambas pertenecen al brief.
+
+No necesitas resolver cada desacuerdo antes de escribir el documento. Nombrar un desacuerdo explícitamente (“Ventas quiere X, Operaciones quiere Y, no lo hemos decidido”) es más útil para un vendor que tapizarlo con un compromiso que nadie aceptó en realidad.
+
+## Cómo usan un buen brief los vendors, en realidad
+
+Un brief claro produce mejores estimados, porque el vendor está estimando algo real en lugar de adivinar tu intención. Produce menos change orders después, porque el alcance se nombró desde el principio en lugar de descubrirse a mitad de construcción. Y produce demos más rápidas al inicio, porque el equipo sabe exactamente qué debe probar “la semana uno”.
+
+Un brief vago produce lo contrario de las tres cosas. Produce cotizaciones acolchadas, porque un vendor serio le pone precio al riesgo de no saber qué necesitas en realidad. Produce change orders, porque los vacíos del brief salen a la luz eventualmente — solo que después, y más caro. Y produce demos más lentas al inicio, porque el equipo pasa los primeros sprints adivinando el alcance en lugar de construirlo.
+
+En ConaiSoft podemos ayudarte a convertir una idea difusa en una primera rebanada construible a través de una conversación de trabajo corta — y luego la entregamos en sprints con progreso visible, en lugar de desaparecer detrás de un proceso de especificación durante meses.

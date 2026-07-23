@@ -1,32 +1,59 @@
 ---
-title: "Fixed price vs time and materials for software projects"
-description: "How business buyers should choose between fixed price and T&M — risk, flexibility, and when sprint pricing is the better middle path."
-excerpt: "Fixed price feels safe. T&M feels flexible. Both fail without visibility. Here is how to choose."
+title: "Fixed Price vs Time and Materials for Software Projects: How to Choose"
+description: "How business buyers should actually choose between fixed price and T&M — risk, flexibility, and when sprint pricing beats both."
+excerpt: "Fixed price feels safe. Time and materials feels flexible. Both fail without visibility. Here is how to actually decide."
 publishedAt: 2026-07-30
-readingMinutes: 7
+readingMinutes: 13
 tags:
   - pricing
   - contracts
   - delivery
 ---
-Pricing models allocate risk. They do not create quality by themselves.
 
-## Fixed price
+Pricing models get discussed as if they're a proxy for quality, but they aren't. A fixed-price contract doesn't guarantee a well-built product any more than a time-and-materials contract guarantees flexibility that actually helps you. Pricing models allocate risk between you and the team you're hiring — that's genuinely useful to understand, but it's a different question from "will this be good," and conflating the two is how buyers end up disappointed by a model that was never designed to solve the problem they were worried about.
 
-Best when scope is truly stable and definition of done is precise. Risky when requirements will learn from users — change orders appear.
+So before picking a model because it feels psychologically safer, it's worth understanding what risk each one actually shifts, and onto whom.
 
-## Time and materials (T&M)
+## Fixed price: what it's really for
 
-Best when discovery is ongoing and you want flexibility. Risky when there is no demo cadence or cap — you can fund thrash.
+A fixed price contract works well in a specific, narrow condition: the scope is genuinely stable, and the definition of "done" is precise enough that a reasonable person on either side would agree whether it's been met. Under those conditions, fixed price is a good deal for you — the vendor absorbs the risk of underestimating effort, and you get budget certainty.
 
-## Sprint / capacity pricing (often best)
+The trouble starts when requirements aren't actually stable — which, for most real software, they aren't. Requirements evolve because you learn things once real users touch the product, and no amount of upfront planning fully replaces that learning. On a fixed-price contract, that learning has nowhere good to go. Either the vendor absorbs the change for free (rare, and unsustainable for them), or it becomes a change order — a formal, sometimes adversarial negotiation over what was "really" included in the original scope.
 
-Buy a fixed capacity for a period with weekly deliverables and a clear backlog. You keep flexibility with a budget fence.
+Change orders aren't inherently bad, but a contract that generates them constantly isn't actually fixed price anymore. It's fixed price for a fantasy scope, with a live negotiation running underneath it. If you're going to use fixed price, use it for work that's genuinely well-specified, and be honest with yourself about how rare that actually is for anything beyond a narrow, well-understood feature.
 
-## Decision rule
+## Time and materials: what it's really for
 
-- Stable, well-specified slice → fixed or capped phase can work.
-- Evolving product → sprints or T&M with weekly acceptance.
-- Unknown AI/integration risk → paid discovery first, then sprint.
+Time and materials shifts the risk in the other direction. You pay for actual hours worked, which is exactly right when discovery is ongoing and you genuinely don't yet know the full shape of what you're building. It gives the team room to explore and adjust without either side pretending to know things nobody actually knows yet.
 
-ConaiSoft prefers transparent sprint capacity with demos you can accept — so commercial model matches how products actually get built.
+The risk T&M carries is different, not smaller: without a demo cadence, a rough cap, or clear check-in points, you can fund a lot of activity without a corresponding amount of progress. This isn't usually deliberate bad faith — it's just what happens when nobody has to show working software on a predictable schedule. Time gets spent, and it's hard to know, from the outside, whether that time produced value.
+
+T&M works well when it's paired with visibility: regular demos, a running list of what's actually shipped, and the ability to walk away if the pace of real progress doesn't match the pace of billing.
+
+## Sprint or capacity pricing: often the better middle path
+
+Between the two sits a model that solves more of the real problem than either extreme: buying a fixed capacity for a period — a team, for a set number of weeks, at a known cost — with weekly or biweekly deliverables and a clear, visible backlog.
+
+This gives you most of what fixed price promises (budget predictability, since you know the capacity cost per period) along with most of what T&M promises (flexibility, since the backlog can be reprioritized as you learn). What it adds, that neither pure model guarantees on its own, is a built-in cadence of visible progress. You're not waiting for a single big reveal at the end, and you're not funding open-ended hours with no checkpoint.
+
+> Fixed price and T&M both fail the same way in practice — not because of the pricing math, but because of what happens when nobody has to show you working software on a predictable schedule.
+
+## A decision rule that actually holds up
+
+Rather than picking a model on instinct or on whichever one a vendor happens to prefer, match the model to what you actually know about the work:
+
+- **A stable, well-specified slice of work** — a defined integration, a specific feature with a clear spec — can genuinely work well as fixed price or a capped phase. Just make sure "well-specified" is real, not aspirational.
+- **A product that's still evolving**, where user feedback is expected to change direction, is a much better fit for sprints or T&M with weekly acceptance built in from the start.
+- **Unknown technical risk** — a new AI integration, an unfamiliar legacy system, a third-party API nobody on the team has used before — deserves a short, paid discovery phase before you commit to any pricing model at all. Pricing an unknown is just guessing with more confidence than the guess deserves.
+
+## What to ask regardless of the model
+
+No matter which pricing structure you land on, a few questions protect you either way:
+
+- How often will I see working software, and what happens if that cadence slips?
+- What's the process if scope needs to change — and is it lightweight enough that it won't feel punitive to use?
+- What happens if I want to pause or stop after a given period — what do I keep, and in what state?
+
+If a vendor can't answer these clearly regardless of the pricing model on the table, the pricing model isn't actually your biggest risk in that relationship.
+
+ConaiSoft prefers transparent sprint capacity with demos you can accept or reject on a regular cadence — a commercial model built to match how software actually gets built, rather than a pricing structure chosen to make a proposal look simpler than the work really is.

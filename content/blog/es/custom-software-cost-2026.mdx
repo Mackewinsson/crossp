@@ -3,44 +3,58 @@ title: "¿Cuánto cuesta un software a medida en 2026?"
 description: "Guía práctica de costos para founders y operadores — qué mueve el precio, rangos realistas por alcance y cómo presupuestar sin comprar una caja negra."
 excerpt: "El precio del software a medida depende del alcance, el riesgo y el modelo de entrega. Así debes pensar el costo en 2026 antes de firmar."
 publishedAt: 2026-07-20
-readingMinutes: 8
+readingMinutes: 13
 tags:
   - pricing
   - custom-software
   - buying-software
 ---
 
-“¿Cuánto cuesta un software a medida?” es la primera pregunta de casi todo comprador — y la peor para responder con un único número. En 2026 el precio sigue dependiendo del alcance, las integraciones, el compliance y de si compras un proyecto caja negra o un partner con entregas visibles.
+Alguien nos escribe: "solo necesito un número aproximado para un software a medida". Lo entendemos — estás armando un presupuesto, no firmando un contrato, y quieres un rango razonable antes de gastar tres semanas escribiendo un brief. Tiene sentido. Pero "cuánto cuesta un software a medida" es como preguntar "cuánto cuesta una casa". Depende de la casa, el terreno, los acabados y, seamos honestos, de quién está construyendo.
 
-## Qué mueve realmente el precio
+En 2026 la conversación de precios cambió un poco. Las funciones de IA ahora son una línea normal del presupuesto, no un extra novedoso. Los clientes las piden por defecto, como antes preguntaban si el sitio era responsive. Eso cambia las cuentas de costo de formas que vale la pena entender antes de pedir una cotización.
 
-- **Claridad de alcance.** Requisitos vagos se rellenan con contingencia. Un MVP claro cuesta menos estimar y menos construir.
-- **Integraciones.** Conectar pagos, ERPs, CRMs o sistemas legacy suele costar más que la interfaz.
-- **Barra de calidad.** Auth, roles, auditoría, pruebas, CI/CD y staging no son opcionales en un producto real — y aparecen en el presupuesto.
-- **Quién lo construye.** Arquitectura senior al inicio suele salir más barata que velocidad junior que luego hay que reescribir.
-- **Modelo de entrega.** Un presupuesto cerrado sobre requisitos que cambian crece con change orders. El trabajo por sprints cobras el aprendizaje sobre la marcha.
+## Qué mueve realmente el número
 
-## Rangos realistas (órdenes de magnitud)
+Olvida el precio de etiqueta un segundo. Esto es lo que miramos cuando dimensionamos un proyecto internamente:
 
-Úsalos como bandas de planificación, no como cotización:
+- **Qué tan claro está el alcance.** Un founder que dice "los usuarios inician sesión, crean un proyecto, invitan compañeros, ven un dashboard" recibe un estimado más ajustado que uno que dice "algo como Notion pero para nuestra industria". El alcance vago se rellena con contingencia — no por codicia, sino porque nadie quiere absorber el riesgo de lo desconocido.
+- **Integraciones.** Esta es la que la gente subestima siempre. Conectar con Stripe, un ERP legacy, un sistema contable viejo o un CRM que alguien armó en 2014 suele costar más horas de ingeniería que las pantallas que el usuario realmente ve. Hemos visto una "simple" función de facturación inflarse porque el QuickBooks del cliente tenía tres años de datos inconsistentes detrás.
+- **La barra de calidad que realmente necesitas.** Auth, roles y permisos, logs de auditoría, pruebas automatizadas, entornos de staging — no son lujos si el producto maneja datos reales de clientes o dinero. Cuestan horas reales. Saltárselos no elimina el costo; solo lo mueve al año siguiente, normalmente con intereses.
+- **Quién construye.** Un ingeniero senior que diseña bien el modelo de datos desde el inicio suele salir más barato que un equipo junior que entrega rápido y necesita una reconstrucción en el mes cuatro. Hemos visto ambos caminos. El "barato" rara vez se mantiene barato.
+- **Cómo lo compras.** Un presupuesto cerrado sobre requisitos que obviamente van a cambiar tiende a crecer por change orders — no es una estafa, es matemática. El precio por sprints cobra el aprendizaje real a medida que ocurre, en lugar de adivinarlo por adelantado.
 
-- **Landing + captura de leads + admin simple:** a menudo desde unos pocos miles hasta cinco cifras bajas, según diseño e integraciones.
-- **MVP enfocado (auth, flujo core, admin, despliegue en producción):** comúnmente cinco cifras; a veces seis bajas si hay IA, pagos o datos complejos.
-- **Producto multi-rol con integraciones y compliance:** suele ir de cinco cifras medias-altas hacia arriba, sobre todo si necesitas iterar después del lanzamiento.
+## Bandas aproximadas, no cotizaciones
 
-La geografía, la seniority y la urgencia mueven estas bandas. Las tarifas “baratas” offshore salen caras si faltan propiedad, pruebas y handover.
+Vamos a darte rangos, y lo decimos en serio: trátalos como bandas de planificación. Cualquiera que te dé un número exacto tras una llamada de 20 minutos, o ya construyó exactamente tu producto antes, o está adivinando con mucha confianza.
 
-## Presupuesto fijo vs precio por sprints
+- Una landing con captura de leads y un panel admin simple suele ir desde unos pocos miles hasta cinco cifras bajas, según qué tan a medida sea el diseño y con cuántos sistemas tenga que hablar.
+- Un MVP enfocado — auth real, un flujo core, una vista admin básica, desplegado en producción — comúnmente cae en cinco cifras. Agrega IA, pagos o datos genuinamente desordenados, y puede subir a seis cifras bajas.
+- Un producto multi-rol con varias integraciones y algún requisito de compliance (HIPAA, SOC 2, ese tipo de cosas) suele ir de cinco cifras medias-altas hacia arriba, sobre todo considerando que vas a seguir iterando después del lanzamiento — porque lo harás.
 
-Un gran presupuesto cerrado se siente seguro. A menudo no lo es: congela supuestos antes de tener feedback de usuarios. El precio por sprints (o un discovery corto + primer sprint) te permite pagar por software usable que puedes rechazar, no por una promesa en PDF.
+La geografía y la seniority mueven estas bandas, sí. Pero aquí está la trampa: una tarifa offshore que en papel parece 40% más barata puede terminar saliendo más cara una vez que cuentas las pruebas faltantes, la documentación inexistente y un handover que te deja con credenciales que nadie encuentra.
 
-> Si el único número que tienes es un presupuesto grande y no hay demos semanales, estás comprando esperanza.
+### Una prueba rápida de sentido común
+
+Si alguien te cotiza un número único antes de preguntar qué significa "listo" para tu negocio, ese número es un artefacto de marketing. Un estimado real viene con supuestos escritos — y una lista de qué lo movería.
+
+## Presupuesto fijo vs. precio por sprints — elige tu riesgo, no tu comodidad
+
+Un número fijo grande se siente responsable. Lo puedes poner en una hoja de cálculo, mostrárselo a tu cofundador, dormir tranquilo. El problema es que congela supuestos antes de que un solo usuario real haya tocado el producto. Los requisitos *van* a cambiar en cuanto la gente use la cosa — eso no es una falla de planificación, es simplemente lo que significa construir software.
+
+> Si el único número que tienes es un presupuesto cerrado grande sin un plan de demos semanales, no estás comprando software. Estás comprando esperanza con fecha de entrega.
+
+El precio por sprints (o un discovery corto de pago seguido de un primer sprint) te permite pagar por algo que realmente puedes rechazar. Eso cambia todo el perfil de riesgo — no quedas atrapado en una decisión equivocada tomada en la semana uno, y tampoco tu proveedor, honestamente.
 
 ## Cómo presupuestar sin quedar atrapado
 
-- Financia una **primera rebanada entregable**, no todo el roadmap.
-- Exige **repositorio y cloud a tu nombre** desde el día uno.
-- Pregunta qué va **incluido por defecto** (pruebas, CI, documentación, staging).
-- Reserva margen para la segunda y tercera iteración — los productos rara vez terminan en la v1.
+Algunas cosas que le diríamos a un amigo antes de que firme algo:
 
-En ConaiSoft trabajamos por sprints cortos con arquitectura senior y propiedad total del código. Si quieres un rango para tu idea, agenda una llamada breve y mapeamos alcance a una primera entrega realista — no a un total de fantasía.
+- Financia la **primera rebanada entregable** — no todo el roadmap de seis meses. Siempre puedes financiar la siguiente rebanada una vez que veas que la primera funciona.
+- Exige que el **repositorio y las cuentas cloud vivan bajo tu empresa** desde el día uno, no "al momento del handover". Esto no es negociable y no le cuesta nada al proveedor aceptarlo.
+- Pregunta directamente qué va **incluido por defecto**: pruebas, CI/CD, documentación, un entorno de staging. Si la respuesta es "eso es aparte", eso te dice algo sobre la cotización base.
+- Reserva margen para la iteración dos y tres. Casi nada que valga la pena construir se detiene en la v1 — y presupuestar como si lo hiciera es cómo los founders terminan sorprendidos en el mes cuatro.
+
+Esta es la versión honesta: el costo es sobre todo un proxy del riesgo y la claridad. Cuanto más claro sea tu alcance y más visible la entrega, menos pagas por la incertidumbre de otros.
+
+En ConaiSoft trabajamos por sprints cortos, con arquitectura senior desde el inicio y propiedad total entregada de inmediato — no prometida para después. Si quieres un rango real para tu idea en lugar de una adivinanza sacada de un post de blog, agenda una llamada breve. Mapeamos tu alcance a una primera entrega realista, no a un total de fantasía.

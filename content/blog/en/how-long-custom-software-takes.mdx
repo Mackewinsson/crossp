@@ -3,32 +3,64 @@ title: "How long does custom software take to build?"
 description: "Realistic timelines for custom software projects — what stretches schedules, and how to set milestones buyers can trust."
 excerpt: "Custom software timelines slip when scope is fantasy. Set phases around shippable slices instead of a single faraway launch."
 publishedAt: 2026-08-01
-readingMinutes: 7
+readingMinutes: 13
 tags:
   - timeline
   - custom-software
   - delivery
 ---
-“How long does custom software take?” is the sibling of the cost question. Honest partners answer with phases, not one heroic date.
+Somewhere in nearly every kickoff call, a buyer asks for a single date: "when will this be done?" It is a reasonable question to want answered, and it is also the wrong question to answer with one number. Custom software timelines are not a single countdown — they are a series of phases, and each one carries different risk.
+
+"How long does custom software take?" is really the sibling of the cost question, and honest partners answer both the same way: with phases and trade-offs, not a heroic date pulled from a sales deck.
 
 ## Typical phase bands
 
-- **Discovery + first thin slice:** often 2–6 weeks depending on clarity.
-- **MVP usable by real users:** commonly 1–3 months for focused scope.
-- **Hardening + integrations + multi-role expansion:** additional months as complexity grows.
+These are ranges, not promises — the actual number depends heavily on how clear your scope is and how quickly you make decisions.
 
-## What makes timelines slip
+- **Discovery plus a first thin slice:** often 2–6 weeks. A team with a narrow, well-understood problem can move through this quickly. A team still debating what the product even is will take longer, and should — building the wrong thing fast is not a win.
+- **An MVP usable by real users:** commonly 1–3 months for a genuinely focused scope. This is the phase where "focused" gets tested against reality — every integration and edge case you add pushes this out.
+- **Hardening, integrations, and multi-role expansion:** additional months as complexity grows. This is where enterprise buyers, compliance requirements, and second and third user roles usually live.
 
-- Unowned decisions on your side.
-- Hidden integrations discovered late.
-- Expanding “MVP” mid-flight.
-- No staging or QA until the end.
+A single-screen internal tool for ten people and a multi-tenant platform with billing, permissions, and three integrations are not the same timeline, even if both get called "an MVP" in casual conversation.
 
-## How to set a timeline you can trust
+## What actually makes timelines slip
 
-1. Define done for the first release in writing.
-2. Schedule weekly demos.
-3. Separate must-haves from later bets.
-4. Re-forecast after sprint one with real evidence.
+None of these are mysterious. They show up in nearly every project that runs long:
 
-ConaiSoft plans delivery as sprint milestones with working software — so dates are based on progress, not optimism.
+- **Unowned decisions on your side.** If a design choice or a policy question sits with "the team" instead of a named person, it will sit for a week while everyone waits for everyone else.
+- **Hidden integrations discovered late.** The "quick" integration with your accounting system turns out to have undocumented rate limits, or the third-party API you assumed existed does not actually expose the data you need.
+- **An "MVP" that quietly expands mid-flight.** Someone in a meeting says "while we're in there, can we also add..." and a two-week task becomes a five-week one, without anyone re-forecasting the date.
+- **No staging environment or QA discipline until the end.** Bugs found in week ten that could have been caught in week three cost far more to fix — and they always surface right before a deadline, never conveniently early.
+- **Underestimating data migration.** Moving years of records from an old system rarely goes as smoothly as a single line item in a proposal suggests.
+
+## How to set a timeline you can actually trust
+
+1. **Define "done" for the first release in writing**, in terms of what a user can do, not a list of technical tasks. "A customer can submit a request and see its status" is a real definition of done. "Backend is 80% complete" is not.
+2. **Schedule weekly demos from week one**, even when there is not much to show yet. This habit surfaces slippage in week two, not week eight.
+3. **Separate must-haves from later bets explicitly**, in writing, before development starts — not as a negotiation once you are already behind.
+4. **Re-forecast after the first sprint using real evidence.** How long did the first two or three features actually take, compared to the estimate? That ratio is a far better predictor than the original plan.
+
+> A date given before scope is settled is not an estimate. It is a guess wearing a calendar.
+
+## A realistic example, stripped of specifics
+
+Picture an operations team automating a manual approval process that currently lives in email and spreadsheets. Discovery takes two weeks and produces a clear first slice: one workflow, one role, one integration with the system that holds the underlying records. That slice ships in five to six weeks and is genuinely usable — people stop emailing spreadsheets around for that one workflow.
+
+From there, a second role gets added, then a second workflow, then a reporting view for managers. Each addition is its own small milestone with its own demo, rather than one enormous "phase two" looming in the distance. By the time the system covers the full department, months have passed — but nobody was waiting in the dark for a single mythical launch date. They were using something real for most of that time.
+
+## Why "as soon as possible" is not a plan
+
+Founders under investor or board pressure often ask for the fastest possible date, which is understandable, but "as soon as possible" is not a scope decision — it is pressure with no shape. The more useful question is: what is the smallest version of this that would actually change our situation if it shipped in a month? That question forces a real trade-off conversation instead of a vague push to go faster on everything at once.
+
+Compressing a timeline honestly usually means cutting scope, not cutting quality. Removing a secondary user role, deferring a nice-to-have integration, or launching to twenty pilot users before the full account base are all legitimate ways to move faster. Skipping tests, skipping a staging environment, or skipping the weekly demo are not — those cuts just move the delay to later, disguised as a bug list instead of a schedule.
+
+## Questions worth asking before you accept a timeline
+
+- What specifically ships at the end of the first phase, described as user-visible outcomes?
+- What happens to the schedule if we discover a complex integration in week three?
+- How will we know by week four whether the timeline is still realistic?
+- What is explicitly *not* included in this timeline, so scope creep gets named instead of absorbed silently?
+
+A vendor who can answer these clearly, with specifics rather than reassurance, is more trustworthy than one who offers a single confident date on the first call.
+
+ConaiSoft plans delivery as sprint milestones tied to working software, so your dates are based on evidence from the last two weeks, not optimism from the first sales call.

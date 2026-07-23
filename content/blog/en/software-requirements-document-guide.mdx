@@ -3,32 +3,82 @@ title: "How to write a software requirements document that vendors can actually 
 description: "A lightweight SRS / requirements guide for non-technical buyers — enough clarity to estimate and start without a 80-page binder."
 excerpt: "Vendors cannot estimate fog. Capture outcomes, users, workflows, and constraints — not every button color."
 publishedAt: 2026-08-02
-readingMinutes: 8
+readingMinutes: 13
 tags:
   - requirements
   - mvp
   - process
 ---
-You do not need an 80-page specification to start. You do need enough clarity that a senior engineer can challenge scope and propose a first slice.
+A common myth stalls a lot of software projects before they start: the belief that you need an exhaustive, 80-page specification before anyone can give you a real estimate. Some buyers spend months writing that document. Others give up and hand a vendor two paragraphs and a hopeful tone, which produces an equally unreliable outcome, just faster.
+
+Neither extreme works. You do not need to spec every button color. You do need enough clarity that a senior engineer can challenge your scope intelligently and propose a credible first slice. That is a much shorter document than most buyers expect.
 
 ## What to include
 
-- Problem and desired business outcome.
-- Primary users and their jobs.
-- Happy-path workflow step by step.
-- Must-have vs later.
-- Integrations and data sources.
-- Constraints: security, compliance, deadline, budget band.
-- Definition of done for v1.
+### The problem and the desired business outcome
 
-## What to skip early
+Start with why this needs to exist at all, in business terms. "Reduce the time it takes to approve a purchase order from three days to same-day" is a real outcome. "Build a purchase order system" is a feature description with no way to judge success attached to it.
 
-- Exhaustive UI pixel specs before the workflow is proven.
-- Edge cases for scenarios you have never seen in reality.
-- Technology mandates unless you have a real constraint.
+### Primary users and their jobs
 
-## How vendors use a good brief
+Name the two or three roles that actually matter, and describe what each one is trying to accomplish — not a full persona document with hobbies and quotes, just enough to know whose problem you are solving in each screen.
 
-A clear brief produces better estimates, fewer change orders, and faster first demos. A vague brief produces padded quotes.
+### The happy-path workflow, step by step
 
-ConaiSoft can help turn a messy idea into a buildable first slice — then ship it in sprints with visible progress.
+Walk through the single most common path a user takes from start to finish, in plain language. "A rep creates a quote, a manager approves it if it's above a threshold, the customer receives it by email" is a workflow a vendor can estimate. A list of disconnected features is not.
+
+### Must-have versus later
+
+Be explicit and unafraid to be short here. A three-item must-have list with a clearly separate "later" list is far more useful to a vendor than a forty-item wishlist with everything marked equally important, because equally important usually means nobody actually decided.
+
+### Integrations and data sources
+
+List the systems this needs to talk to — even loosely, even if you are not sure of the technical details yet. "It needs to pull customer data from our billing system" is enough to start a real conversation; the vendor's job is to ask the follow-up questions.
+
+### Constraints
+
+Security requirements, compliance obligations (HIPAA, SOC 2, GDPR, or industry-specific rules), a real deadline if one exists, and a rough budget band. Vague constraints produce vague estimates; specific constraints — even uncomfortable ones — produce accurate ones.
+
+### A definition of done for v1
+
+Describe, in outcomes, what "the first version works" actually means. This becomes the yardstick everyone measures against later, and it prevents the slow, silent scope creep that turns a four-week MVP into a four-month argument about what was actually promised.
+
+## What to skip, at least early on
+
+- **Exhaustive UI pixel specs before the workflow is proven.** Visual polish on a flow nobody has validated is effort spent on the wrong risk.
+- **Edge cases for scenarios you have never actually seen happen.** If it has not happened in three years of running the business the old way, it does not need to block the first release.
+- **Technology mandates without a real constraint behind them.** Unless you have an existing team, a compliance requirement, or a genuine integration need that dictates the stack, let the vendor recommend based on what they can support well and maintain long-term.
+
+> Vendors cannot estimate fog. A clear brief and an honest "we don't know yet" are both far more useful than a confident guess dressed up as a spec.
+
+## A short template you can actually use
+
+If a blank page is the blocker, a rough outline is enough to start:
+
+1. **Outcome:** what changes for the business if this works?
+2. **Users:** who touches this, and what are they trying to do?
+3. **Workflow:** the main path, step by step, in plain language.
+4. **Must-have vs later:** a short list of each.
+5. **Integrations:** systems this needs to connect to.
+6. **Constraints:** security, compliance, deadline, budget band.
+7. **Definition of done:** what "v1 works" looks like in practice.
+
+A page and a half covering these seven sections beats a beautifully formatted 80-page binder that nobody on the vendor's side reads cover to cover anyway.
+
+## Where this information actually comes from
+
+Most buyers do not have this information sitting in a document already — it lives scattered across people's heads, old email threads, and whatever workaround process is currently limping along. Gathering it is less about writing and more about asking the right people the right questions:
+
+- Sit with whoever does the work today, manually, and watch them do it once. You will catch steps they forgot to mention because the steps feel too obvious to them to say out loud.
+- Ask what currently goes wrong, specifically — a missed handoff, a duplicate entry, a customer complaint that keeps recurring. Real complaints are a better requirements source than a wish list built in a conference room.
+- Talk to whoever currently owns the budget for this, separately from whoever will use the system daily. Their definitions of success are sometimes different, and both belong in the brief.
+
+You do not need to resolve every disagreement before writing the document. Naming a disagreement explicitly ("Sales wants X, Ops wants Y, we have not decided") is more useful to a vendor than papering over it with a compromise nobody actually agreed to.
+
+## How vendors actually use a good brief
+
+A clear brief produces better estimates, because the vendor is estimating a real thing instead of guessing at your intent. It produces fewer change orders later, because scope was named up front instead of discovered mid-build. And it produces faster first demos, because the team knows exactly what "week one" should aim to prove.
+
+A vague brief produces the opposite of all three. It produces padded quotes, because a serious vendor prices in the risk of not knowing what you actually need. It produces change orders, because the gaps in the brief surface eventually — just later, and more expensively. And it produces slower first demos, because the team spends early sprints guessing at scope instead of building it.
+
+ConaiSoft can help turn a messy idea into a buildable first slice through a short working conversation — then ship it in sprints with visible progress, instead of disappearing behind a specification process for months.

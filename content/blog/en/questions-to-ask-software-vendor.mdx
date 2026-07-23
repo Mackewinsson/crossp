@@ -1,39 +1,83 @@
 ---
 title: "12 questions every business should ask a software vendor"
-description: "A practical RFP-style checklist for CEOs, COOs, and product leaders evaluating agencies, studios, and engineering partners."
-excerpt: "Skip the buzzwords. These questions expose delivery risk, ownership, AI capability, and true cost."
+description: "A practical RFP-style checklist for CEOs, COOs, and product leaders evaluating agencies, studios, and engineering partners — with the answers that should make you walk away."
+excerpt: "Skip the buzzwords. These questions expose delivery risk, ownership, AI capability, and true cost before you sign."
 publishedAt: 2026-07-14
-readingMinutes: 8
+readingMinutes: 13
 tags:
   - vendor-selection
   - rfp
   - procurement
 ---
 
-Most vendor pitches sound the same: agile, AI-powered, senior talent. The difference shows up in how they answer operational questions. Use this list on your next sales call.
+Sit through enough vendor pitches and they start to blur together. Everyone's agile. Everyone's "AI-powered" now, whether or not that means anything concrete. Everyone has senior talent, according to the slide with the headshots. The differences that actually matter don't show up in the pitch — they show up in how a vendor answers specific, slightly uncomfortable operational questions.
+
+So ask them. On the actual sales call. Before you're deep enough into the relationship that asking feels awkward.
+
+We've sat on both sides of these conversations — as the team being evaluated, and as informal advisors when a founder was about to sign something they shouldn't. The same twelve questions keep separating serious partners from expensive theater. You don't need to fire all twelve in one call like an interrogation. Three or four, asked well, tell you most of what you need.
 
 ## Delivery and visibility
 
-- What will we review at the end of week one?
-- How do you report blockers — and who owns the decision?
-- Can we access the repository and staging environment continuously?
+This is where most bad engagements announce themselves early — if you listen.
+
+- **What will we be able to review at the end of week one?** Not week four. Week one. If the answer is a kickoff deck, a research summary, or "we'll share progress," push once: *What can a user click?* Vendors who habitually ship working software get slightly uncomfortable with this question in a good way — they start describing the first slice. Vendors who live in slides get vague.
+- **How do you report blockers, and who owns the decision when something's stuck?** "We handle it internally" usually means you find out late. You want a named path: who notices, how you hear, and who decides whether to cut scope, extend time, or swap approach.
+- **Can we access the repository and staging environment continuously from the start?** Continuously — not "on request at milestones." If access is complicated to arrange, imagine how complicated exit will be.
+
+A founder we talked with once waited six weeks for "the first demo." When it arrived, it was a Figma walkthrough. That wasn't a scheduling problem. It was a delivery culture problem that the week-one question would have caught immediately.
 
 ## Ownership and lock-in
 
-- Is 100% of the source code our property?
-- Are cloud accounts and domains created under our company?
-- What does handover include on the last day of engagement?
+Ask these with the same tone you'd use for bank account ownership — because that's roughly the right severity.
+
+- **Is 100% of the source code our property, in writing, from day one?** Say it exactly like that. Watch for hedging about "frameworks," "accelerators," or "our proprietary platform."
+- **Are cloud accounts and domains created under our company, or theirs?** There is a wrong answer. It's easy to fix before signing and painful after.
+- **What does handover actually include on the last day?** Credentials, docs, a walkthrough, CI secrets, third-party admin transfers — not the word "everything."
+
+> If you cannot clone the repo and redeploy without the vendor on a call, you do not fully own the product yet — no matter what the invoice says.
+
+We've seen "ownership" that meant: you can have a zip file of the code, but the production DNS, the Stripe account, and the CI pipeline all lived in the agency's personal logins. That is not ownership. That is a hostage situation with polite branding.
 
 ## Quality and AI
 
-- Are automated tests and CI/CD included by default?
-- For AI features: how do you handle data privacy and evaluation?
-- Who designs the architecture — and what is their experience?
+- **Are automated tests and CI/CD included by default, or are those a separate line item?** This tells you what the base price actually buys. Optional quality is how "cheap" projects become expensive maintenance.
+- **For AI features: how do you handle data privacy, and how do you evaluate whether the feature works?** "It uses GPT" answers neither half. You want to hear about data boundaries, logging, human review, and how they measure quality before users suffer.
+- **Who designs the architecture, specifically — and what's their track record with something similar?** Ask to talk to that person. If sales can't introduce you to the person who will design the system, the seniority in the pitch may not be the seniority in the room.
 
 ## Commercial model
 
-- Is pricing sprint-based or a single fixed quote?
-- How are scope changes priced and approved?
-- What happens if we pause after an MVP?
+- **Is pricing sprint-based, phased, or one single fixed quote?** Each can be legitimate. You want to know which risk model you're signing.
+- **How are scope changes priced and approved once we're underway?** This is where "flexible" either proves real or reveals fixed pricing wearing a hoodie.
+- **What happens if we pause after the MVP?** A normal, supported outcome — or a contract that punishes learning? Products often need a pause to sell, raise, or rethink. Partners who treat that as failure are optimizing for their revenue, not your learning.
 
-If answers are vague, treat that as a signal. ConaiSoft is built around clear sprints, senior architecture, and ownership that stays with you — ask us these same questions on a 15-minute call.
+## How to use this on a real call without sounding like procurement cosplay
+
+You don't need to read the list off a clipboard. That makes everyone stiff. Instead:
+
+1. Pick three questions that match your biggest fear (ownership, speed, or AI risk).
+2. Ask them conversationally, then stay quiet long enough for a real answer.
+3. Note specificity versus deflection. Good partners get crisp because they've answered before and aren't scared of the answers.
+4. Save the rest of the list for the proposal review or a second call.
+
+Also listen for what they ask *you*. Strong partners challenge fuzzy scope. Weak ones agree with every feature you invent because agreement closes deals.
+
+## Answers that should make you slow down
+
+- Guaranteed launch dates with no questions about integrations or data quality
+- "You'll get access at the end"
+- "Our platform makes you faster" without explaining exit
+- Instant fixed price after a fifteen-minute chat for a multi-system product
+- Only account managers available — never the people who will build
+
+None of these alone proves a vendor is bad. Patterns of them usually do.
+
+## A short sequence that works better than a beauty contest
+
+1. Short exploratory call → ballpark fit.
+2. Ask a subset of these twelve questions.
+3. Optional paid discovery if risk is high.
+4. First sprint with working software you can reject or continue.
+
+You're not buying a logo. You're buying a path to a product you can operate when the vendor is offline.
+
+ConaiSoft is built around clear sprints, senior architecture that isn't hidden behind sales, and ownership that stays with you from the first commit. Ask us these exact twelve questions on a fifteen-minute call — we'd rather you did that than find out the answers six weeks late.

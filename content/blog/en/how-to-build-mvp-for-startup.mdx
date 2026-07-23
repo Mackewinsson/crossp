@@ -1,47 +1,78 @@
 ---
-title: "How to build an MVP for your startup (without wasting your runway)"
-description: "A practical MVP build guide for founders — what to include, what to cut, and how to ship a first version investors and users can actually use."
-excerpt: "Building an MVP is not building a mini version of everything. Here is a founder-friendly path from idea to first users."
+title: "How to Build an MVP for Your Startup Without Burning Your Runway"
+description: "A founder-friendly MVP guide — what actually belongs in v1, what to cut without guilt, and how to ship something real users can touch."
+excerpt: "An MVP isn't a smaller version of your whole vision. It's the fastest honest test of whether anyone wants it."
 publishedAt: 2026-07-24
-readingMinutes: 8
+readingMinutes: 12
 tags:
   - mvp
   - startups
   - product
 ---
-Most startups do not fail because they cannot write code. They fail because they spend months building features nobody asked for. An MVP should buy learning — not decorate a pitch deck.
 
-## Start with one job-to-be-done
+A founder came to us with a eleven-page spec: multi-tenant accounts, four user roles, a billing engine with three plans, a notifications center, and an admin dashboard with charts. Zero users. Zero revenue. Zero validation that anyone wanted the core idea in the first place. That document represented maybe five months of work. The actual idea underneath it could have been tested in three weeks.
 
-Write one sentence: *For [user], my product helps them [job] so they can [outcome].* If you need three sentences, you have three products. Pick one for v1.
+This happens constantly, and it's not because founders are careless. It's because an MVP feels safer when it looks complete. A half-built product feels risky to show anyone. But completeness is exactly the wrong goal at this stage — speed to a real answer is the goal.
 
-## Cut ruthlessly
+## What "minimum viable" actually means
 
-Keep in the first version:
-- authentication (only if required for the job),
-- the core workflow end to end,
-- a simple admin path so you are not stuck in the database,
-- production deploy with staging.
+Most teams read "minimum" and "viable" as being in tension, so they compromise somewhere in the middle and end up with neither. Here's a cleaner way to think about it: viable means a real person can complete the real job, start to finish, without you standing behind them explaining what to click. Minimum means everything that isn't required for that job to happen is out — no matter how good it would look in a demo.
 
-Cut for later:
-- multi-role complexity,
-- every integration “we will need someday,”
-- beautiful edge-case polish,
-- analytics dashboards nobody will open in week one.
+An MVP is not a smaller version of your product. It's a sharper test of your riskiest assumption.
 
-## Build sequence that protects runway
+## Start with one sentence, not one roadmap
 
-1. Scope the shippable slice in writing.
-2. Ship weekly demos of working software.
-3. Put it in front of real users before expanding.
-4. Only then fund the next slice.
+Before any scoping conversation, we ask founders to write this:
 
-## Common MVP traps
+*For [type of user], my product helps them [do this specific job], so they can [get this outcome].*
 
-- Confusing a Figma prototype with a product.
-- Hiring for speed and skipping ownership of the repository.
-- Asking for a 6-month fixed quote before you have talked to users.
+If you need three sentences to describe it, you're describing three products. Pick the one where the pain is sharpest and the willingness to pay — or at least to switch — is clearest. Everything else waits.
 
-> An MVP that cannot be used by a real customer is a science project with branding.
+## What actually belongs in version one
 
-ConaiSoft helps founders ship focused MVPs in short sprints with senior architecture and full code ownership — so your next raise or sales cycle is based on evidence, not slides.
+Keep:
+
+- Authentication, but only if the job genuinely requires knowing who the user is.
+- The core workflow, built end to end — not each step polished, but every step present.
+- A minimal way to see and fix data without touching the database directly (even a basic internal table view counts).
+- A real deploy with staging, so "it works on my laptop" isn't your quality bar.
+
+Cut, for now:
+
+- Multi-role permission systems, unless the job is literally about managing permissions.
+- Every integration that "we'll obviously need eventually." Eventually isn't this sprint.
+- Edge-case polish — the empty states, the rare error messages, the animation on the button.
+- Analytics dashboards. Nobody opens them in week one; you'll be talking to users directly instead.
+
+## A build sequence that protects your runway
+
+1. Write the scope down — literally, in a doc everyone agrees to — before any code gets written.
+2. Ship a working demo every week, even an ugly one. Weekly cadence is what keeps scope honest.
+3. Put the thing in front of real users before you expand it. Not friends. Not investors. The actual buyer.
+4. Only fund the next slice of work once the current one has taught you something.
+
+That order matters more than any individual step. Founders who skip step 3 — who keep building because building feels like progress — are usually the ones who run out of money holding a beautifully engineered answer to a question nobody asked.
+
+## The traps that eat the most runway
+
+- **Confusing a clickable prototype with a product.** A Figma flow proves the idea is understandable. It doesn't prove anyone will use it when it's real, with real friction and real consequences.
+- **Hiring purely for speed and losing ownership.** A fast freelancer who keeps the repository on a personal account, or skips tests entirely, can hand you a fast MVP you can't safely build on top of six months later.
+- **Locking into a six-month fixed quote before talking to a single user.** Fixed scope assumes you already know what to build. At this stage, you don't — and that's fine, as long as your engagement model admits it.
+
+> An MVP that a real customer can't actually use isn't an MVP. It's a science project with a nice logo.
+
+## What a healthy build engagement looks like from the outside
+
+If someone else is building this for you — a freelancer, an agency, a partner — the healthy version of that relationship has a recognizable shape: short sprints, a working demo every week, and a scope document that everyone expects to change once real feedback shows up. If a vendor insists on locking the entire feature list before a single line of code exists, that's usually a sign they're optimizing for predictable billing, not for your actual speed of learning.
+
+Ask what happens after week two if user feedback contradicts the original plan. A good partner treats that as the whole point of building an MVP in the first place — not as scope creep to be pushed back on. A vendor who gets defensive about revising the plan early is telling you something about how the rest of the engagement will go.
+
+It's also worth asking, plainly, who owns the repository and the infrastructure while this is being built. We've seen founders get an MVP shipped fast, only to discover the codebase lived on a contractor's personal account with no documentation — meaning "fast" quietly became "hard to ever touch again without starting over."
+
+## Knowing when you're actually done with v1
+
+The signal isn't a finished-feeling product. It's one of two things: either a handful of real users completed the core job and told you clearly what's missing next, or they didn't use it at all and you now know why. Both outcomes are wins. The only losing outcome is spending three more months polishing before you get either answer.
+
+Once you have that signal, the next slice of work gets funded by evidence — a specific request from a specific user, not a guess made in a planning meeting six weeks ago.
+
+ConaiSoft helps founders ship focused MVPs in short, visible sprints with senior architecture underneath and full ownership of the code from day one — so your next investor conversation or sales cycle runs on evidence, not on slides.

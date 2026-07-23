@@ -1,32 +1,59 @@
 ---
-title: "Precio fijo vs time and materials en proyectos de software"
-description: "Cómo elegir entre precio fijo y T&M — riesgo, flexibilidad y cuándo el precio por sprints es el mejor camino intermedio."
-excerpt: "El precio fijo se siente seguro. El T&M se siente flexible. Ambos fallan sin visibilidad. Así eliges."
+title: "Precio fijo vs time and materials en proyectos de software: cómo elegir"
+description: "Cómo deberían elegir realmente los compradores entre precio fijo y T&M — riesgo, flexibilidad, y cuándo el precio por sprints gana a ambos."
+excerpt: "El precio fijo se siente seguro. El time and materials se siente flexible. Ambos fallan sin visibilidad. Así es como decides de verdad."
 publishedAt: 2026-07-30
-readingMinutes: 7
+readingMinutes: 13
 tags:
   - pricing
   - contracts
   - delivery
 ---
-Los modelos de precio asignan riesgo. No crean calidad por sí solos.
 
-## Precio fijo
+Los modelos de precio se discuten como si fueran una señal de calidad, pero no lo son. Un contrato de precio fijo no garantiza un producto bien construido más de lo que un contrato de time and materials garantiza una flexibilidad que realmente te ayude. Los modelos de precio distribuyen el riesgo entre tú y el equipo que contratas — eso es genuinamente útil de entender, pero es una pregunta distinta de "¿esto va a estar bien hecho?", y mezclar ambas es cómo los compradores terminan decepcionados por un modelo que nunca fue diseñado para resolver el problema que en realidad les preocupaba.
 
-Mejor cuando el alcance es realmente estable y la definición de “listo” es precisa. Riesgoso cuando los requisitos aprenderán de usuarios — aparecen change orders.
+Así que antes de elegir un modelo porque se siente psicológicamente más seguro, vale la pena entender qué riesgo mueve realmente cada uno, y hacia quién.
 
-## Time and materials (T&M)
+## Precio fijo: para qué sirve realmente
 
-Mejor cuando el discovery es continuo y quieres flexibilidad. Riesgoso sin cadencia de demos o tope — puedes financiar thrash.
+Un contrato de precio fijo funciona bien en una condición específica y angosta: el alcance es genuinamente estable, y la definición de "listo" es lo suficientemente precisa como para que una persona razonable de cualquier lado esté de acuerdo en si se cumplió. Bajo esas condiciones, el precio fijo es un buen trato para ti — el proveedor absorbe el riesgo de subestimar el esfuerzo, y tú obtienes certeza de presupuesto.
 
-## Precio por sprints / capacidad (a menudo lo mejor)
+El problema empieza cuando los requisitos no son realmente estables — que, para la mayoría del software real, no lo son. Los requisitos evolucionan porque aprendes cosas una vez que usuarios reales tocan el producto, y ninguna cantidad de planeación previa reemplaza del todo ese aprendizaje. En un contrato de precio fijo, ese aprendizaje no tiene a dónde ir bien. O el proveedor absorbe el cambio gratis (raro, e insostenible para ellos), o se convierte en un change order — una negociación formal, a veces adversarial, sobre qué estaba "realmente" incluido en el alcance original.
 
-Compras capacidad fija por un periodo con entregables semanales y backlog claro. Mantienes flexibilidad con un cerco de presupuesto.
+Los change orders no son malos en sí mismos, pero un contrato que los genera constantemente ya no es realmente precio fijo. Es precio fijo para un alcance de fantasía, con una negociación en vivo corriendo debajo. Si vas a usar precio fijo, úsalo para trabajo que esté genuinamente bien especificado, y sé honesto contigo mismo sobre qué tan raro es eso realmente para cualquier cosa más allá de una feature angosta y bien entendida.
 
-## Regla de decisión
+## Time and materials: para qué sirve realmente
 
-- Rebanada estable y bien especificada → fijo o fase con tope puede funcionar.
-- Producto que evoluciona → sprints o T&M con aceptación semanal.
-- Riesgo desconocido de IA/integración → discovery de pago primero, luego sprint.
+El time and materials mueve el riesgo en la otra dirección. Pagas por horas realmente trabajadas, que es exactamente correcto cuando el discovery está en curso y genuinamente todavía no sabes la forma completa de lo que estás construyendo. Le da al equipo espacio para explorar y ajustar sin que ninguno de los dos lados pretenda saber cosas que en realidad nadie sabe todavía.
 
-En ConaiSoft preferimos capacidad por sprints transparente con demos que puedes aceptar — el modelo comercial encaja con cómo se construyen los productos de verdad.
+El riesgo que carga el T&M es distinto, no menor: sin una cadencia de demos, un tope aproximado, o puntos de check-in claros, puedes financiar mucha actividad sin una cantidad correspondiente de progreso. Normalmente esto no es mala fe deliberada — es simplemente lo que pasa cuando nadie tiene que mostrar software funcionando en un calendario predecible. El tiempo se gasta, y es difícil saber, desde afuera, si ese tiempo produjo valor.
+
+El T&M funciona bien cuando va acompañado de visibilidad: demos regulares, una lista corriente de lo que realmente se ha entregado, y la capacidad de retirarte si el ritmo del progreso real no coincide con el ritmo de la facturación.
+
+## Precio por sprints o capacidad: a menudo el mejor camino intermedio
+
+Entre los dos hay un modelo que resuelve más del problema real que cualquiera de los extremos: comprar una capacidad fija por un periodo — un equipo, por un número determinado de semanas, a un costo conocido — con entregables semanales o quincenales y un backlog claro y visible.
+
+Esto te da la mayor parte de lo que promete el precio fijo (previsibilidad de presupuesto, porque conoces el costo de la capacidad por periodo) junto con la mayor parte de lo que promete el T&M (flexibilidad, porque el backlog se puede repriorizar a medida que aprendes). Lo que agrega, que ningún modelo puro garantiza por sí solo, es una cadencia incorporada de progreso visible. No estás esperando una única gran revelación al final, ni financiando horas abiertas sin ningún checkpoint.
+
+> El precio fijo y el T&M fallan de la misma forma en la práctica — no por las matemáticas del precio, sino por lo que pasa cuando nadie tiene que mostrarte software funcionando en un calendario predecible.
+
+## Una regla de decisión que realmente funciona
+
+En lugar de elegir un modelo por instinto o por el que le convenga al proveedor, haz que el modelo coincida con lo que realmente sabes sobre el trabajo:
+
+- **Una rebanada de trabajo estable y bien especificada** — una integración definida, una feature específica con un spec claro — puede funcionar genuinamente bien como precio fijo o una fase con tope. Solo asegúrate de que "bien especificada" sea real, no aspiracional.
+- **Un producto que todavía está evolucionando**, donde se espera que el feedback de usuarios cambie el rumbo, encaja mucho mejor con sprints o T&M con aceptación semanal incorporada desde el inicio.
+- **Riesgo técnico desconocido** — una integración de IA nueva, un sistema legacy poco familiar, una API de terceros que nadie del equipo ha usado antes — merece una fase corta y pagada de discovery antes de comprometerte con cualquier modelo de precio. Poner precio a lo desconocido es solo adivinar con más confianza de la que la adivinanza merece.
+
+## Qué preguntar sin importar el modelo
+
+Sin importar en qué estructura de precio termines, algunas preguntas te protegen de todas formas:
+
+- ¿Con qué frecuencia voy a ver software funcionando, y qué pasa si esa cadencia se atrasa?
+- ¿Cuál es el proceso si el alcance necesita cambiar — y es lo suficientemente ligero como para no sentirse punitivo al usarlo?
+- ¿Qué pasa si quiero pausar o parar después de un periodo determinado — qué me quedo, y en qué estado?
+
+Si un proveedor no puede responder esto con claridad sin importar el modelo de precio sobre la mesa, el modelo de precio no es realmente tu mayor riesgo en esa relación.
+
+En ConaiSoft preferimos capacidad transparente por sprints con demos que puedes aceptar o rechazar con una cadencia regular — un modelo comercial construido para coincidir con cómo se construye el software de verdad, en lugar de una estructura de precio elegida para hacer que una propuesta se vea más simple de lo que realmente es el trabajo.

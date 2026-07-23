@@ -3,32 +3,64 @@ title: "¿Cuánto tarda construir un software a medida?"
 description: "Tiempos realistas para proyectos a medida — qué alarga el schedule y cómo fijar hitos en los que el comprador pueda confiar."
 excerpt: "Los timelines se resbalan cuando el alcance es fantasía. Define fases alrededor de rebanadas entregables, no una sola fecha lejana."
 publishedAt: 2026-08-01
-readingMinutes: 7
+readingMinutes: 13
 tags:
   - timeline
   - custom-software
   - delivery
 ---
-“¿Cuánto tarda un software a medida?” es la hermana de la pregunta del costo. Los partners honestos responden con fases, no con una fecha heroica.
+En casi cualquier llamada de kickoff, en algún momento el comprador pide una sola fecha: “¿cuándo va a estar listo esto?” Es una pregunta razonable de querer responder, y también es la pregunta equivocada de responder con un solo número. Los timelines de software a medida no son una sola cuenta regresiva — son una serie de fases, y cada una carga un riesgo distinto.
+
+“¿Cuánto tarda un software a medida?” en realidad es la hermana de la pregunta del costo, y los partners honestos responden ambas de la misma forma: con fases y trade-offs, no con una fecha heroica sacada de un deck de ventas.
 
 ## Bandas típicas por fase
 
-- **Discovery + primera rebanada delgada:** a menudo 2–6 semanas según claridad.
-- **MVP usable por usuarios reales:** comúnmente 1–3 meses con alcance enfocado.
-- **Endurecimiento + integraciones + expansión multi-rol:** meses adicionales según complejidad.
+Son rangos, no promesas — el número real depende mucho de qué tan claro esté tu alcance y qué tan rápido decidas.
 
-## Qué hace resbalar el timeline
+- **Discovery más una primera rebanada delgada:** a menudo 2–6 semanas. Un equipo con un problema estrecho y bien entendido puede moverse rápido por esta fase. Un equipo que todavía está debatiendo qué es el producto va a tardar más, y debería — construir rápido lo equivocado no es una victoria.
+- **Un MVP usable por usuarios reales:** comúnmente 1–3 meses con un alcance genuinamente enfocado. Esta es la fase donde “enfocado” se pone a prueba contra la realidad — cada integración y edge case que agregas empuja esto hacia adelante.
+- **Endurecimiento, integraciones y expansión multi-rol:** meses adicionales según crece la complejidad. Aquí es donde suelen vivir los compradores enterprise, los requisitos de compliance y el segundo y tercer rol de usuario.
 
-- Decisiones sin dueño de tu lado.
-- Integraciones ocultas descubiertas tarde.
-- Expandir el “MVP” a mitad de vuelo.
-- Sin staging ni QA hasta el final.
+Una herramienta interna de una sola pantalla para diez personas y una plataforma multi-tenant con billing, permisos y tres integraciones no tienen el mismo timeline, aunque en la conversación casual ambas se llamen “un MVP”.
 
-## Cómo fijar un timeline confiable
+## Qué hace resbalar el timeline en realidad
 
-1. Define “listo” de la primera release por escrito.
-2. Agenda demos semanales.
-3. Separa must-haves de apuestas posteriores.
-4. Re-pronostica después del sprint uno con evidencia real.
+Nada de esto es misterioso. Aparece en casi todo proyecto que se alarga:
 
-En ConaiSoft planificamos la entrega como hitos de sprint con software funcionando — fechas basadas en progreso, no en optimismo.
+- **Decisiones sin dueño de tu lado.** Si una elección de diseño o una pregunta de política queda en manos de “el equipo” en lugar de una persona nombrada, se va a quedar ahí una semana mientras todos esperan a todos.
+- **Integraciones ocultas descubiertas tarde.** La integración “rápida” con tu sistema de contabilidad resulta tener rate limits sin documentar, o la API de terceros que asumías que existía en realidad no expone los datos que necesitas.
+- **Un “MVP” que se expande en silencio a mitad de vuelo.** Alguien en una reunión dice “ya que estamos, ¿podemos agregar también...” y una tarea de dos semanas se vuelve una de cinco, sin que nadie re-pronostique la fecha.
+- **Sin ambiente de staging ni disciplina de QA hasta el final.** Los bugs encontrados en la semana diez que se pudieron haber pillado en la semana tres cuestan mucho más arreglar — y siempre aparecen justo antes de un deadline, nunca convenientemente temprano.
+- **Subestimar la migración de datos.** Mover años de registros de un sistema viejo casi nunca va tan suave como sugiere una sola línea en una propuesta.
+
+## Cómo fijar un timeline en el que realmente puedas confiar
+
+1. **Define “listo” para la primera release por escrito**, en términos de qué puede hacer un usuario, no una lista de tareas técnicas. “Un cliente puede enviar una solicitud y ver su estado” es una definición real de “listo”. “El backend está 80% completo” no lo es.
+2. **Agenda demos semanales desde la semana uno**, aunque todavía no haya mucho que mostrar. Este hábito revela retrasos en la semana dos, no en la semana ocho.
+3. **Separa los must-haves de las apuestas posteriores explícitamente**, por escrito, antes de que empiece el desarrollo — no como una negociación una vez que ya vas atrasado.
+4. **Re-pronostica después del primer sprint usando evidencia real.** ¿Cuánto tardaron en realidad las primeras dos o tres funcionalidades, comparado con el estimado? Esa proporción predice mucho mejor que el plan original.
+
+> Una fecha dada antes de cerrar el alcance no es un estimado. Es una adivinanza disfrazada de calendario.
+
+## Un ejemplo realista, sin datos específicos
+
+Imagina un equipo de operaciones automatizando un proceso de aprobación manual que hoy vive en emails y hojas de cálculo. El discovery toma dos semanas y produce una primera rebanada clara: un flujo, un rol, una integración con el sistema que guarda los registros base. Esa rebanada se entrega en cinco o seis semanas y es genuinamente usable — la gente deja de mandarse hojas de cálculo por email para ese flujo en particular.
+
+De ahí, se agrega un segundo rol, luego un segundo flujo, luego una vista de reporting para gerentes. Cada agregado es su propio hito pequeño con su propia demo, en lugar de una enorme “fase dos” acechando en la distancia. Para cuando el sistema cubre todo el departamento, han pasado meses — pero nadie estuvo esperando en la oscuridad una sola fecha de lanzamiento mítica. Estuvieron usando algo real la mayor parte de ese tiempo.
+
+## Por qué “lo antes posible” no es un plan
+
+Los founders bajo presión de inversionistas o de la junta a menudo piden la fecha más rápida posible, lo cual es entendible, pero “lo antes posible” no es una decisión de alcance — es presión sin forma. La pregunta más útil es: ¿cuál es la versión más pequeña de esto que realmente cambiaría nuestra situación si se lanzara en un mes? Esa pregunta obliga a una conversación real de trade-offs en lugar de un empuje vago para ir más rápido en todo a la vez.
+
+Comprimir un timeline con honestidad suele significar recortar alcance, no recortar calidad. Quitar un rol secundario de usuario, posponer una integración deseable pero no esencial, o lanzar a veinte usuarios piloto antes que a toda la base de cuentas son formas legítimas de avanzar más rápido. Saltarse pruebas, saltarse un ambiente de staging o saltarse la demo semanal no lo son — esos recortes solo mueven el retraso más adelante, disfrazado de lista de bugs en lugar de schedule.
+
+## Preguntas que vale la pena hacer antes de aceptar un timeline
+
+- ¿Qué se entrega específicamente al final de la primera fase, descrito como resultados visibles para el usuario?
+- ¿Qué pasa con el schedule si descubrimos una integración compleja en la semana tres?
+- ¿Cómo vamos a saber, para la semana cuatro, si el timeline sigue siendo realista?
+- ¿Qué está explícitamente *fuera* de este timeline, para que el scope creep se nombre en lugar de absorberse en silencio?
+
+Un vendor que puede responder esto con claridad, con especificidad en lugar de solo tranquilizarte, es más confiable que uno que ofrece una sola fecha segura en la primera llamada.
+
+En ConaiSoft planificamos la entrega como hitos de sprint atados a software funcionando, así que tus fechas se basan en evidencia de las últimas dos semanas, no en optimismo de la primera llamada de ventas.

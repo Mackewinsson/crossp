@@ -1,54 +1,72 @@
 ---
-title: "¿Cuánto tarda un MVP (y qué significa “listo”)?"
-description: "Tiempos realistas de MVP para compradores de negocio — qué va en la v1, qué debe significar “listo” y cómo evitar fechas falsas de lanzamiento."
+title: "¿Cuánto tarda un MVP (y qué significa \"listo\")?"
+description: "Tiempos realistas de MVP para compradores de negocio — qué va en la v1, qué debe significar \"listo\" y cómo evitar fechas falsas de lanzamiento."
 excerpt: "Un MVP no es una fecha en una slide. Es una rebanada entregable frente a usuarios reales. Así defines un timeline que sobreviva al contacto con la realidad."
 publishedAt: 2026-07-21
-readingMinutes: 7
+readingMinutes: 12
 tags:
   - mvp
   - delivery
   - timeline
 ---
 
-Los compradores preguntan “¿Cuánto tarda un MVP?” porque tienen una ronda, una ventana comercial o un board meeting. La respuesta honesta: depende de qué llames MVP — y muchos equipos inflan la etiqueta hasta que significa “casi el producto completo”.
+Casi todos los founders preguntan esto con el mismo tono: mitad esperanza, mitad preparándose para una mala noticia. "¿Cuánto tarda un MVP?" Normalmente hay una fecha de ronda detrás, o una demo comercial ya agendada, o una reunión de junta donde alguien va a preguntar "bueno, ¿y el producto?". La respuesta honesta es poco satisfactoria: depende por completo de qué estés llamando MVP. Y casi todos los equipos, sin querer, inflan esa etiqueta hasta que en silencio termina significando "el producto completo, pero apurado".
 
-## Qué es un MVP (y qué no)
+Hemos estado en suficientes de estas conversaciones para notar el patrón. Alguien empieza con "solo lo básico" y para la tercera llamada de planificación, "lo básico" incluye un sistema de referidos, tres roles de usuario y un dashboard admin con exportación a PDF. Nada de eso está mal en sí — está mal llamarlo MVP.
 
-Un MVP es la **rebanada más pequeña en producción** que permite a un usuario real completar un trabajo valioso. No es:
+## Qué es un MVP en realidad
 
-- un prototipo clickeable sin backend,
-- una plataforma multi-rol completa “porque después la vamos a necesitar”,
-- ni una lista de features copiada del competidor.
+Quitando la palabra de moda, un MVP es simplemente la **rebanada más pequeña lista para producción** que le permite a un usuario real completar un trabajo valioso, de principio a fin, sin que alguien de tu equipo esté arreglando cosas por detrás en silencio.
 
-Si tu “MVP” incluye todos los edge cases, todos los reportes de admin y todas las integraciones, estás construyendo la v2 con etiqueta de MVP.
+No es:
 
-## Bandas de tiempo que suelen ser honestas
+- un prototipo clickeable sin un backend real detrás,
+- una plataforma multi-rol completa justificada con "eventualmente la vamos a necesitar",
+- ni una lista de features copiada de quien consideres tu mayor competidor.
 
-Otra vez: bandas, no garantías.
+Una prueba que usamos con clientes: si tu spec de "MVP" cubre cada edge case, cada reporte de admin y cada integración de terceros que puedas imaginar necesitar, no estás definiendo un MVP. Estás definiendo la v2 y llamándola v1 por costumbre.
 
-- **2–4 semanas:** rebanada muy estrecha (auth + un flujo core + deploy) cuando el alcance ya está claro y las integraciones son livianas.
-- **4–8 semanas:** MVP enfocado típico con admin básico, staging y listo para producción.
-- **8–12+ semanas:** entran pagos, roles complejos, IA o integraciones legacy difíciles.
+## Bandas de tiempo que suelen aguantar
 
-Cualquier “listo en 10 días” que prometa calidad de producto completo suele saltarse pruebas, handover o endurecimiento real de producción.
+Te vamos a dar bandas, no una promesa — porque una promesa de un desconocido en internet no vale nada.
 
-## Qué debe significar “listo”
+- **2–4 semanas.** Es una rebanada genuinamente angosta: auth, un flujo core, un pipeline de deploy. Solo pasa así de rápido cuando el alcance ya estaba claro desde el inicio y las integraciones son livianas o inexistentes.
+- **4–8 semanas.** El MVP enfocado más típico — flujo core más admin básico, un entorno de staging, y algo que en verdad está listo para producción y no una demo que se rompe si haces clic donde no debes.
+- **8–12+ semanas.** Pagos, varios roles de usuario con permisos distintos, funciones de IA que necesitan evaluación real, o integraciones legacy que nadie documentó del todo — cualquiera de estas te lleva aquí, a veces más allá.
 
-Acuérdalo por escrito antes de arrancar el reloj:
+Un patrón que conviene conocer: cualquier cosa anunciada como "lista en 10 días" mientras promete calidad de producción completa suele estar saltándose algo. A menudo son las pruebas. A veces es la documentación de handover. De vez en cuando son ambas, y te enteras tres meses después cuando el desarrollador original ya no responde.
 
-- Los usuarios completan el flujo principal de punta a punta.
-- El código vive en **tu** repositorio; credenciales y cloud están a **tu** nombre.
-- Existe staging; el deploy a producción está documentado y es repetible.
-- Los caminos críticos tienen pruebas automatizadas o al menos un checklist de QA claro.
-- Puedes ver demos semanales, no solo emails de status.
+### Por qué los tiempos se retrasan más de lo que los equipos admiten
 
-> Una fecha de lanzamiento sin definición de “listo” es solo un rumor con invitación de calendario.
+Rara vez es el código lo lento. Casi siempre es la latencia de decisión del lado del comprador — esperar tres días una respuesta en Slack sobre el texto de un botón, o un stakeholder que quiere ver "una opción más" antes de aprobar un flujo que ya estaba acordado. No lo decimos para culpar a nadie; decidir rápido es genuinamente difícil cuando estás manejando otras cinco cosas a la vez. Pero vale nombrarlo, porque es el verdadero asesino del cronograma que nadie pone en el Gantt.
 
-## Cómo comprimir tiempo sin destruir calidad
+## Qué debe significar "listo" en realidad
 
-- Corta alcance antes de cortar calidad.
-- Secuencia: flujo core → admin esencial → integraciones secundarias.
-- Prefiere incrementos semanales entregables frente a un gran unveil.
-- Decide rápido — el delay del comprador suele ser el verdadero asesino del schedule.
+Cualquiera sea el timeline al que llegues, acuerda esto por escrito antes de arrancar el reloj — no después de la semana seis, cuando se vuelve una negociación en lugar de un checklist:
 
-En ConaiSoft planificamos MVPs por sprints cortos con una primera demo clara. Si necesitas un timeline para tu idea, te diremos qué cabe en la primera rebanada — y qué debe esperar.
+- Los usuarios completan el flujo principal de punta a punta, no solo hacen clic en un happy path con datos falsos.
+- El código vive en **tu** repositorio. Credenciales y cuentas cloud están a **tu** nombre, no en una cuenta personal que alguien "transferirá después".
+- Existe un entorno de staging, y el proceso de deploy a producción está documentado lo suficiente para que alguien distinto de quien lo construyó pueda ejecutarlo.
+- Los caminos críticos tienen pruebas automatizadas, o al menos un checklist de QA lo bastante específico para que "funciona" signifique algo.
+- Puedes ver demos semanales de software funcionando — no solo recibir emails de status que describen un avance que no puedes verificar.
+
+> Una fecha de lanzamiento sin una definición escrita de "listo" es solo un rumor con invitación de calendario.
+
+## Cómo comprimir el timeline sin arruinar la calidad
+
+Si la fecha límite es real y no negociable — las rondas de inversión no esperan a nadie — aquí está la palanca real:
+
+- Corta alcance antes de cortar calidad. Menos features bien hechos gana a más features sostenidos con cinta adhesiva.
+- Secuencia con intención: flujo core primero, admin esencial segundo, integraciones secundarias al final. Ningún primer usuario real necesita la exportación a CSV.
+- Prefiere incrementos semanales entregables frente a un gran reveal al final. Es menos dramático, pero así detectas un supuesto equivocado en la semana dos en vez de la nueve.
+- Decide rápido de tu lado. En serio — esta es en gran parte tu responsabilidad, y mueve la aguja más que casi cualquier decisión técnica.
+
+Hemos visto equipos recortar dos o tres semanas de un cronograma solo por decidir más rápido sobre un mockup, sin tocar la construcción en sí.
+
+## Un timeline es una decisión de alcance disfrazada de calendario
+
+Esto vale la pena internalizarlo: cuando alguien pregunta "¿puedes hacerlo en cuatro semanas?", en realidad está haciendo dos preguntas a la vez, y solo una es sobre velocidad. La otra es "¿qué estás dispuesto a cortar para llegar a esa fecha?". Un partner que dice sí a cualquier timeline sin renegociar el alcance, o te va a decepcionar, o va a saltarse en silencio las partes que no vas a notar hasta que importen — las pruebas, la documentación, los edge cases que nadie mostró en la demo.
+
+La versión mejor de esa conversación suena así: "Cuatro semanas te da el flujo core y el admin básico. Pagos y el segundo rol esperan al sprint dos." No es una peor respuesta. Es una más honesta, y es la que en realidad protege tu fecha de lanzamiento en vez de solo nombrarla.
+
+En ConaiSoft planificamos MVPs por sprints cortos con una primera demo clara, normalmente dentro de la primera o segunda semana. Si necesitas un timeline real para tu idea en vez de una adivinanza, cuéntanos qué quieres lanzar — te diremos con honestidad qué cabe en la primera rebanada entregable, y qué debe esperar a la segunda ronda.

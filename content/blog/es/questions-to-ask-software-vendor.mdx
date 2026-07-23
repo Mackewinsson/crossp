@@ -1,39 +1,83 @@
 ---
 title: "12 preguntas que todo negocio debería hacer a un vendor de software"
-description: "Checklist tipo RFP para CEOs, COOs y product leaders que evalúan agencias, studios y partners de ingeniería."
-excerpt: "Olvida el marketing. Estas preguntas revelan riesgo de entrega, propiedad, capacidad de IA y costo real."
+description: "Checklist tipo RFP para CEOs, COOs y product leaders que evalúan agencias, studios y partners de ingeniería — con las respuestas que deberían hacerte salir corriendo."
+excerpt: "Olvida el marketing. Estas preguntas revelan riesgo de entrega, propiedad, capacidad de IA y costo real antes de firmar."
 publishedAt: 2026-07-14
-readingMinutes: 8
+readingMinutes: 13
 tags:
   - vendor-selection
   - rfp
   - procurement
 ---
 
-La mayoría de pitches suenan igual: ágil, con IA, talento senior. La diferencia aparece en las preguntas operativas. Usa esta lista en tu próxima llamada comercial.
+Si te sientas a suficientes pitches de vendors, empiezan a sonar iguales. Todos son ágiles. Todos son “AI-powered”, aunque eso no signifique nada concreto. Todos tienen talento senior, según la slide con las fotos. Las diferencias que importan no aparecen en el pitch: aparecen en cómo responden preguntas operativas, un poco incómodas.
+
+Así que pregúntalas. En la llamada comercial. Antes de estar tan metido en la relación que preguntar se sienta raro.
+
+Hemos estado en ambos lados — como equipo evaluado y como consejo informal cuando un founder estaba a punto de firmar algo que no debía. Las mismas doce preguntas separan partners serios del teatro caro. No hace falta disparar las doce como un interrogatorio. Tres o cuatro, bien hechas, te dicen casi todo.
 
 ## Entrega y visibilidad
 
-- ¿Qué revisaremos al final de la primera semana?
-- ¿Cómo reportan bloqueos — y quién decide?
-- ¿Podemos acceder al repo y al staging de forma continua?
+Aquí es donde la mayoría de malos engagements se delatan temprano — si escuchas.
+
+- **¿Qué podremos revisar al final de la primera semana?** No la cuarta. La primera. Si la respuesta es un kickoff deck, un resumen de research o “compartiremos avances”, empuja una vez: *¿Qué puede clickear un usuario?* Quienes entregan software de verdad describen la primera rebanada. Quienes viven en slides se ponen vagos.
+- **¿Cómo reportan bloqueos, y quién decide cuando algo se atasca?** “Lo manejamos internamente” suele significar que te enteras tarde. Quieres una ruta con nombre: quién detecta, cómo te enteras y quién decide si se corta alcance, se alarga tiempo o se cambia el enfoque.
+- **¿Podemos acceder al repositorio y al staging de forma continua desde el inicio?** Continua — no “bajo petición en hitos”. Si el acceso es complicado de arreglar, imagina lo complicada que será la salida.
+
+Un founder con el que hablamos esperó seis semanas por “la primera demo”. Cuando llegó, era un walkthrough de Figma. No era un problema de agenda. Era un problema de cultura de entrega que la pregunta de la semana uno habría cazado al instante.
 
 ## Propiedad y lock-in
 
-- ¿El 100% del código fuente es nuestro?
-- ¿Las cuentas cloud y dominios se crean a nombre de nuestra empresa?
-- ¿Qué incluye la entrega el último día del engagement?
+Pregunta esto con el mismo tono que usarías para la titularidad de una cuenta bancaria — porque la gravedad es parecida.
+
+- **¿El 100% del código fuente es nuestro, por escrito, desde el día uno?** Dilas exactamente así. Atiende a hedges sobre “frameworks”, “aceleradores” o “nuestra plataforma propietaria”.
+- **¿Las cuentas cloud y los dominios se crean a nombre de nuestra empresa, o de la suya?** Hay una respuesta incorrecta. Es fácil de arreglar antes de firmar y dolorosa después.
+- **¿Qué incluye de verdad la entrega el último día?** Credenciales, docs, un walkthrough, secretos de CI, transferencias de admins de terceros — no la palabra “todo”.
+
+> Si no puedes clonar el repo y redesplegar sin el vendor en una llamada, todavía no eres del todo dueño del producto — diga lo que diga la factura.
+
+Hemos visto “propiedad” que significaba: te dan un zip del código, pero el DNS de producción, la cuenta de Stripe y el pipeline de CI vivían en logins personales de la agencia. Eso no es propiedad. Es un secuestro con branding amable.
 
 ## Calidad e IA
 
-- ¿Pruebas automatizadas y CI/CD van incluidos por defecto?
-- Para IA: ¿cómo manejan privacidad de datos y evaluación?
-- ¿Quién diseña la arquitectura — y qué experiencia tiene?
+- **¿Pruebas automatizadas y CI/CD van incluidos por defecto, o son un ítem aparte?** Eso te dice qué compra realmente el precio base. La calidad opcional es cómo los proyectos “baratos” se vuelven mantenimiento caro.
+- **Para IA: ¿cómo manejan privacidad de datos y cómo evalúan si la feature funciona?** “Usa GPT” no responde ninguna de las dos mitades. Quieres oír límites de datos, logs, revisión humana y cómo miden calidad antes de que sufran los usuarios.
+- **¿Quién diseña la arquitectura, en concreto — y qué track record tiene con algo similar?** Pide hablar con esa persona. Si ventas no puede presentarte a quien diseñará el sistema, el seniority del pitch puede no ser el seniority de la sala.
 
 ## Modelo comercial
 
-- ¿El precio es por sprints o un presupuesto fijo único?
-- ¿Cómo se aprueban y cobran los cambios de alcance?
-- ¿Qué pasa si pausamos después de un MVP?
+- **¿El precio es por sprints, por fases, o un único presupuesto fijo?** Cada uno puede ser legítimo. Quieres saber qué modelo de riesgo estás firmando.
+- **¿Cómo se aprueban y cobran los cambios de alcance una vez arrancados?** Aquí es donde lo “flexible” se demuestra o revela precio fijo disfrazado.
+- **¿Qué pasa si queremos pausar después del MVP?** ¿Es un outcome normal y soportado — o el contrato castiga aprender? A menudo hace falta pausar para vender, levantar ronda o repensar. Los partners que tratan eso como fracaso optimizan su revenue, no tu aprendizaje.
 
-Si las respuestas son vagas, tómalo como señal. ConaiSoft se basa en sprints claros, arquitectura senior y propiedad que se queda contigo — haznos estas mismas preguntas en una llamada de 15 minutos.
+## Cómo usar esto en una llamada real sin parecer procurement de cosplay
+
+No leas la lista del portapapeles. Eso pone rígidos a todos. Mejor:
+
+1. Elige tres preguntas que coincidan con tu mayor miedo (propiedad, velocidad o riesgo de IA).
+2. Hazlas en conversación y quédate en silencio lo bastante para una respuesta real.
+3. Anota especificidad frente a evasivas. Los buenos partners responden claro porque ya lo han oído y no les asusta la respuesta.
+4. Guarda el resto para revisar la propuesta o una segunda llamada.
+
+También escucha qué te preguntan *ellos*. Los partners fuertes desafían alcance difuso. Los débiles aceptan cada feature que inventas porque el acuerdo cierra deals.
+
+## Respuestas que deberían hacerte frenar
+
+- Fechas de lanzamiento garantizadas sin preguntas sobre integraciones o calidad de datos
+- “Tendrás acceso al final”
+- “Nuestra plataforma te hace más rápido” sin explicar la salida
+- Precio fijo instantáneo tras quince minutos para un producto multi-sistema
+- Solo account managers disponibles — nunca la gente que construirá
+
+Ninguna sola prueba que un vendor sea malo. Los patrones, casi siempre sí.
+
+## Una secuencia corta que funciona mejor que un concurso de belleza
+
+1. Llamada exploratoria breve → encaje y rango.
+2. Haz un subconjunto de estas doce preguntas.
+3. Discovery de pago opcional si el riesgo es alto.
+4. Primer sprint con software usable que puedas rechazar o continuar.
+
+No estás comprando un logo. Estás comprando un camino hacia un producto que puedas operar cuando el vendor esté offline.
+
+En ConaiSoft trabajamos con sprints claros, arquitectura senior que no se esconde detrás de ventas, y propiedad que se queda contigo desde el primer commit. Haznos estas mismas doce preguntas en una llamada de quince minutos — preferimos eso a que las descubras seis semanas tarde.
