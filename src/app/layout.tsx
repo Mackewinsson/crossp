@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { Providers } from "@/components/Providers";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { LocaleProvider } from "@/components/LocaleProvider";
 
@@ -86,14 +87,14 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <TranslationProvider>
-          <LocaleProvider>
-            {children}
-          </LocaleProvider>
-        </TranslationProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Providers>
+          <TranslationProvider>
+            <LocaleProvider>
+              {children}
+            </LocaleProvider>
+          </TranslationProvider>
+        </Providers>
       </body>
     </html>
   );

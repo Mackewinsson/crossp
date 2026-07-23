@@ -4,23 +4,31 @@ import { useState } from 'react';
 
 interface LeadEmailFormProps {
   className?: string;
+  source?: string;
+  language?: 'es' | 'en';
+  /** @deprecated Prefer /api/leads. Kept for temporary backwards compatibility. */
   webhookUrl?: string;
 }
 
-export default function LeadEmailForm({ className = '', webhookUrl }: LeadEmailFormProps) {
+export default function LeadEmailForm({
+  className = '',
+  source = 'website',
+  language = 'es',
+  webhookUrl,
+}: LeadEmailFormProps) {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  const validateEmail = (email: string): boolean => {
+  const validateEmail = (value: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return emailRegex.test(value);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!nombre.trim()) {
       setMessage({ type: 'error', text: 'Por favor ingresa tu nombre.' });
       return;
@@ -40,45 +48,38 @@ export default function LeadEmailForm({ className = '', webhookUrl }: LeadEmailF
     setMessage(null);
 
     try {
-      const finalWebhookUrl = webhookUrl || process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
-      
-      if (!finalWebhookUrl) {
-        throw new Error('Webhook URL no configurada');
-      }
+      const endpoint = webhookUrl || '/api/leads';
+      const payload = webhookUrl
+        ? { nombre: nombre.trim(), email: email.trim() }
+        : {
+            name: nombre.trim(),
+            email: email.trim(),
+            source,
+            language,
+          };
 
-      console.log('🌐 Sending to webhook:', finalWebhookUrl);
-      console.log('📦 Payload:', { nombre: nombre.trim(), email: email.trim() });
-
-      const response = await fetch(finalWebhookUrl, {
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'User-Agent': 'ConaiSoft-Webhook/1.0',
+          Accept: 'application/json',
         },
-        body: JSON.stringify({ 
-          nombre: nombre.trim(),
-          email: email.trim() 
-        }),
+        body: JSON.stringify(payload),
       });
-
-      console.log('📡 Response status:', response.status);
-      console.log('📡 Response headers:', Object.fromEntries(response.headers.entries()));
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.error('❌ Response error:', errorText);
-        throw new Error(`Error ${response.status}: ${response.statusText}`);
+        throw new Error(errorText || `Error ${response.status}`);
       }
 
       setMessage({ type: 'success', text: '¡Gracias! Te contactaremos pronto.' });
       setNombre('');
       setEmail('');
     } catch (error) {
-      console.error('Error submitting email:', error);
-      setMessage({ 
-        type: 'error', 
-        text: 'Hubo un error al enviar tu correo. Por favor intenta nuevamente.' 
+      console.error('Error submitting lead:', error);
+      setMessage({
+        type: 'error',
+        text: 'Hubo un error al enviar tu correo. Por favor intenta nuevamente.',
       });
     } finally {
       setIsSubmitting(false);
@@ -132,11 +133,13 @@ export default function LeadEmailForm({ className = '', webhookUrl }: LeadEmailF
             </div>
 
             {message && (
-              <div className={`p-4 rounded-xl text-sm ${
-                message.type === 'success' 
-                  ? 'bg-green-50 text-green-800 border border-green-200' 
-                  : 'bg-red-50 text-red-800 border border-red-200'
-              }`}>
+              <div
+                className={`p-4 rounded-xl text-sm ${
+                  message.type === 'success'
+                    ? 'bg-green-50 text-green-800 border border-green-200'
+                    : 'bg-red-50 text-red-800 border border-red-200'
+                }`}
+              >
                 {message.text}
               </div>
             )}
@@ -148,9 +151,25 @@ export default function LeadEmailForm({ className = '', webhookUrl }: LeadEmailF
             >
               {isSubmitting ? (
                 <>
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
                   </svg>
                   Enviando...
                 </>
@@ -163,4 +182,4 @@ export default function LeadEmailForm({ className = '', webhookUrl }: LeadEmailF
       </div>
     </section>
   );
-} 
+}

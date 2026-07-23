@@ -326,7 +326,7 @@ export default function CreaTuSoftwarePage() {
       </section>
 
       {/* Email Capture Form */}
-      <LeadEmailForm />
+      <LeadEmailForm source="crea-tu-software" />
     </div>
     </>
   );
