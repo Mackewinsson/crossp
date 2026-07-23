@@ -17,6 +17,30 @@
 - Freelancer risk checklist
 - Questions to ask a software vendor
 - When no-code is no longer enough
+- Custom software cost in 2026
+- How long an MVP takes (definition of done)
+- How to choose a software development partner
+- Whether a software estimate costs money
+- How to build an MVP for a startup
+- Dedicated development team explained
+- Staff augmentation vs software agency
+- Migrate from no-code to custom software
+- AI automation for small businesses
+- Add AI to existing software
+- Reduce software development costs
+- Build vs buy software
+- When to rebuild legacy software
+- Validate a software idea before building
+- Software development contract checklist
+- Who owns the code when hiring
+- Fixed price vs time and materials
+- Manage an outsourced development team
+- Nearshore software development
+- Custom CRM development cost
+- How long custom software takes
+- Software agency red flags
+- Software requirements document guide
+- Is a discovery phase worth it
 
 ## What we build
 - Full-stack web & SaaS (Next.js, React, TypeScript)

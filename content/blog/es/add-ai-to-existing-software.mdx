@@ -1,0 +1,38 @@
+---
+title: "Cómo agregar IA a software existente sin reescribirlo todo"
+description: "Enfoque práctico para negocios que quieren IA sobre sistemas actuales — datos, riesgo y entrega incremental."
+excerpt: "Rara vez necesitas un rebuild greenfield para sacar valor de IA. Añade inteligencia al flujo de más apalancamiento."
+publishedAt: 2026-07-26
+readingMinutes: 7
+tags:
+  - ai
+  - legacy
+  - product
+---
+“Necesitamos IA” suele convertirse en una propuesta de reescritura. Suele ser el primer paso equivocado. La mayoría obtiene mejor ROI agregando IA a un flujo doloroso dentro del software que ya usan.
+
+## Elige el flujo, no el modelo
+
+Buenos candidatos:
+- búsqueda sobre documentos internos,
+- generación de borradores desde formularios estructurados,
+- clasificación y enrutado de tickets o leads,
+- extracción de PDFs y emails hacia tu sistema de registro.
+
+Malos primeros candidatos:
+- agentes totalmente autónomos sin revisión humana en decisiones de alto riesgo,
+- “chat with everything” sin diseño de permisos.
+
+## Prerrequisitos técnicos (en lenguaje de negocio)
+
+- Acceso a datos suficientemente limpio para el caso de uso.
+- Dueño claro de dónde viven prompts, logs y outputs.
+- Un entorno de staging para evaluar calidad antes de producción.
+
+## Patrón de entrega incremental
+
+1. Feature con asistencia manual (humano revisa la salida de IA).
+2. Mide calidad y tiempo ahorrado.
+3. Automatiza solo los pasos que demuestren ser confiables.
+
+En ConaiSoft agregamos capacidades de IA sobre arquitectura de producto real en sprints semanales — valor sin un rewrite riesgoso.

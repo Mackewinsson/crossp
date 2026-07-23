@@ -1,0 +1,33 @@
+---
+title: "Cuándo rehacer software legacy (y cuándo dejarlo en paz)"
+description: "Señales de que un sistema legacy necesita modernización — y alternativas más seguras que un rewrite completo."
+excerpt: "Los rewrites totales fallan a menudo. Moderniza primero las partes riesgosas y conserva lo que aún genera dinero."
+publishedAt: 2026-07-28
+readingMinutes: 7
+tags:
+  - legacy
+  - rebuild
+  - architecture
+---
+El software legacy duele, y el instinto es “reconstruir”. Los rewrites totales fallan a menudo porque intentan recrear años de edge cases en un solo proyecto.
+
+## Reconstruye (o reemplaza módulos) cuando…
+
+- El riesgo de seguridad o compliance es inaceptable.
+- Pocas personas entienden el sistema (bus factor).
+- Las features nuevas tardan meses por la arquitectura.
+- El lock-in del vendor o la tecnología muerta bloquea hiring y mantenimiento.
+
+## No reescribas cuando…
+
+- El dolor es solo gusto de UI, no resultados de negocio.
+- No hay documentación de los flujos reales.
+- Liderazgo quiere un “stack moderno” sin dueño de la migración.
+
+## Caminos de modernización más seguros
+
+- Patrón strangler: módulos nuevos alrededor del core viejo.
+- Reemplaza primero el flujo de mayor riesgo.
+- Agrega APIs y pruebas antes de rediseños cosméticos.
+
+En ConaiSoft abordamos la modernización legacy como product engineering incremental — progreso semanal, menos riesgo y propiedad retenida.
