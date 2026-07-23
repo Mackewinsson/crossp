@@ -1,17 +1,17 @@
 module.exports = {
   company: {
-    name: "CrossP",
-    tagline: "Software & AI Consultancy",
-    description: "We transform businesses through innovative software solutions and AI integration. Our expertise spans custom development, AI automation, and digital transformation.",
+    name: "ConaiSoft",
+    tagline: "AI Software Engine",
+    description: "We deliver enterprise software products and AI integration fast and reliably. We build high-performance web platforms, mobile apps, and autonomous AI systems.",
     mission: "To empower businesses with cutting-edge technology solutions that drive growth and efficiency.",
-    vision: "To be the leading partner for companies seeking digital transformation and AI innovation.",
+    vision: "To be the leading software engineering partner for high-growth companies seeking AI innovation.",
   },
   contact: {
-    email: "hello@crossp.com",
+    email: "hello@conaisoft.com",
     phone: "+1 (555) 123-4567",
     address: "San Francisco, CA",
-    linkedin: "https://linkedin.com/company/crossp",
-    twitter: "https://twitter.com/crossp_ai",
+    linkedin: "https://linkedin.com/company/conaisoft",
+    twitter: "https://twitter.com/conaisoft",
   },
   stats: {
     projects: "150+",
@@ -29,7 +29,7 @@ module.exports = {
     },
   },
   features: {
-    title: "Why Choose CrossP",
+    title: "Why Choose ConaiSoft",
     subtitle: "We combine technical expertise with business acumen to deliver solutions that drive real results.",
   },
   cta: {

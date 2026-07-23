@@ -17,7 +17,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({ project, isOpen,
     <Modal isOpen={isOpen} onClose={onClose} title={project.title}>
       <div className="space-y-6">
         {/* Project Image */}
-        <div className="relative h-64 w-full rounded-lg overflow-hidden">
+        <div className="relative h-64 w-full rounded-xl overflow-hidden border border-slate-800">
           <img
             src={project.portfolioImage}
             alt={project.title}
@@ -27,33 +27,33 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({ project, isOpen,
         
         {/* Project Details */}
         <div className="space-y-4">
-          {/* Tags */}
+          {/* Badges */}
           <div className="flex flex-wrap gap-2">
-            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-cyan-950/80 text-cyan-300 border border-cyan-500/30 rounded-full text-xs font-mono font-semibold">
               {project.category}
             </span>
-            <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium">
               {project.clientName}
             </span>
           </div>
           
           {/* Technologies */}
           <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Technologies</h4>
-            <p className="text-gray-600">{project.meta}</p>
+            <h4 className="text-xs font-mono text-cyan-400 font-bold uppercase mb-1">Tecnologías / Stack</h4>
+            <p className="text-sm text-slate-300">{project.meta}</p>
           </div>
           
           {/* Project Overview */}
           <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Project Overview</h4>
-            <p className="text-gray-600 leading-relaxed">{project.projectDescriptions}</p>
+            <h4 className="text-xs font-mono text-cyan-400 font-bold uppercase mb-1">Resumen del Proyecto</h4>
+            <p className="text-sm text-slate-300 leading-relaxed">{project.projectDescriptions}</p>
           </div>
           
           {/* Date */}
           {project.date && (
-            <div className="pt-2 border-t border-gray-200">
-              <p className="text-sm text-gray-500">
-                Completed: {project.date}
+            <div className="pt-3 border-t border-slate-800">
+              <p className="text-xs text-slate-400 font-mono">
+                Fecha de Despliegue: {project.date}
               </p>
             </div>
           )}
@@ -61,4 +61,4 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({ project, isOpen,
       </div>
     </Modal>
   );
-}; 
+};

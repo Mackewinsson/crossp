@@ -14,93 +14,107 @@ export const ServicesSection: React.FC = () => {
       description: t('services.aiIntegration.description'),
       icon: "🤖",
       features: [
-        'Custom AI model development and training',
-        'API integration with existing systems',
-        'Workflow automation and optimization',
-        'Real-time data processing and analytics',
-        'Natural language processing implementation',
+        t('services.aiIntegration.features.0'),
+        t('services.aiIntegration.features.1'),
+        t('services.aiIntegration.features.2'),
+        t('services.aiIntegration.features.3'),
+        t('services.aiIntegration.features.4'),
       ],
     },
     {
       id: "custom-software",
       title: t('services.customSoftware.title'),
       description: t('services.customSoftware.description'),
-      icon: "💻",
+      icon: "⚡",
       features: [
-        'Full-stack web applications',
-        'Mobile app development', 
-        'API design and integration',
-        'Legacy system modernization'
+        t('services.customSoftware.features.0'),
+        t('services.customSoftware.features.1'),
+        t('services.customSoftware.features.2'),
+        t('services.customSoftware.features.3'),
       ],
     },
     {
-      id: "cloud-migration",
-      title: t('services.cloudMigration.title'),
-      description: t('services.cloudMigration.description'),
+      id: "mobile-apps",
+      title: t('services.mobileApps.title'),
+      description: t('services.mobileApps.description'),
+      icon: "📱",
+      features: [
+        t('services.mobileApps.features.0'),
+        t('services.mobileApps.features.1'),
+        t('services.mobileApps.features.2'),
+        t('services.mobileApps.features.3'),
+      ],
+    },
+    {
+      id: "cloud-automation",
+      title: t('services.cloudAutomation.title'),
+      description: t('services.cloudAutomation.description'),
       icon: "☁️",
       features: [
-        'Cloud strategy and planning',
-        'Infrastructure as Code',
-        'CI/CD pipeline setup',
-        'Performance optimization'
-      ],
-    },
-    {
-      id: "digital-transformation",
-      title: t('services.digitalTransformation.title'),
-      description: t('services.digitalTransformation.description'),
-      icon: "🚀",
-      features: [
-        'Process automation',
-        'Digital workflow optimization',
-        'Change management',
-        'Technology training and adoption'
+        t('services.cloudAutomation.features.0'),
+        t('services.cloudAutomation.features.1'),
+        t('services.cloudAutomation.features.2'),
+        t('services.cloudAutomation.features.3'),
       ],
     },
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-32 bg-white" id="services">
+    <section className="py-20 lg:py-32 bg-[#080b12] relative overflow-hidden border-b border-slate-800/80" id="services">
       <Container>
-        <div className="text-center mb-12 sm:mb-16 px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+        {/* Header */}
+        <div className="text-center max-w-4xl mx-auto px-4 mb-16">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+            <span>🛠️</span>
+            <span className="font-semibold tracking-wider uppercase">{t('services.badge')}</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6">
             {t('services.title')}
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto">
             {t('services.subtitle')}
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-6">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 sm:p-8 border border-gray-100 hover:border-blue-200 group"
+              className="glass-panel-interactive rounded-2xl p-6 sm:p-8 flex flex-col justify-between group"
             >
-              <div className="text-3xl sm:text-4xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                {service.icon}
+              <div>
+                <div className="flex items-center space-x-4 mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                    {service.title}
+                  </h3>
+                </div>
+                
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  {service.description}
+                </p>
               </div>
-              
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                {service.description}
-              </p>
-              
-              <ul className="space-y-2">
-                {service.features.map((feature, index) => (
-                  <li key={index} className="flex items-start text-sm text-gray-600">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0 mt-2"></span>
-                    <span className="leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+
+              <div className="pt-4 border-t border-slate-800/80">
+                <div className="text-xs font-mono text-cyan-400 mb-3 font-semibold uppercase tracking-wider">CAPACIDADES ENTREGADAS</div>
+                <ul className="space-y-2">
+                  {service.features.map((feature, index) => (
+                    <li key={index} className="flex items-start text-xs sm:text-sm text-slate-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-2.5 flex-shrink-0 mt-2"></span>
+                      <span className="leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
       </Container>
     </section>
   );
-}; 
+};

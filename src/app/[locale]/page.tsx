@@ -1,8 +1,11 @@
 import { Header } from '@/components/layout/Header';
 import { HeroSection } from '@/components/sections/HeroSection';
-import { PortfolioSection } from '@/components/sections/PortfolioSection';
+import { PainPointsSection } from '@/components/sections/PainPointsSection';
+import { VelocityCalculatorSection } from '@/components/sections/VelocityCalculatorSection';
 import { ServicesSection } from '@/components/sections/ServicesSection';
+import { DeliveryProcessSection } from '@/components/sections/DeliveryProcessSection';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
+import { PortfolioSection } from '@/components/sections/PortfolioSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { CTASection } from '@/components/sections/CTASection';
 
@@ -13,28 +16,25 @@ interface LocalePageProps {
 }
 
 export default async function LocalePage({ params }: LocalePageProps) {
-  // Await params to satisfy Next.js 15 requirements
   await params;
   
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#07090e] text-slate-100">
       <Header />
       <main>
         <HeroSection />
-        <div id="portfolio">
-          <PortfolioSection />
-        </div>
-        <div id="services">
-          <ServicesSection />
-        </div>
-        <div id="features">
-          <FeaturesSection />
-        </div>
-        <div id="testimonials">
-          <TestimonialsSection />
-        </div>
+        <PainPointsSection />
+        <VelocityCalculatorSection />
+        <ServicesSection />
+        <DeliveryProcessSection />
+        <FeaturesSection />
+        <PortfolioSection />
+        <TestimonialsSection />
         <CTASection />
       </main>
+      <footer className="py-8 bg-[#05070a] border-t border-slate-800/80 text-center text-xs text-slate-500 font-mono">
+        <p>© 2026 ConaiSoft AI Engine. Enterprise AI Software Delivery. All rights reserved.</p>
+      </footer>
     </div>
   );
-} 
+}
