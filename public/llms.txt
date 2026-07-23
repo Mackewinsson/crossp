@@ -1,0 +1,27 @@
+# ConaiSoft
+
+> Software & AI engineering partner. We help founders and product teams ship web platforms, mobile apps, and AI features with senior architecture, weekly deliverables, and 100% code ownership.
+
+## Site
+- Home (ES): https://conaisoft.com/es
+- Home (EN): https://conaisoft.com/en
+- Custom software: https://conaisoft.com/crea-tu-software
+- AI automation workshop: https://conaisoft.com/automatiza-ia
+- Book a call: https://calendly.com/mackewinsson/exploring-call
+
+## What we build
+- Full-stack web & SaaS (Next.js, React, TypeScript)
+- AI agents, RAG pipelines, and document intelligence
+- React Native mobile apps (iOS / Android)
+- Cloud infrastructure & DevOps (AWS, GCP, Vercel)
+
+## How we work
+- Discovery & architecture first
+- Weekly sprint deliverables with working software
+- Testing, CI/CD, and documentation included
+- Full repository and credential handover — no lock-in
+
+## Contact
+- Prefer a short discovery call over cold email
+- Calendly: https://calendly.com/mackewinsson/exploring-call
+- Languages: Spanish and English

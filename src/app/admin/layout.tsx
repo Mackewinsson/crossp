@@ -1,8 +1,23 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+import type { Metadata } from 'next';
 import { isClerkEnabled } from '@/lib/env';
 import { isAdminUser } from '@/lib/admin-auth';
 import { AdminUserButton } from '@/components/admin/AdminUserButton';
+
+export const metadata: Metadata = {
+  title: 'Admin',
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
+};
 
 const NAV = [
   { href: '/admin', label: 'Dashboard' },

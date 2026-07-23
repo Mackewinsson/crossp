@@ -5,6 +5,15 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { LocaleProvider } from "@/components/LocaleProvider";
+import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
+import {
+  DEFAULT_DESCRIPTION,
+  SEO_KEYWORDS,
+  SITE_NAME,
+  SITE_TAGLINE,
+  absoluteUrl,
+  getSiteUrl,
+} from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,15 +32,73 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "ConaiSoft — Software & AI Engineering Partner",
-  description: "Ship web platforms, mobile apps, and AI features with senior architecture, weekly deliverables, and 100% code ownership. Book a discovery call.",
+  metadataBase: new URL(getSiteUrl()),
+  title: {
+    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: SEO_KEYWORDS,
+  authors: [{ name: SITE_NAME, url: getSiteUrl() }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: 'technology',
+  alternates: {
+    canonical: '/',
+    languages: {
+      es: '/es',
+      en: '/en',
+      'x-default': '/es',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    alternateLocale: ['en_US'],
+    url: getSiteUrl(),
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: DEFAULT_DESCRIPTION,
+    images: [
+      {
+        url: absoluteUrl('/og.png'),
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: DEFAULT_DESCRIPTION,
+    images: [absoluteUrl('/og.png')],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "ConaiSoft",
+    title: SITE_NAME,
   },
   formatDetection: {
     telephone: false,
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
 };
 
@@ -41,8 +108,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html>
+    <html lang="es">
       <head>
+        <SiteJsonLd />
         {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
