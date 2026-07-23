@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ConaiSoft - AI & Software Consultancy - Transform Your Business",
-  description: "Expert AI and software consulting services to accelerate your digital transformation. Custom solutions, machine learning, and cloud migration expertise.",
+  title: "ConaiSoft — Software & AI Engineering Partner",
+  description: "Ship web platforms, mobile apps, and AI features with senior architecture, weekly deliverables, and 100% code ownership. Book a discovery call.",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   themeColor: "#2563eb",
   appleWebApp: {

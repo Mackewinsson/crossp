@@ -99,11 +99,11 @@ export const HeroSection: React.FC = () => {
                 <div className="text-xs text-slate-400 mt-1 font-medium">{t('hero.metrics.deliveryLabel')}</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">99.9%</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">{t('hero.metrics.uptime')}</div>
                 <div className="text-xs text-slate-400 mt-1 font-medium">{t('hero.metrics.uptimeLabel')}</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">100%</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">{t('hero.metrics.codeOwnership')}</div>
                 <div className="text-xs text-slate-400 mt-1 font-medium">{t('hero.metrics.codeOwnershipLabel')}</div>
               </div>
             </div>

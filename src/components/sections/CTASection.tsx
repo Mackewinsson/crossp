@@ -18,7 +18,7 @@ export const CTASection: React.FC = () => {
           
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono mb-6">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span className="font-semibold tracking-wider uppercase">GARANTÍA DE VELOCIDAD Y CALIDAD</span>
+            <span className="font-semibold tracking-wider uppercase">{t('cta.badge')}</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
