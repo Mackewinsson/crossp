@@ -7,6 +7,7 @@ export const es = {
     process: 'Cómo Trabajamos',
     portfolio: 'Proyectos',
     testimonials: 'Clientes',
+    blog: 'Blog',
     getStarted: 'Agendar Llamada',
     status: 'Ingeniería senior • Entregas semanales • Propiedad total del código',
   },

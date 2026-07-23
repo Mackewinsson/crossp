@@ -7,11 +7,16 @@ import { useTranslations } from '@/hooks/useTranslations';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { header } = useTranslations();
+  const { header, locale } = useTranslations();
+  const homeBase = `/${locale === 'en' ? 'en' : 'es'}`;
+
+  const navLinkClass =
+    'text-slate-300 hover:text-cyan-400 transition-colors';
+  const mobileNavClass =
+    'text-slate-300 hover:text-cyan-400 py-2.5 px-3 rounded-lg hover:bg-slate-900 text-sm font-medium transition-colors';
 
   return (
     <header className="sticky top-0 z-50 bg-[#07090e]/85 backdrop-blur-xl border-b border-white/10 transition-all duration-200">
-      {/* Top operational status banner */}
       <div className="bg-gradient-to-r from-blue-950/80 via-slate-900/90 to-blue-950/80 border-b border-blue-500/20 px-3 py-1.5 text-center text-[10px] leading-snug sm:text-xs font-mono text-cyan-300 flex items-center justify-center gap-2">
         <span className="relative flex h-2 w-2 flex-shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -22,8 +27,7 @@ export const Header: React.FC = () => {
 
       <Container>
         <div className="flex items-center justify-between py-3.5">
-          {/* Logo */}
-          <a href="#" className="flex min-w-0 items-center space-x-2.5 group">
+          <a href={homeBase} className="flex min-w-0 items-center space-x-2.5 group">
             <div className="w-9 h-9 flex-shrink-0 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-indigo-600 p-0.5 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
               <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
                 <span className="text-cyan-400 font-extrabold text-lg tracking-tighter">C</span>
@@ -33,33 +37,33 @@ export const Header: React.FC = () => {
               <span className="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center">
                 Conai<span className="text-cyan-400">Soft</span>
               </span>
-              <span className="text-[10px] font-mono text-slate-400 tracking-wider uppercase -mt-1 truncate">AI Software Engine</span>
+              <span className="text-[10px] font-mono text-slate-400 tracking-wider uppercase -mt-1 truncate">
+                AI Software Engine
+              </span>
             </div>
           </a>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-7 text-sm font-medium">
-            <a href="#pain-points" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href={`${homeBase}#pain-points`} className={navLinkClass}>
               {header.painPoints()}
             </a>
-            <a href="#velocity" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href={`${homeBase}#velocity`} className={navLinkClass}>
               {header.velocity()}
             </a>
-            <a href="#services" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href={`${homeBase}#services`} className={navLinkClass}>
               {header.services()}
             </a>
-            <a href="#process" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href={`${homeBase}#process`} className={navLinkClass}>
               {header.process()}
             </a>
-            <a href="#portfolio" className="text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href={`${homeBase}#portfolio`} className={navLinkClass}>
               {header.portfolio()}
             </a>
-            <a href="#testimonials" className="text-slate-300 hover:text-cyan-400 transition-colors">
-              {header.testimonials()}
+            <a href={`${homeBase}/blog`} className={navLinkClass}>
+              {header.blog()}
             </a>
           </nav>
 
-          {/* Action buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <LanguageSwitcher />
             <a
@@ -72,7 +76,6 @@ export const Header: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile menu button */}
           <div className="flex items-center space-x-2 sm:space-x-3 lg:hidden">
             <LanguageSwitcher />
             <button
@@ -92,51 +95,26 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t border-slate-800 bg-[#07090e]/95 backdrop-blur-xl">
             <nav className="flex flex-col space-y-3 px-2">
-              <a
-                href="#pain-points"
-                className="text-slate-300 hover:text-cyan-400 py-2.5 px-3 rounded-lg hover:bg-slate-900 text-sm font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href={`${homeBase}#pain-points`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
                 {header.painPoints()}
               </a>
-              <a
-                href="#velocity"
-                className="text-slate-300 hover:text-cyan-400 py-2.5 px-3 rounded-lg hover:bg-slate-900 text-sm font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href={`${homeBase}#velocity`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
                 {header.velocity()}
               </a>
-              <a
-                href="#services"
-                className="text-slate-300 hover:text-cyan-400 py-2.5 px-3 rounded-lg hover:bg-slate-900 text-sm font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href={`${homeBase}#services`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
                 {header.services()}
               </a>
-              <a
-                href="#process"
-                className="text-slate-300 hover:text-cyan-400 py-2.5 px-3 rounded-lg hover:bg-slate-900 text-sm font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href={`${homeBase}#process`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
                 {header.process()}
               </a>
-              <a
-                href="#portfolio"
-                className="text-slate-300 hover:text-cyan-400 py-2.5 px-3 rounded-lg hover:bg-slate-900 text-sm font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href={`${homeBase}#portfolio`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
                 {header.portfolio()}
               </a>
-              <a
-                href="#testimonials"
-                className="text-slate-300 hover:text-cyan-400 py-2.5 px-3 rounded-lg hover:bg-slate-900 text-sm font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {header.testimonials()}
+              <a href={`${homeBase}/blog`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
+                {header.blog()}
               </a>
               <div className="pt-2">
                 <a

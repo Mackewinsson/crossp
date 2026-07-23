@@ -7,6 +7,7 @@ export const en = {
     process: 'How We Work',
     portfolio: 'Work',
     testimonials: 'Clients',
+    blog: 'Blog',
     getStarted: 'Book a Call',
     status: 'Senior engineering • Weekly deliverables • Full code ownership',
   },

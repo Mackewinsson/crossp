@@ -10,6 +10,7 @@ export const useTranslations = () => {
     process: () => t('header.process'),
     portfolio: () => t('header.portfolio'),
     testimonials: () => t('header.testimonials'),
+    blog: () => t('header.blog'),
     getStarted: () => t('header.getStarted'),
     status: () => t('header.status'),
   };

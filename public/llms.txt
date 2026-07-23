@@ -5,9 +5,18 @@
 ## Site
 - Home (ES): https://conaisoft.com/es
 - Home (EN): https://conaisoft.com/en
+- Blog (ES): https://conaisoft.com/es/blog
+- Blog (EN): https://conaisoft.com/en/blog
 - Custom software: https://conaisoft.com/crea-tu-software
 - AI automation workshop: https://conaisoft.com/automatiza-ia
 - Book a call: https://calendly.com/mackewinsson/exploring-call
+
+## Blog topics (for buyers who hire development)
+- Agency delays vs weekly sprint partners
+- Hire in-house vs outsource
+- Freelancer risk checklist
+- Questions to ask a software vendor
+- When no-code is no longer enough
 
 ## What we build
 - Full-stack web & SaaS (Next.js, React, TypeScript)
