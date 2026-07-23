@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { portfolioData } from '@/data/portfolio';
 import { Container } from '@/components/ui/Container';
 import { PortfolioModal } from '@/components/ui/PortfolioModal';
@@ -40,11 +41,12 @@ export const PortfolioSection: React.FC = () => {
             >
               {/* Project Image */}
               <div className="relative h-48 w-full overflow-hidden bg-slate-900 border-b border-slate-800">
-                <img
+                <Image
                   src={project.portfolioImage}
                   alt={project.title}
-                  className="w-full h-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               

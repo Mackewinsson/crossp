@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { Modal } from './Modal';
 import { PortfolioProject } from '@/data/portfolio';
 
@@ -17,10 +18,12 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({ project, isOpen,
     <Modal isOpen={isOpen} onClose={onClose} title={project.title}>
       <div className="space-y-6">
         <div className="relative h-64 w-full overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface-muted)]">
-          <img
+          <Image
             src={project.portfolioImage}
             alt={project.title}
-            className="h-full w-full object-cover object-left-top"
+            fill
+            sizes="(max-width: 768px) 100vw, 896px"
+            className="object-cover object-left-top"
           />
         </div>
 
