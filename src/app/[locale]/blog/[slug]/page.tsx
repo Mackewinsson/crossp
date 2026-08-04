@@ -11,10 +11,18 @@ import {
   getPostBySlug,
   normalizeBlogLocale,
 } from '@/lib/blog';
+import { SEO_LANDINGS } from '@/data/seo-landings';
 import { absoluteUrl, getSiteUrl, SITE_NAME } from '@/lib/seo';
 
 type BlogPostPageProps = {
   params: Promise<{ locale: string; slug: string }>;
+};
+
+const BLOG_TO_LANDING: Record<string, (typeof SEO_LANDINGS)[number]['id']> = {
+  'dedicated-development-team-explained': 'dedicated-team',
+  'when-to-rebuild-legacy-software': 'legacy-rebuild',
+  'add-ai-to-existing-software': 'add-ai',
+  'manage-outsourced-development-team': 'dedicated-team',
 };
 
 export function generateStaticParams() {
@@ -66,6 +74,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const path = `/${locale}/blog/${post.slug}`;
   const siteUrl = getSiteUrl();
   const faqItems = extractFaqFromMdx(post.content, post.excerpt);
+  const relatedLandingId = BLOG_TO_LANDING[post.slug];
+  const relatedLanding = relatedLandingId
+    ? SEO_LANDINGS.find((item) => item.id === relatedLandingId)
+    : undefined;
 
   const articleLd = {
     '@context': 'https://schema.org',
@@ -151,7 +163,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <BlogContent source={post.content} />
           </div>
 
-          <div className="mt-12 pt-8 border-t border-slate-800">
+          <div className="mt-12 pt-8 border-t border-slate-800 space-y-6">
+            {relatedLanding ? (
+              <div className="rounded-2xl border border-slate-700/80 bg-slate-900/50 p-6">
+                <p className="text-xs font-mono uppercase tracking-wider text-cyan-400/90 mb-2">
+                  {locale === 'en' ? 'Related service' : 'Servicio relacionado'}
+                </p>
+                <Link
+                  href={`/${locale}/${relatedLanding.slugs[locale]}`}
+                  className="text-lg font-semibold text-white hover:text-cyan-400 transition-colors"
+                >
+                  {relatedLanding.serviceName[locale]} →
+                </Link>
+                <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+                  {relatedLanding.content[locale].intro.slice(0, 140)}…
+                </p>
+              </div>
+            ) : null}
+
             <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-blue-950/40 via-slate-900/80 to-cyan-950/30 p-6 sm:p-8">
               <h2 className="text-xl font-bold text-white mb-2">
                 {locale === 'en' ? 'Ready to unblock your roadmap?' : '¿Listo para desbloquear tu roadmap?'}

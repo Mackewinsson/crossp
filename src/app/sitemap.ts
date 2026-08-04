@@ -1,10 +1,31 @@
 import type { MetadataRoute } from 'next';
+import { SEO_LANDINGS, type LandingLocale } from '@/data/seo-landings';
 import { getSitemapPosts } from '@/lib/blog';
 import { getSiteUrl } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();
   const lastModified = new Date();
+
+  const seoLandingRoutes: MetadataRoute.Sitemap = SEO_LANDINGS.flatMap((landing) => {
+    const locales: LandingLocale[] = ['es', 'en'];
+    return locales.map((locale) => {
+      const path = `/${locale}/${landing.slugs[locale]}`;
+      return {
+        url: `${siteUrl}${path}`,
+        lastModified,
+        changeFrequency: 'weekly' as const,
+        priority: 0.9,
+        alternates: {
+          languages: {
+            es: `${siteUrl}/es/${landing.slugs.es}`,
+            en: `${siteUrl}/en/${landing.slugs.en}`,
+            'x-default': `${siteUrl}/es/${landing.slugs.es}`,
+          },
+        },
+      };
+    });
+  });
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -102,5 +123,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...staticRoutes, ...seoLandingRoutes, ...blogRoutes];
 }
