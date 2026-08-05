@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { getSql } from '@/lib/db';
+import { getSiteUrl } from '@/lib/seo';
 import {
   compileLeadTemplate,
   getAdminLeadNotificationHtml,
@@ -100,7 +101,7 @@ export async function POST(request: Request) {
     try {
       const adminEmail = process.env.ADMIN_EMAIL;
       if (adminEmail) {
-        const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://conaisoft.com';
+        const siteUrl = getSiteUrl();
         await resend.emails.send({
           from: getFromAddress(),
           to: adminEmail,

@@ -51,9 +51,9 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
     ],
     content: {
       es: {
-        metaTitle: 'Equipo de Desarrollo Dedicado | Pod Senior | ConaiSoft',
+        metaTitle: 'Equipo de Desarrollo Dedicado Senior | Demo en 7 Días',
         metaDescription:
-          'Capacidad continua de ingeniería (web, APIs, IA) con demos semanales y código 100% tuyo. Ideal si ya pasaste el MVP. Agenda discovery call.',
+          'Ingenieros senior 100% dedicados a tu roadmap: demos cada semana, código y cuentas cloud a tu nombre desde el día 1. Sin lock-in. Agenda tu discovery call.',
         h1: 'Equipo de desarrollo dedicado',
         intro:
           'Un pod estable de ingenieros senior asignado a tu roadmap — no un proyecto de alcance fijo ni freelancers rotativos. Diriges el backlog cada sprint; nosotros entregamos software usable cada semana.',
@@ -100,6 +100,11 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
             answer:
               'Sí. 100% del código, CI y cuentas cloud quedan a nombre de tu empresa desde el día uno.',
           },
+          {
+            question: '¿Cuánto tarda en arrancar un equipo dedicado?',
+            answer:
+              'Después del discovery, el pod suele empezar a la semana y verás la primera demo funcionando dentro de los primeros 7 días de sprint uno.',
+          },
         ],
         relatedBlogSlug: 'dedicated-development-team-explained',
         relatedBlogLabel: 'Qué es realmente un equipo de desarrollo dedicado',
@@ -108,9 +113,9 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
           'En 20 minutos vemos si el modelo de equipo dedicado encaja con tu etapa y presupuesto.',
       },
       en: {
-        metaTitle: 'Dedicated Development Team | Senior Pod | ConaiSoft',
+        metaTitle: 'Dedicated Development Team | Senior Pod, Live in 7 Days',
         metaDescription:
-          'A stable senior engineering pod for your ongoing roadmap—weekly demos, APIs & AI, 100% code ownership. Book a discovery call.',
+          'Get a stable senior engineering pod on your roadmap: weekly demos, 100% code ownership, zero lock-in. Book a free discovery call today.',
         h1: 'Dedicated development team',
         intro:
           'A stable senior engineering pod on your roadmap — not a fixed-scope agency project or rotating freelancers. You steer the backlog each sprint; we ship working software every week.',
@@ -157,6 +162,11 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
             answer:
               'Yes. 100% of the code, CI, and cloud accounts are under your company from day one.',
           },
+          {
+            question: 'How fast can a dedicated team start?',
+            answer:
+              'After discovery, the pod typically starts within a week, and you will see a working demo inside the first 7 days of sprint one.',
+          },
         ],
         relatedBlogSlug: 'dedicated-development-team-explained',
         relatedBlogLabel: 'What a dedicated development team actually is',
@@ -183,9 +193,9 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
     ],
     content: {
       es: {
-        metaTitle: 'Reconstruir software legacy: cuándo sí y cuándo no | ConaiSoft',
+        metaTitle: 'Reconstruir Software Legacy: Guía 2026 (Cuándo Sí/No)',
         metaDescription:
-          'Señales reales para modernizar sistemas legacy sin un rewrite suicida. Assessment + migración por módulos. Agenda una llamada.',
+          '4 señales reales para saber si necesitas un rebuild o solo modernizar módulos críticos. Sin rewrite suicida. Agenda tu assessment gratuito.',
         h1: 'Reconstruir software legacy',
         intro:
           'Los rewrites completos fallan más de lo que admiten. Modernizamos las superficies de alto riesgo primero — APIs, módulos críticos, datos — y dejamos en paz lo que todavía genera dinero.',
@@ -232,6 +242,11 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
             answer:
               'Sí. A menudo el primer paso es una capa de API/antiseptic alrededor del core legacy mientras se migran piezas.',
           },
+          {
+            question: '¿Cómo saben qué módulo migrar primero?',
+            answer:
+              'Priorizamos por riesgo de negocio medible: seguridad, velocidad de cambio y dependencia de personas clave — no por qué pantalla se ve más vieja.',
+          },
         ],
         relatedBlogSlug: 'when-to-rebuild-legacy-software',
         relatedBlogLabel: 'Cuándo reconstruir software legacy',
@@ -240,9 +255,9 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
           'Te ayudamos a decidir rebuild vs strangler con criterios de negocio — no de moda tecnológica.',
       },
       en: {
-        metaTitle: 'Legacy Software Rebuild: When to Modernize | ConaiSoft',
+        metaTitle: 'Legacy Software Rebuild: When to Modernize (2026 Guide)',
         metaDescription:
-          'Full rewrites fail often. Learn when to rebuild legacy software, when to leave it, and how we modernize high-risk modules with zero lock-in.',
+          "4 warning signs it's time to rebuild legacy software, and when a full rewrite is the wrong call. Free assessment, zero lock-in. Book a call.",
         h1: 'Legacy software rebuild',
         intro:
           'Full rewrites fail more often than vendors admit. We modernize high-risk surfaces first — APIs, critical modules, data — and leave alone whatever is still quietly making money.',
@@ -288,6 +303,11 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
             question: 'Can you add new APIs on top of the current system?',
             answer:
               'Yes. Often the first step is an API/antiseptic layer around the legacy core while pieces migrate.',
+          },
+          {
+            question: 'How do you decide which module to migrate first?',
+            answer:
+              'We prioritize by measurable business risk — security, change velocity, and key-person dependency — not by which screen looks the oldest.',
           },
         ],
         relatedBlogSlug: 'when-to-rebuild-legacy-software',

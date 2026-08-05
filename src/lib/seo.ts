@@ -1,8 +1,13 @@
 export const SITE_NAME = 'ConaiSoft';
 export const SITE_TAGLINE = 'Software & AI Engineering Partner';
 
+// Vercel's domain config redirects the apex (conaisoft.com) to www.conaisoft.com
+// at the edge (307, before Next.js runs). Canonical/OG/sitemap/robots URLs must
+// point at the same host that is actually served, or Google treats them as a
+// duplicate-without-user-selected-canonical / redirect-chain mismatch and skips
+// indexing. Keep this in sync with the Vercel project's primary domain.
 export function getSiteUrl() {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL || 'https://conaisoft.com';
+  const raw = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.conaisoft.com';
   return raw.replace(/\/$/, '');
 }
 

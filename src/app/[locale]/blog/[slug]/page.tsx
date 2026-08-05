@@ -23,6 +23,8 @@ const BLOG_TO_LANDING: Record<string, (typeof SEO_LANDINGS)[number]['id']> = {
   'when-to-rebuild-legacy-software': 'legacy-rebuild',
   'add-ai-to-existing-software': 'add-ai',
   'manage-outsourced-development-team': 'dedicated-team',
+  'fixed-price-vs-time-and-materials': 'dedicated-team',
+  'how-to-build-mvp-for-startup': 'dedicated-team',
 };
 
 export function generateStaticParams() {
