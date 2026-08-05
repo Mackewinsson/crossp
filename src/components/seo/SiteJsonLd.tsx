@@ -46,6 +46,8 @@ export function SiteJsonLd() {
     areaServed: 'Worldwide',
     serviceType: [
       'Custom software development',
+      'Dedicated development team',
+      'Legacy software rebuild',
       'AI integration',
       'Web and SaaS platforms',
       'React Native mobile apps',

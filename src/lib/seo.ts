@@ -19,10 +19,15 @@ export const DEFAULT_DESCRIPTION_ES =
 
 export const SEO_KEYWORDS = [
   'ConaiSoft',
+  'equipo dedicado de desarrollo',
+  'dedicated development team',
+  'legacy software rebuild',
+  'reconstruir software legacy',
   'software development',
   'AI engineering',
   'Next.js development',
   'custom software',
+  'custom CRM cost',
   'SaaS development',
   'RAG',
   'AI agents',

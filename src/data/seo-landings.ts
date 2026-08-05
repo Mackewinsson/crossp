@@ -51,10 +51,10 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
     ],
     content: {
       es: {
-        metaTitle: 'Equipo de Desarrollo Dedicado Senior | Demo en 7 Días',
+        metaTitle: 'Equipo Dedicado de Desarrollo Senior | Demo en 7 Días',
         metaDescription:
-          'Ingenieros senior 100% dedicados a tu roadmap: demos cada semana, código y cuentas cloud a tu nombre desde el día 1. Sin lock-in. Agenda tu discovery call.',
-        h1: 'Equipo de desarrollo dedicado',
+          'Equipo dedicado de desarrollo: ingenieros senior 100% en tu roadmap, demos semanales y código a tu nombre desde el día 1. Sin lock-in. Agenda discovery call.',
+        h1: 'Equipo dedicado de desarrollo',
         intro:
           'Un pod estable de ingenieros senior asignado a tu roadmap — no un proyecto de alcance fijo ni freelancers rotativos. Diriges el backlog cada sprint; nosotros entregamos software usable cada semana.',
         ctaLabel: 'Agendar discovery call',
@@ -113,9 +113,9 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
           'En 20 minutos vemos si el modelo de equipo dedicado encaja con tu etapa y presupuesto.',
       },
       en: {
-        metaTitle: 'Dedicated Development Team | Senior Pod, Live in 7 Days',
+        metaTitle: 'Dedicated Development Team | Senior Pod Live in 7 Days',
         metaDescription:
-          'Get a stable senior engineering pod on your roadmap: weekly demos, 100% code ownership, zero lock-in. Book a free discovery call today.',
+          'Hire a dedicated development team of senior engineers on your roadmap: weekly demos, 100% code ownership, zero lock-in. Book a free discovery call.',
         h1: 'Dedicated development team',
         intro:
           'A stable senior engineering pod on your roadmap — not a fixed-scope agency project or rotating freelancers. You steer the backlog each sprint; we ship working software every week.',
@@ -193,9 +193,9 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
     ],
     content: {
       es: {
-        metaTitle: 'Reconstruir Software Legacy: Guía 2026 (Cuándo Sí/No)',
+        metaTitle: 'Reconstruir Software Legacy | Cuándo Sí y Cuándo No (2026)',
         metaDescription:
-          '4 señales reales para saber si necesitas un rebuild o solo modernizar módulos críticos. Sin rewrite suicida. Agenda tu assessment gratuito.',
+          'Legacy software rebuild sin rewrite suicida: 4 señales para reconstruir o modernizar módulos. Assessment gratuito con ConaiSoft.',
         h1: 'Reconstruir software legacy',
         intro:
           'Los rewrites completos fallan más de lo que admiten. Modernizamos las superficies de alto riesgo primero — APIs, módulos críticos, datos — y dejamos en paz lo que todavía genera dinero.',
@@ -257,7 +257,7 @@ export const SEO_LANDINGS: SeoLandingDefinition[] = [
       en: {
         metaTitle: 'Legacy Software Rebuild: When to Modernize (2026 Guide)',
         metaDescription:
-          "4 warning signs it's time to rebuild legacy software, and when a full rewrite is the wrong call. Free assessment, zero lock-in. Book a call.",
+          'Legacy software rebuild without a suicidal rewrite: 4 warning signs to rebuild vs modernize modules. Free assessment with ConaiSoft.',
         h1: 'Legacy software rebuild',
         intro:
           'Full rewrites fail more often than vendors admit. We modernize high-risk surfaces first — APIs, critical modules, data — and leave alone whatever is still quietly making money.',
