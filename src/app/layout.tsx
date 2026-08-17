@@ -44,8 +44,9 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   category: 'technology',
+  // Canonical/hreflang live on locale and page layouts. Declaring `/` here
+  // made Google treat the 307 homepage redirect as the preferred URL.
   alternates: {
-    canonical: '/',
     languages: {
       es: '/es',
       en: '/en',

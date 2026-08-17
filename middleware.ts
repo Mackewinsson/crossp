@@ -24,7 +24,7 @@ export function middleware(request: NextRequest) {
     // Redirect to Spanish (default locale)
     const locale = 'es';
     request.nextUrl.pathname = `/${locale}${pathname}`;
-    return NextResponse.redirect(request.nextUrl);
+    return NextResponse.redirect(request.nextUrl, 308);
   }
 
   return;
