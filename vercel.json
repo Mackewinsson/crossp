@@ -1,4 +1,18 @@
 {
   "installCommand": "npm ci",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "conaisoft.com" }],
+      "destination": "https://www.conaisoft.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "conaisoft.com" }],
+      "destination": "https://www.conaisoft.com/:path*",
+      "permanent": true
+    }
+  ]
 }

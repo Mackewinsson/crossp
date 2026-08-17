@@ -3,12 +3,12 @@
 > Software & AI engineering partner. We help founders and product teams ship web platforms, mobile apps, and AI features with senior architecture, weekly deliverables, and 100% code ownership.
 
 ## Site
-- Home (ES): https://conaisoft.com/es
-- Home (EN): https://conaisoft.com/en
-- Blog (ES): https://conaisoft.com/es/blog
-- Blog (EN): https://conaisoft.com/en/blog
-- Custom software: https://conaisoft.com/crea-tu-software
-- AI automation workshop: https://conaisoft.com/automatiza-ia
+- Home (ES): https://www.conaisoft.com/es
+- Home (EN): https://www.conaisoft.com/en
+- Blog (ES): https://www.conaisoft.com/es/blog
+- Blog (EN): https://www.conaisoft.com/en/blog
+- Custom software: https://www.conaisoft.com/crea-tu-software
+- AI automation workshop: https://www.conaisoft.com/automatiza-ia
 - Book a call: https://calendly.com/mackewinsson/exploring-call
 
 ## Blog topics (for buyers who hire development)
