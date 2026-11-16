@@ -9,7 +9,7 @@ export const es: Dictionary = {
     cta: 'Empezar un proyecto',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
-    switchLanguage: 'View in English',
+    switchLanguage: 'Idioma',
   },
 
   hero: {
