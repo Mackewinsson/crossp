@@ -1,4 +1,7 @@
 import { absoluteUrl } from '@/lib/seo';
+import { CALENDLY_DISCOVERY_URL } from '@/lib/site';
+
+export { CALENDLY_DISCOVERY_URL };
 
 export type LandingLocale = 'es' | 'en';
 
@@ -29,9 +32,6 @@ export type SeoLandingDefinition = {
   serviceType: string[];
   content: Record<LandingLocale, SeoLandingContent>;
 };
-
-export const CALENDLY_DISCOVERY_URL =
-  'https://calendly.com/mackewinsson/exploring-call';
 
 export const SEO_LANDINGS: SeoLandingDefinition[] = [
   {
