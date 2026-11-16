@@ -9,5 +9,3 @@ export const HOME_ANCHORS = {
   faq: 'faq',
   contact: 'contact',
 } as const;
-
-export type HomeAnchor = keyof typeof HOME_ANCHORS;
