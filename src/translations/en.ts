@@ -18,7 +18,7 @@ export const en: Dictionary = {
     subtitle:
       'ConaiSoft is a small senior team that uses AI to build web apps, mobile apps and AI features faster than a traditional agency. You see working software every week, and you own all the code.',
     ctaPrimary: 'Tell us what you want to build',
-    ctaSecondary: 'Book a 15-min call',
+    ctaSecondary: 'Book a free call',
     proof: [
       {
         title: 'A working demo every week',
@@ -77,7 +77,7 @@ export const en: Dictionary = {
       {
         title: 'Tell us your idea',
         description:
-          'Send the form or book a free 15-minute call. We tell you honestly whether we can help and how we would approach it.',
+          'Send the form or book a free call. We tell you honestly whether we can help and how we would approach it.',
       },
       {
         title: 'We agree on a plan',
@@ -184,8 +184,8 @@ export const en: Dictionary = {
     subtitle:
       'Describe your idea in a few lines. An engineer replies within 24 hours with honest feedback and next steps. No commitment.',
     callTitle: 'Prefer to talk?',
-    callBody: 'Book a free 15-minute call and walk us through your project.',
-    callCta: 'Book a 15-min call',
+    callBody: 'Book a free call and walk us through your project.',
+    callCta: 'Book a free call',
   },
 
   footer: {

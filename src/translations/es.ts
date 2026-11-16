@@ -18,7 +18,7 @@ export const es: Dictionary = {
     subtitle:
       'ConaiSoft es un equipo pequeño y senior que usa IA para construir aplicaciones web, apps móviles y funciones de IA más rápido que una agencia tradicional. Ves software funcionando cada semana y todo el código es tuyo.',
     ctaPrimary: 'Cuéntanos qué quieres construir',
-    ctaSecondary: 'Agendar llamada de 15 min',
+    ctaSecondary: 'Agendar llamada gratuita',
     proof: [
       {
         title: 'Una demo funcionando cada semana',
@@ -77,7 +77,7 @@ export const es: Dictionary = {
       {
         title: 'Cuéntanos tu idea',
         description:
-          'Envía el formulario o agenda una llamada gratuita de 15 minutos. Te decimos con honestidad si podemos ayudarte y cómo lo haríamos.',
+          'Envía el formulario o agenda una llamada gratuita. Te decimos con honestidad si podemos ayudarte y cómo lo haríamos.',
       },
       {
         title: 'Acordamos un plan',
@@ -184,8 +184,8 @@ export const es: Dictionary = {
     subtitle:
       'Describe tu idea en pocas líneas. Un ingeniero te responde en menos de 24 horas con una opinión honesta y los siguientes pasos. Sin compromiso.',
     callTitle: '¿Prefieres hablar?',
-    callBody: 'Agenda una llamada gratuita de 15 minutos y cuéntanos tu proyecto.',
-    callCta: 'Agendar llamada de 15 min',
+    callBody: 'Agenda una llamada gratuita y cuéntanos tu proyecto.',
+    callCta: 'Agendar llamada gratuita',
   },
 
   footer: {
