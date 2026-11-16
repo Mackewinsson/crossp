@@ -1,136 +1,100 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Container } from '@/components/ui/Container';
+import { ButtonLink } from '@/components/ui/ButtonLink';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
-import { useTranslations } from '@/hooks/useTranslations';
+import { useTranslation } from '@/contexts/TranslationContext';
+import { HOME_ANCHORS } from '@/lib/site';
 
-export const Header: React.FC = () => {
+type HeaderProps = {
+  /** Path of this page in the other language, for pages whose slug differs per locale. */
+  alternatePath?: string;
+  /** Where the header button leads. Defaults to the homepage contact form. */
+  contactHref?: string;
+};
+
+export function Header({ alternatePath, contactHref }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { header, locale } = useTranslations();
-  const homeBase = `/${locale === 'en' ? 'en' : 'es'}`;
+  const { t, locale } = useTranslation();
+  const home = `/${locale}`;
+  const ctaHref = contactHref ?? `${home}#${HOME_ANCHORS.contact}`;
 
-  const navLinkClass =
-    'text-slate-300 hover:text-cyan-400 transition-colors';
-  const mobileNavClass =
-    'text-slate-300 hover:text-cyan-400 py-2.5 px-3 rounded-lg hover:bg-slate-900 text-sm font-medium transition-colors';
+  const navLinks = [
+    { href: `${home}#${HOME_ANCHORS.services}`, label: t('header.services') },
+    { href: `${home}#${HOME_ANCHORS.process}`, label: t('header.process') },
+    { href: `${home}#${HOME_ANCHORS.work}`, label: t('header.work') },
+    { href: `${home}/blog`, label: t('header.blog') },
+  ];
+
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#07090e]/85 backdrop-blur-xl border-b border-white/10 transition-all duration-200">
-      <div className="bg-gradient-to-r from-blue-950/80 via-slate-900/90 to-blue-950/80 border-b border-blue-500/20 px-3 py-1.5 text-center text-[10px] leading-snug sm:text-xs font-mono text-cyan-300 flex items-center justify-center gap-2">
-        <span className="relative flex h-2 w-2 flex-shrink-0">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
-        </span>
-        <span className="tracking-wide text-balance">{header.status()}</span>
-      </div>
-
+    <header className="sticky top-0 z-50 border-b border-line bg-bg/90 backdrop-blur">
       <Container>
-        <div className="flex items-center justify-between py-3.5">
-          <a href={homeBase} className="flex min-w-0 items-center space-x-2.5 group">
-            <div className="w-9 h-9 flex-shrink-0 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-indigo-600 p-0.5 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
-              <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                <span className="text-cyan-400 font-extrabold text-lg tracking-tighter">C</span>
-              </div>
-            </div>
-            <div className="flex min-w-0 flex-col">
-              <span className="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center">
-                Conai<span className="text-cyan-400">Soft</span>
-              </span>
-              <span className="text-[10px] font-mono text-slate-400 tracking-wider uppercase -mt-1 truncate">
-                AI Software Engine
-              </span>
-            </div>
+        <div className="flex h-16 items-center justify-between gap-4">
+          <a href={home} className="text-xl font-bold tracking-tight text-ink">
+            Conai<span className="text-accent">Soft</span>
           </a>
 
-          <nav className="hidden lg:flex items-center space-x-7 text-sm font-medium">
-            <a href={`${homeBase}#pain-points`} className={navLinkClass}>
-              {header.painPoints()}
-            </a>
-            <a href={`${homeBase}#velocity`} className={navLinkClass}>
-              {header.velocity()}
-            </a>
-            <a href={`${homeBase}#services`} className={navLinkClass}>
-              {header.services()}
-            </a>
-            <a href={`${homeBase}#process`} className={navLinkClass}>
-              {header.process()}
-            </a>
-            <a href={`${homeBase}#portfolio`} className={navLinkClass}>
-              {header.portfolio()}
-            </a>
-            <a href={`${homeBase}/blog`} className={navLinkClass}>
-              {header.blog()}
-            </a>
+          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-ink-soft hover:text-accent transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-4">
-            <LanguageSwitcher />
-            <a
-              href="https://calendly.com/mackewinsson/exploring-call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-white rounded-lg bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-200 shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/40 active:scale-95 border border-cyan-400/30"
-            >
-              {header.getStarted()}
-            </a>
-          </div>
-
-          <div className="flex items-center space-x-2 sm:space-x-3 lg:hidden">
-            <LanguageSwitcher />
+          <div className="flex items-center gap-2 sm:gap-4">
+            <LanguageSwitcher alternatePath={alternatePath} />
+            <div className="hidden sm:block">
+              <ButtonLink href={ctaHref} size="sm">
+                {t('header.cta')}
+              </ButtonLink>
+            </div>
             <button
-              className="min-h-11 min-w-11 p-2 rounded-lg text-slate-300 hover:text-white bg-slate-900 border border-slate-800"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle Navigation Menu"
+              type="button"
+              className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg border border-line text-ink"
+              onClick={() => setIsMenuOpen((open) => !open)}
+              aria-label={isMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
               aria-expanded={isMenuOpen}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+                />
               </svg>
             </button>
           </div>
         </div>
 
-        {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-slate-800 bg-[#07090e]/95 backdrop-blur-xl">
-            <nav className="flex flex-col space-y-3 px-2">
-              <a href={`${homeBase}#pain-points`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
-                {header.painPoints()}
+        {isMenuOpen ? (
+          <nav className="lg:hidden flex flex-col gap-1 border-t border-line py-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="rounded-lg px-2 py-3 text-base font-medium text-ink-soft hover:text-accent"
+                onClick={closeMenu}
+              >
+                {link.label}
               </a>
-              <a href={`${homeBase}#velocity`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
-                {header.velocity()}
-              </a>
-              <a href={`${homeBase}#services`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
-                {header.services()}
-              </a>
-              <a href={`${homeBase}#process`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
-                {header.process()}
-              </a>
-              <a href={`${homeBase}#portfolio`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
-                {header.portfolio()}
-              </a>
-              <a href={`${homeBase}/blog`} className={mobileNavClass} onClick={() => setIsMenuOpen(false)}>
-                {header.blog()}
-              </a>
-              <div className="pt-2">
-                <a
-                  href="https://calendly.com/mackewinsson/exploring-call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all shadow-lg shadow-cyan-500/20"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {header.getStarted()}
-                </a>
-              </div>
-            </nav>
-          </div>
-        )}
+            ))}
+            <div className="mt-3 sm:hidden">
+              <ButtonLink href={ctaHref} className="w-full" onClick={closeMenu}>
+                {t('header.cta')}
+              </ButtonLink>
+            </div>
+          </nav>
+        ) : null}
       </Container>
     </header>
   );
-};
+}

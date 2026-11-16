@@ -26,7 +26,8 @@ export async function generateMetadata({
   const path = `/${isSpanish ? 'es' : 'en'}`;
 
   return {
-    title,
+    // Absolute: the root layout's "%s | ConaiSoft" template would repeat the name.
+    title: { absolute: title },
     description,
     alternates: {
       canonical: path,

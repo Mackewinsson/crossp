@@ -1,60 +1,37 @@
-"use client";
+import { LeadForm } from '@/components/lead/LeadForm';
+import { ButtonLink } from '@/components/ui/ButtonLink';
+import { Card } from '@/components/ui/Card';
+import { Section } from '@/components/ui/Section';
+import { SectionHeading } from '@/components/ui/SectionHeading';
+import type { Locale } from '@/lib/locales';
+import { CALENDLY_DISCOVERY_URL, HOME_ANCHORS } from '@/lib/site';
+import type { Dictionary } from '@/translations/types';
 
-import React from 'react';
-import { Container } from '@/components/ui/Container';
-import { useTranslation } from '@/contexts/TranslationContext';
-
-export const CTASection: React.FC = () => {
-  const { t } = useTranslation();
-
-  return (
-    <section className="py-20 lg:py-32 bg-[#07090e] relative overflow-hidden">
-      {/* Glow background */}
-      <div className="absolute inset-0 bg-radial-glow pointer-events-none"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
-
-      <Container>
-        <div className="max-w-4xl mx-auto glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-14 border border-cyan-500/30 text-center relative shadow-2xl shadow-cyan-500/10">
-          
-          <div className="inline-flex max-w-full items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-[10px] sm:text-xs font-mono mb-6">
-            <span className="w-2 h-2 flex-shrink-0 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span className="font-semibold tracking-wider uppercase text-balance">{t('cta.badge')}</span>
-          </div>
-
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6 text-balance">
-            {t('cta.title')}
-          </h2>
-          
-          <p className="text-sm sm:text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-            {t('cta.subtitle')}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-6">
-            <a 
-              href="https://calendly.com/mackewinsson/exploring-call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-4 text-sm sm:text-base font-bold text-white rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 active:scale-95 transition-all duration-200 border border-cyan-400/40 w-full sm:w-auto min-h-[48px]"
-            >
-              <span>{t('cta.button')}</span>
-              <svg className="w-5 h-5 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-            
-            <a 
-              href="#portfolio"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-4 text-sm sm:text-base font-bold text-slate-200 hover:text-white rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-500/40 transition-all duration-200 w-full sm:w-auto min-h-[48px]"
-            >
-              <span>{t('portfolio.viewProject')}</span>
-            </a>
-          </div>
-          
-          <p className="text-[11px] sm:text-xs font-mono text-slate-400 mt-4 leading-relaxed text-balance">
-            {t('cta.guarantee')}
-          </p>
-        </div>
-      </Container>
-    </section>
-  );
+type CTASectionProps = {
+  copy: Dictionary['contact'];
+  locale: Locale;
 };
+
+/** Closing contact section: the project form, with a call as the alternative. */
+export function CTASection({ copy, locale }: CTASectionProps) {
+  return (
+    <Section id={HOME_ANCHORS.contact}>
+      {/* Source order is heading, form, call so the form comes first on small screens. */}
+      <div className="grid gap-10 lg:grid-cols-2 lg:gap-x-16">
+        <SectionHeading title={copy.title} subtitle={copy.subtitle} flush />
+
+        <Card className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start">
+          <LeadForm source={`home-${locale}`} language={locale} />
+        </Card>
+
+        <div className="border-t border-line pt-8 lg:self-end">
+          <h3 className="text-lg font-semibold text-ink">{copy.callTitle}</h3>
+          <p className="mt-2 text-base text-ink-soft leading-relaxed">{copy.callBody}</p>
+          <ButtonLink href={CALENDLY_DISCOVERY_URL} variant="secondary" className="mt-5">
+            {copy.callCta}
+          </ButtonLink>
+        </div>
+      </div>
+    </Section>
+  );
+}
