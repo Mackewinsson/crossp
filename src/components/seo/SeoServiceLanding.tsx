@@ -127,7 +127,7 @@ export function SeoServiceLanding({ landing, locale }: SeoServiceLandingProps) {
           </Container>
         </section>
 
-        <LeadEmailForm source={`seo-${landing.id}-${locale}`} />
+        <LeadEmailForm source={`seo-${landing.id}-${locale}`} language={locale} />
       </main>
 
       <footer className="py-8 px-4 bg-[#05070a] border-t border-slate-800/80 text-center text-xs text-slate-500 font-mono">
