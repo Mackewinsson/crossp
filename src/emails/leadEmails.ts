@@ -1,5 +1,8 @@
 export type LeadLanguage = 'es' | 'en';
 
+/** Same blue as --color-accent in globals.css. Mail clients cannot read CSS variables. */
+const ACCENT = '#2343e0';
+
 const HTML_ESCAPES: Record<string, string> = {
   '&': '&amp;',
   '<': '&lt;',
@@ -74,7 +77,7 @@ export function getAdminLeadNotificationHtml(input: {
 
   return `
     <div style="font-family: sans-serif; line-height: 1.5; color: #222; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
-      <h2 style="margin-top: 0; color: #0e7490;">New lead — ConaiSoft</h2>
+      <h2 style="margin-top: 0; color: ${ACCENT};">New lead — ConaiSoft</h2>
       <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">${row('Name', name)}${row(
         'Email',
         `<a href="mailto:${email}">${email}</a>`
@@ -83,7 +86,7 @@ export function getAdminLeadNotificationHtml(input: {
       }
       </table>
       <p style="text-align: center; margin-top: 24px;">
-        <a href="${input.adminUrl}" style="background: #0e7490; color: #fff; padding: 10px 18px; text-decoration: none; border-radius: 8px; font-weight: bold;">Open admin</a>
+        <a href="${input.adminUrl}" style="background: ${ACCENT}; color: #fff; padding: 10px 18px; text-decoration: none; border-radius: 8px; font-weight: bold;">Open admin</a>
       </p>
     </div>
   `;

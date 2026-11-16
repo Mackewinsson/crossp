@@ -20,7 +20,7 @@ export function LanguageSwitcher({ alternatePath }: LanguageSwitcherProps) {
         const isCurrent = option === locale;
         return (
           <span key={option} className="flex items-center">
-            {index > 0 ? <span className="text-line-strong" aria-hidden>/</span> : null}
+            {index > 0 ? <span className="text-ink-muted" aria-hidden>/</span> : null}
             {isCurrent ? (
               <span className="px-2 py-2 text-ink" aria-current="true">
                 {option.toUpperCase()}

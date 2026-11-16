@@ -5,11 +5,11 @@ import { SignInClient } from '@/components/auth/SignInClient';
 export default function SignInPage() {
   if (!isClerkEnabled()) {
     return (
-      <main className="min-h-screen bg-[#07090e] flex items-center justify-center p-6 text-center">
+      <main className="min-h-screen bg-bg flex items-center justify-center p-6 text-center">
         <div className="space-y-3">
-          <h1 className="text-xl font-bold text-white">Sign-in not configured</h1>
-          <p className="text-sm text-slate-400">Add Clerk keys to enable authentication.</p>
-          <Link href="/" className="text-sm text-cyan-400 hover:underline">
+          <h1 className="text-xl font-bold text-ink">Sign-in not configured</h1>
+          <p className="text-sm text-ink-muted">Add Clerk keys to enable authentication.</p>
+          <Link href="/" className="text-sm text-accent hover:underline">
             ← Back to site
           </Link>
         </div>
@@ -18,7 +18,7 @@ export default function SignInPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#07090e] flex items-center justify-center p-4">
+    <main className="min-h-screen bg-bg flex items-center justify-center p-4">
       <SignInClient />
     </main>
   );
