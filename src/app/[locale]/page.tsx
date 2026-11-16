@@ -1,63 +1,43 @@
+import { notFound } from 'next/navigation';
 import { Header } from '@/components/layout/Header';
-import { HeroSection } from '@/components/sections/HeroSection';
-import { PainPointsSection } from '@/components/sections/PainPointsSection';
-import { VelocityCalculatorSection } from '@/components/sections/VelocityCalculatorSection';
-import { ServicesSection } from '@/components/sections/ServicesSection';
-import { DeliveryProcessSection } from '@/components/sections/DeliveryProcessSection';
-import { FeaturesSection } from '@/components/sections/FeaturesSection';
-import { PortfolioSection } from '@/components/sections/PortfolioSection';
-import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
+import { SiteFooter } from '@/components/layout/SiteFooter';
 import { CTASection } from '@/components/sections/CTASection';
+import { DeliveryProcessSection } from '@/components/sections/DeliveryProcessSection';
+import { FaqSection } from '@/components/sections/FaqSection';
+import { HeroSection } from '@/components/sections/HeroSection';
+import { PortfolioSection } from '@/components/sections/PortfolioSection';
+import { ServicesSection } from '@/components/sections/ServicesSection';
+import { WhyUsSection } from '@/components/sections/WhyUsSection';
+import { getDictionary } from '@/lib/i18n';
+import { LOCALES, isLocale } from '@/lib/locales';
 
 interface LocalePageProps {
-  params: Promise<{
-    locale: 'es' | 'en';
-  }>;
+  params: Promise<{ locale: string }>;
+}
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
 }
 
 export default async function LocalePage({ params }: LocalePageProps) {
   const { locale } = await params;
-  
+  if (!isLocale(locale)) notFound();
+
+  const copy = getDictionary(locale);
+
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100">
+    <div className="min-h-screen bg-bg text-ink">
       <Header />
       <main>
-        <HeroSection />
-        <PainPointsSection />
-        <VelocityCalculatorSection />
-        <ServicesSection />
-        <DeliveryProcessSection />
-        <FeaturesSection />
-        <PortfolioSection />
-        <TestimonialsSection />
-        <CTASection />
+        <HeroSection copy={copy.hero} />
+        <ServicesSection copy={copy.services} locale={locale} />
+        <DeliveryProcessSection copy={copy.process} />
+        <WhyUsSection copy={copy.why} />
+        <PortfolioSection copy={copy.work} locale={locale} />
+        <FaqSection copy={copy.faq} locale={locale} />
+        <CTASection copy={copy.contact} locale={locale} />
       </main>
-      <footer className="py-8 px-4 bg-[#05070a] border-t border-slate-800/80 text-center text-xs text-slate-500 font-mono">
-        <p className="leading-relaxed text-balance mb-2">© 2026 ConaiSoft. All rights reserved.</p>
-        <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 max-w-3xl mx-auto">
-          <a href={`/${locale}/blog`} className="text-cyan-500/80 hover:text-cyan-400">
-            Blog
-          </a>
-          <a
-            href={`/${locale}/${locale === 'es' ? 'equipo-desarrollo-dedicado' : 'dedicated-development-team'}`}
-            className="text-cyan-500/80 hover:text-cyan-400"
-          >
-            {locale === 'es' ? 'Equipo dedicado' : 'Dedicated team'}
-          </a>
-          <a
-            href={`/${locale}/${locale === 'es' ? 'reconstruir-software-legacy' : 'legacy-software-rebuild'}`}
-            className="text-cyan-500/80 hover:text-cyan-400"
-          >
-            {locale === 'es' ? 'Software legacy' : 'Legacy rebuild'}
-          </a>
-          <a
-            href={`/${locale}/${locale === 'es' ? 'agregar-ia-a-software-existente' : 'add-ai-to-existing-software'}`}
-            className="text-cyan-500/80 hover:text-cyan-400"
-          >
-            {locale === 'es' ? 'IA en software existente' : 'Add AI'}
-          </a>
-        </nav>
-      </footer>
+      <SiteFooter locale={locale} />
     </div>
   );
 }

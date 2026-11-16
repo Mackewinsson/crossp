@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
-:root {
-  --background: #07090e;
-  --foreground: #f3f4f6;
-  --card-bg: rgba(15, 23, 42, 0.75);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --accent-cyan: #00f0ff;
-  --accent-blue: #3b82f6;
-  --accent-violet: #8b5cf6;
+/*
+ * Design tokens. Every marketing surface uses these instead of raw palette
+ * classes, so the brand can be retuned in one place.
+ */
+@theme {
+  --color-bg: #07090e;
+  --color-bg-alt: #0b0e15;
+  --color-surface: #10141d;
+  --color-line: #1f2633;
+  --color-line-strong: #323b4d;
+  --color-ink: #f3f4f6;
+  --color-ink-soft: #c3c9d4;
+  --color-ink-muted: #8b93a1;
+  --color-accent: #22d3ee;
+  --color-accent-hover: #67e8f9;
+  --color-on-accent: #07090e;
+  --color-success: #34d399;
+  --color-danger: #f87171;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -20,17 +28,19 @@
 html {
   color-scheme: dark;
   overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-bg);
+  color: var(--color-ink);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  scroll-behavior: smooth;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,100 +49,29 @@ body {
   padding-right: env(safe-area-inset-right);
 }
 
-/* Offset sticky header when jumping to in-page anchors */
-section[id] {
-  scroll-margin-top: 7.5rem;
+/* Offset the sticky header when jumping to in-page anchors */
+[id] {
+  scroll-margin-top: 5.5rem;
 }
 
-@media (min-width: 1024px) {
-  section[id] {
-    scroll-margin-top: 6rem;
-  }
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
-/* Background grid pattern */
-.bg-cyber-grid {
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, rgba(0, 240, 255, 0.05) 35%, transparent 70%);
-}
-
-.glass-panel {
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-panel-interactive {
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-panel-interactive:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .glass-panel-interactive:hover {
-    transform: translateY(-2px);
-  }
-}
-
-.glow-cyan-sm {
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
-}
-
-.glow-blue-md {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
-}
-
-.gradient-text-cyan {
-  background: linear-gradient(135deg, #ffffff 0%, #a5f3fc 50%, #00f0ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-text-blue {
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #a855f7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Custom scrollbar for tech look */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #07090e;
+  background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: var(--color-line);
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
-}
-
-/* Terminal pulsing cursor */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.animate-blink {
-  animation: blink 1s infinite;
+  background: var(--color-line-strong);
 }

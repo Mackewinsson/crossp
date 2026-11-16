@@ -12,10 +12,10 @@ export function getSiteUrl() {
 }
 
 export const DEFAULT_DESCRIPTION =
-  'Ship web platforms, mobile apps, and AI features with senior architecture, weekly deliverables, and 100% code ownership. Book a discovery call.';
+  'A small senior team that uses AI to build your web app, mobile app or AI feature in weeks, not months. You see it working every week and you own all the code.';
 
 export const DEFAULT_DESCRIPTION_ES =
-  'Desarrollamos plataformas web, apps móviles y capacidades de IA con arquitectura senior, entregas semanales y propiedad total del código. Agenda una llamada.';
+  'Un equipo pequeño y senior que usa IA para construir tu aplicación web, app móvil o función de IA en semanas, no en meses. La ves funcionando cada semana y el código es tuyo.';
 
 export const SEO_KEYWORDS = [
   'ConaiSoft',

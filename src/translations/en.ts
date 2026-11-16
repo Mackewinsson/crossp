@@ -1,265 +1,198 @@
-export const en = {
-  // Header
+import type { Dictionary } from '@/translations/types';
+
+export const en: Dictionary = {
   header: {
-    services: 'Solutions',
-    painPoints: 'Challenges',
-    velocity: 'Timeline Estimator',
-    process: 'How We Work',
-    portfolio: 'Work',
-    testimonials: 'Clients',
+    services: 'Services',
+    process: 'How it works',
+    work: 'Work',
     blog: 'Blog',
-    getStarted: 'Book a Call',
-    status: 'Senior engineering • Weekly deliverables • Full code ownership',
+    cta: 'Start a project',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    switchLanguage: 'Language',
   },
 
-  // Hero Section
   hero: {
-    statusBadge: 'SOFTWARE & AI ENGINEERING PARTNER',
-    title: 'Ship production software without the usual delays',
-    titleHighlight: 'Senior team. Clear process. You own everything.',
-    subtitle: 'We help founders and product teams build web platforms, mobile apps, and AI features with senior architecture, weekly working deliverables, and full transparency — so you move faster without agency lock-in or hiring overhead.',
-    ctaPrimary: 'Book a Discovery Call',
-    ctaSecondary: 'Compare Delivery Models',
-    scrollDown: 'See how we solve common blockers',
-    metrics: {
-      delivery: 'Weekly',
-      deliveryLabel: 'Working Deliverables',
-      uptime: 'Senior',
-      uptimeLabel: 'Architecture-Led Delivery',
-      codeOwnership: '100%',
-      codeOwnershipLabel: 'Source Code Ownership',
-    },
-    terminal: {
-      title: 'conaisoft delivery ~ sprint',
-      prompt: 'plan_sprint --architecture --tests --handover',
-      output1: '✔ Clarifying requirements and system boundaries...',
-      output2: '✔ Building production-ready TypeScript, APIs & Next.js...',
-      output3: '✔ Adding automated tests, CI checks & documentation...',
-      output4: '✔ Sprint review ready — code and access handed over.',
-    }
-  },
-
-  // Pain Points Section
-  painPoints: {
-    badge: 'COMMON DEVELOPMENT BLOCKERS',
-    title: 'Stuck between slow agencies, risky freelancers, and costly hiring?',
-    subtitle: 'Most teams lose months to the wrong delivery model. We remove the friction that delays products and inflates cost:',
-    viewCards: 'Problems',
-    viewMatrix: 'Compare',
-    scrollHint: 'Swipe sideways to compare all models →',
-    cards: [
+    title: 'We build your software product.',
+    titleAccent: 'In weeks, not months.',
+    subtitle:
+      'ConaiSoft is a small senior team that uses AI to build web apps, mobile apps and AI features faster than a traditional agency. You see working software every week, and you own all the code.',
+    ctaPrimary: 'Tell us what you want to build',
+    ctaSecondary: 'Book a free call',
+    proof: [
       {
-        id: 'agencies',
-        icon: '⏳',
-        painTitle: 'Agency timelines drag on',
-        painDesc: 'Long discovery phases, rigid scopes, and 6–12 month cycles that push your launch further out — often with little working software along the way.',
-        solutionTitle: 'Solution: Weekly sprint delivery',
-        solutionDesc: 'Short cycles with working software every week, visible progress, and scope you can adjust as priorities change.',
+        title: 'A working demo every week',
+        description: 'You see real progress, not status reports.',
       },
       {
-        id: 'hiring',
-        icon: '💸',
-        painTitle: 'Hiring is slow and expensive',
-        painDesc: 'Recruiting senior engineers takes months and creates fixed overhead before you know if the product fits the market.',
-        solutionTitle: 'Solution: Senior team on demand',
-        solutionDesc: 'Immediate access to architecture and engineering capacity — without payroll, management burden, or a long hiring cycle.',
+        title: '100% code ownership',
+        description: 'Code, accounts and credentials in your name from day one.',
       },
       {
-        id: 'freelancers',
-        icon: '⚠️',
-        painTitle: 'Inconsistent quality and no tests',
-        painDesc: 'Fragmented codebases, missing standards, weak documentation, and technical debt that shows up right when you need to scale.',
-        solutionTitle: 'Solution: Quality built into every sprint',
-        solutionDesc: 'Clear architecture, automated tests, documentation, and a full repository handover so your team can take over with confidence.',
-      },
-      {
-        id: 'nocode',
-        icon: '🧱',
-        painTitle: 'No-code hits a ceiling',
-        painDesc: 'Fine for early prototypes — but custom workflows, AI features, integrations, and scale quickly outgrow drag-and-drop tools.',
-        solutionTitle: 'Solution: Real full-stack architecture',
-        solutionDesc: 'Built on Next.js, Node/Python, and databases designed to grow with your product — without rebuilding from scratch later.',
+        title: 'Reply within 24 hours',
+        description: 'An engineer reads your message and answers it.',
       },
     ],
-    comparisonTitle: 'How delivery models compare',
-    tableHeaders: {
-      feature: 'What matters',
-      agency: 'Traditional Agency',
-      inHouse: 'In-House Team',
-      freelance: 'Freelancers',
-      conaiSoft: 'ConaiSoft',
-    },
-    tableRows: [
-      { feature: 'Delivery rhythm', agency: '6–12 month batches', inHouse: '4–8 months typical', freelance: 'Variable / uncertain', conaiSoft: 'Continuous weekly sprints' },
-      { feature: 'Investment model', agency: 'Rigid fixed quotes', inHouse: 'High fixed salaries', freelance: 'Hourly / project', conaiSoft: 'Flexible sprint pricing' },
-      { feature: 'AI capability', agency: 'Limited / ad-hoc', inHouse: 'Needs specialists', freelance: 'Often surface-level', conaiSoft: 'Native (LLMs, RAG, agents)' },
-      { feature: 'Testing & CI/CD', agency: 'Often optional / extra', inHouse: 'Depends on team', freelance: 'Rarely included', conaiSoft: 'Included by default' },
-      { feature: 'Code ownership', agency: 'Contract-dependent', inHouse: '100%', freelance: 'Often unclear', conaiSoft: '100% yours' },
-    ]
   },
 
-  // Velocity Calculator Section
-  calculator: {
-    badge: 'TIMELINE ESTIMATOR',
-    title: 'See how sprint-based delivery compares',
-    subtitle: 'Pick a product type for a realistic MVP-scope estimate. Exact timelines depend on complexity — we refine them together on a discovery call.',
-    projectTypes: [
-      { id: 'saas', name: 'SaaS / Web Platform', tradTime: '16 Weeks', tradCost: 'High', aiTime: '6 – 10 Weeks', aiCost: 'Scoped sprints', savings: 'Faster to MVP' },
-      { id: 'ai-app', name: 'AI & RAG Product', tradTime: '24 Weeks', tradCost: 'Very High', aiTime: '8 – 12 Weeks', aiCost: 'Scoped sprints', savings: 'Faster validation' },
-      { id: 'mobile', name: 'iOS / Android App', tradTime: '20 Weeks', tradCost: 'High', aiTime: '6 – 10 Weeks', aiCost: 'Scoped sprints', savings: 'Faster to market' },
-      { id: 'workflow', name: 'API Integrations', tradTime: '12 Weeks', tradCost: 'Medium', aiTime: '2 – 4 Weeks', aiCost: 'Scoped sprints', savings: 'Less waiting' },
-    ],
-    labels: {
-      traditional: 'Typical traditional path',
-      conaiSoft: 'ConaiSoft sprint model',
-      timeSaved: 'Weeks recovered',
-      costSaved: 'Cost control',
-      guarantee: 'Transparency you can verify',
-      guaranteeDesc: 'End-of-sprint reviews with working deliverables, open communication, and full visibility into the codebase.',
-    }
-  },
-
-  // Services Section
   services: {
-    badge: 'WHAT WE BUILD',
-    title: 'Software designed for real business constraints',
-    subtitle: 'Practical architectures that ship, scale, and stay maintainable — not demos that fall apart in production.',
-    aiIntegration: {
-      title: 'AI Agents & RAG Systems',
-      popupTitle: 'Custom AI Integration',
-      description: 'We design AI agents, retrieval pipelines, and document intelligence that fit your workflows — with security and maintainability in mind.',
-      features: [
-        'LLM agent orchestration for real operations',
-        'Vector databases & RAG document search',
-        'Intelligent document and workflow processing',
-        'Secure connections to your APIs and internal systems',
-      ],
-    },
-    customSoftware: {
-      title: 'Web & SaaS Platforms',
-      popupTitle: 'Full-Stack Web Development',
-      description: 'We build fast, reliable web products on Next.js, React, TypeScript, and modern cloud infrastructure.',
-      features: [
-        'Responsive, high-performance React frontends',
-        'Scalable REST & GraphQL APIs in TypeScript',
-        'Payments, authentication, and role-based access',
-      ],
-    },
-    mobileApps: {
-      title: 'React Native Mobile Apps',
-      popupTitle: 'Mobile App Engineering',
-      description: 'Cross-platform iOS and Android apps with solid UX, offline support, and production-ready foundations.',
-      features: [
-        'Efficient React Native cross-platform delivery',
-        'Real-time sync and offline-friendly design',
-        'Push notifications and secure authentication',
-      ],
-    },
-    cloudAutomation: {
-      title: 'Cloud Infrastructure & DevOps',
-      popupTitle: 'DevOps & Cloud Architecture',
-      description: 'Clean deployment pipelines, security practices, and monitoring on AWS, GCP, or Vercel — so releases stay predictable.',
-      features: [
-        'Infrastructure as Code (Docker / cloud)',
-        'CI/CD pipelines for safer releases',
-        'Stability checks and performance monitoring',
-      ],
-    },
+    title: 'What we can build for you',
+    subtitle: 'Pick the situation closest to yours.',
+    items: [
+      {
+        id: 'new-product',
+        title: 'Launch a new product',
+        description:
+          'You have an idea for a web or mobile app. We turn it into a first version that real users can try, then improve it with what you learn.',
+        linkLabel: 'How to build an MVP',
+      },
+      {
+        id: 'add-ai',
+        title: 'Add AI to your product or operations',
+        description:
+          'Assistants, document search and automations connected to the systems you already use, without rebuilding them.',
+        linkLabel: 'Adding AI to existing software',
+      },
+      {
+        id: 'legacy-rebuild',
+        title: 'Rebuild software that holds you back',
+        description:
+          'Old software that is slow and risky to change. We replace the parts that hurt first and keep what still works.',
+        linkLabel: 'Legacy software rebuild',
+      },
+      {
+        id: 'dedicated-team',
+        title: 'Get a dedicated team',
+        description:
+          'Your product is live and the backlog keeps growing. A stable senior team works on your roadmap every week.',
+        linkLabel: 'Dedicated development team',
+      },
+    ],
   },
 
-  // Delivery Protocol Section
   process: {
-    badge: 'HOW WE WORK',
-    title: 'From idea to production in four clear phases',
-    subtitle: 'A transparent workflow so you always know what is being built, why, and what comes next.',
+    title: 'How it works',
+    subtitle: 'Four steps. You always know what is being built and what comes next.',
     steps: [
       {
-        step: '01',
-        day: 'Phase 1',
-        title: 'Discovery & Architecture',
-        description: 'We align on goals, constraints, data models, security needs, and API boundaries before writing production code.',
+        title: 'Tell us your idea',
+        description:
+          'Send the form or book a free call. We tell you honestly whether we can help and how we would approach it.',
       },
       {
-        step: '02',
-        day: 'Phase 2',
-        title: 'Build in Weekly Sprints',
-        description: 'We implement core structure, business logic, and UI — reviewing working software with you every sprint.',
+        title: 'We agree on a plan',
+        description:
+          'Together we define the first version: what it includes, what can wait, how long it takes and what it costs. You decide before any code is written.',
       },
       {
-        step: '03',
-        day: 'Phase 3',
-        title: 'Testing & Hardening',
-        description: 'We add automated tests and tighten security so the product stays stable as features grow.',
+        title: 'You see it working every week',
+        description:
+          'We build in short sprints and show you working software every week. You can change priorities as you learn.',
       },
       {
-        step: '04',
-        day: 'Phase 4',
-        title: 'Deploy & Hand Over',
-        description: 'We deploy to your environment and transfer 100% of the repository, credentials, and documentation.',
+        title: 'Launch and handover',
+        description:
+          'We launch on your own accounts and hand over the code, access and documentation. Keep building with us or take it to your own team.',
       },
-    ]
+    ],
   },
 
-  // Features Section
-  features: {
-    title: 'Why teams choose ConaiSoft',
-    subtitle: 'Trust comes from clarity: senior judgment, measurable progress, and ownership that stays with you.',
-    expertise: {
-      title: 'Senior architecture',
-      description: 'Experienced engineers making the technical decisions that protect your roadmap',
-    },
-    innovation: {
-      title: 'Practical AI acceleration',
-      description: 'We use modern AI tooling to move faster — without sacrificing architecture or quality',
-    },
-    quality: {
-      title: 'Testing & maintainability',
-      description: 'Automated checks and clean structure so your product stays easy to extend',
-    },
-    support: {
-      title: 'Complete ownership',
-      description: 'Your code, credentials, and infrastructure from day one — no lock-in',
-    },
+  why: {
+    title: 'Why a small team in the AI era',
+    subtitle:
+      'AI changed how fast software can be built. It did not change who should make the decisions.',
+    items: [
+      {
+        title: 'Senior engineers build it',
+        description:
+          'Experienced engineers design and build your product, and make the technical decisions that protect your roadmap.',
+      },
+      {
+        title: 'AI where it saves time',
+        description:
+          'We use modern AI tools to move faster on routine work. Architecture and quality stay with the engineers.',
+      },
+      {
+        title: 'No surprises',
+        description:
+          'A working demo every week lets you catch a wrong turn in week two instead of week nine. Automated tests and documentation are included.',
+      },
+      {
+        title: 'No lock-in',
+        description:
+          'Your code, your cloud accounts and your credentials from day one. Your team can take over whenever you want.',
+      },
+    ],
   },
 
-  // Portfolio Section
-  portfolio: {
-    title: 'Selected work',
-    subtitle: 'Software shipped across products, industries, and stages of growth',
-    viewProject: 'View project details',
-    technologies: 'Tech stack',
-    client: 'Client',
-    duration: 'Scope',
+  work: {
+    title: 'Products our engineers have worked on',
+    subtitle:
+      'Our engineers helped build these products as members of the teams behind them.',
   },
 
-  // Testimonials Section
-  testimonials: {
-    title: 'What clients value most',
-    subtitle: 'Clear communication, reliable delivery, and software their teams can actually own',
+  faq: {
+    title: 'Questions people ask before they call',
+    items: [
+      {
+        id: 'cost',
+        question: 'How much does it cost?',
+        answer:
+          'It depends on what the first version has to do, so we do not publish a single price. We work in short sprints with an agreed scope, so you pay for work you can see and review. After a short free call you get a realistic range for your idea.',
+        linkLabel: 'How much custom software costs in 2026',
+      },
+      {
+        id: 'timeline',
+        question: 'How long does it take?',
+        answer:
+          'A focused first version usually takes 4 to 8 weeks. A very narrow one can take 2 to 4. Payments, several user roles, AI features or integrations with older systems can push it to 8 to 12 weeks or more. You usually see a first demo within the first week or two.',
+        linkLabel: 'How long an MVP takes',
+      },
+      {
+        id: 'ownership',
+        question: 'Who owns the code?',
+        answer:
+          'You do. 100% of the code, the cloud accounts and the credentials are in your company’s name from day one.',
+        linkLabel: 'Who owns the code when you hire developers',
+      },
+      {
+        id: 'idea',
+        question: 'I only have an idea. Is that enough?',
+        answer:
+          'Yes. On the first call we help you decide what the smallest useful version is and what can wait. If the idea should be tested before it is built, we will tell you.',
+        linkLabel: 'How to validate an idea before building',
+      },
+      {
+        id: 'non-technical',
+        question: 'I am not technical. Can I work with you?',
+        answer:
+          'Yes. You do not need to read code. Every week you see and try the working product, and we explain the trade-offs in plain language so you can decide.',
+        linkLabel: 'How to manage an outsourced development team',
+      },
+      {
+        id: 'after-launch',
+        question: 'What happens after launch?',
+        answer:
+          'You choose. We can keep building with you as a dedicated team, or hand everything over to your own developers. Either way, the code and the accounts are already yours.',
+        linkLabel: 'How a dedicated team works',
+      },
+    ],
   },
 
-  // CTA Section
-  cta: {
-    badge: 'FREE DISCOVERY CALL',
-    title: 'Ready to unblock your product roadmap?',
-    subtitle: 'Book a free 15-minute call. We will review your goals, flag technical risks early, and outline a realistic delivery plan — with no pressure to commit.',
-    button: 'Book a 15-Min Call',
-    guarantee: 'No commitment • Straight technical advice • Reply within 24 hours',
+  contact: {
+    title: 'Tell us what you want to build',
+    subtitle:
+      'Describe your idea in a few lines. An engineer replies within 24 hours with honest feedback and next steps. No commitment.',
+    callTitle: 'Prefer to talk?',
+    callBody: 'Book a free call and walk us through your project.',
+    callCta: 'Book a free call',
   },
 
-  // Footer
   footer: {
-    copyright: '© 2026 ConaiSoft. All rights reserved.',
-    madeWith: 'Built with care by ConaiSoft',
-  },
-
-  // Common
-  common: {
-    learnMore: 'Learn more',
-    contactUs: 'Contact us',
-    readMore: 'Read more',
-    close: 'Close',
-    next: 'Next',
-    previous: 'Previous',
+    rights: 'All rights reserved.',
+    home: 'Home',
+    blog: 'Blog',
+    bookCall: 'Book a call',
+    navLabel: 'Footer',
   },
 };

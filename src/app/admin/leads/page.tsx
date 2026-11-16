@@ -8,6 +8,7 @@ type LeadRow = {
   email: string;
   source: string | null;
   language: string | null;
+  notes: string | null;
   created_at: string;
 };
 
@@ -17,7 +18,7 @@ export default async function AdminLeadsPage() {
   try {
     const sql = getSql();
     leads = (await sql`
-      SELECT id, name, email, source, language, created_at
+      SELECT id, name, email, source, language, notes, created_at
       FROM leads
       ORDER BY created_at DESC
     `) as LeadRow[];
@@ -36,20 +37,21 @@ export default async function AdminLeadsPage() {
 
       <div className="rounded-2xl border border-slate-800 bg-slate-900/70 overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[640px] text-left text-sm">
+          <table className="w-full min-w-[880px] text-left text-sm">
             <thead className="bg-slate-950/80 text-xs uppercase tracking-wider text-slate-400 border-b border-slate-800">
               <tr>
                 <th className="px-4 py-3 font-semibold">Name</th>
                 <th className="px-4 py-3 font-semibold">Email</th>
                 <th className="px-4 py-3 font-semibold">Source</th>
                 <th className="px-4 py-3 font-semibold">Lang</th>
+                <th className="px-4 py-3 font-semibold">Message</th>
                 <th className="px-4 py-3 font-semibold">Created</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800">
               {leads.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="px-4 py-10 text-center text-slate-400">
+                  <td colSpan={6} className="px-4 py-10 text-center text-slate-400">
                     No leads yet.
                   </td>
                 </tr>
@@ -64,6 +66,9 @@ export default async function AdminLeadsPage() {
                     </td>
                     <td className="px-4 py-3 text-slate-300">{lead.source || '—'}</td>
                     <td className="px-4 py-3 text-slate-300 uppercase">{lead.language || '—'}</td>
+                    <td className="px-4 py-3 text-slate-300 max-w-md whitespace-pre-wrap break-words">
+                      {lead.notes || '—'}
+                    </td>
                     <td className="px-4 py-3 text-slate-400 whitespace-nowrap">
                       {new Date(lead.created_at).toLocaleString()}
                     </td>
