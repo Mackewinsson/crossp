@@ -1,5 +1,6 @@
 import { absoluteUrl, SITE_NAME, SITE_TAGLINE, getSiteUrl } from '@/lib/seo';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { CALENDLY_DISCOVERY_URL } from '@/lib/site';
 
 export function SiteJsonLd() {
   const siteUrl = getSiteUrl();
@@ -16,7 +17,7 @@ export function SiteJsonLd() {
       {
         '@type': 'ContactPoint',
         contactType: 'sales',
-        url: 'https://calendly.com/mackewinsson/exploring-call',
+        url: CALENDLY_DISCOVERY_URL,
         availableLanguage: ['Spanish', 'English'],
       },
     ],
@@ -56,7 +57,7 @@ export function SiteJsonLd() {
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
-      url: 'https://calendly.com/mackewinsson/exploring-call',
+      url: CALENDLY_DISCOVERY_URL,
     },
   };
 
