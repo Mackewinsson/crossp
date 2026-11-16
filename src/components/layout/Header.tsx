@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { Wordmark } from '@/components/layout/Wordmark';
 import { Container } from '@/components/ui/Container';
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
@@ -33,9 +34,7 @@ export function Header({ alternatePath, contactHref }: HeaderProps) {
     <header className="sticky top-0 z-50 border-b border-line bg-bg/90 backdrop-blur">
       <Container>
         <div className="flex h-16 items-center justify-between gap-4">
-          <a href={home} className="text-xl font-bold tracking-tight text-ink">
-            Conai<span className="text-accent">Soft</span>
-          </a>
+          <Wordmark href={home} />
 
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
             {navLinks.map((link) => (
