@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { BlogContent } from '@/components/blog/BlogContent';
 import { BlogShell } from '@/components/blog/BlogShell';
+import { BLOG_COPY } from '@/components/blog/blogCopy';
+import { ButtonLink } from '@/components/ui/ButtonLink';
+import { Card } from '@/components/ui/Card';
 import { JsonLd } from '@/components/seo/JsonLd';
 import {
   extractFaqFromMdx,
@@ -12,7 +15,10 @@ import {
   normalizeBlogLocale,
 } from '@/lib/blog';
 import { SEO_LANDINGS } from '@/data/seo-landings';
+import { formatDate } from '@/lib/dates';
+import { getDictionary } from '@/lib/i18n';
 import { absoluteUrl, getSiteUrl, SITE_NAME } from '@/lib/seo';
+import { CALENDLY_DISCOVERY_URL, HOME_ANCHORS } from '@/lib/site';
 
 type BlogPostPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -26,6 +32,8 @@ const BLOG_TO_LANDING: Record<string, (typeof SEO_LANDINGS)[number]['id']> = {
   'fixed-price-vs-time-and-materials': 'dedicated-team',
   'how-to-build-mvp-for-startup': 'dedicated-team',
 };
+
+const RELATED_INTRO_LENGTH = 140;
 
 export function generateStaticParams() {
   const slugs = getAllBlogSlugs();
@@ -118,46 +126,39 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       }
     : null;
 
+  const copy = BLOG_COPY[locale];
+  const { hero } = getDictionary(locale);
+
   return (
     <BlogShell locale={locale}>
       <JsonLd data={articleLd} />
       {faqLd ? <JsonLd data={faqLd} /> : null}
 
-      <article
-        className="relative border-b border-slate-800/80"
-        itemScope
-        itemType="https://schema.org/Article"
-      >
-        <div className="absolute inset-0 bg-cyber-grid opacity-15 pointer-events-none" />
-        <Container className="relative py-12 sm:py-16 max-w-3xl">
+      <article className="border-b border-line" itemScope itemType="https://schema.org/Article">
+        <Container width="narrow" className="py-12 sm:py-16">
           <Link
             href={`/${locale}/blog`}
-            className="inline-flex text-sm text-cyan-400 hover:text-cyan-300 mb-8"
+            className="inline-flex text-sm font-semibold text-accent hover:text-accent-hover"
           >
-            ← {locale === 'en' ? 'All articles' : 'Todos los artículos'}
+            <span aria-hidden>←&nbsp;</span>
+            {copy.allArticles}
           </Link>
 
-          <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-400 mb-4">
+          <p className="mt-8 text-sm text-ink-muted">
             <time dateTime={post.publishedAt} itemProp="datePublished">
-              {new Date(post.publishedAt).toLocaleDateString(locale === 'en' ? 'en-US' : 'es-ES', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
+              {formatDate(post.publishedAt, locale)}
             </time>
-            <span>•</span>
-            <span>
-              {post.readingMinutes} {locale === 'en' ? 'min read' : 'min de lectura'}
-            </span>
-          </div>
+            <span aria-hidden> · </span>
+            {post.readingMinutes} {copy.minutesRead}
+          </p>
 
           <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6 text-balance"
+            className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-ink text-balance"
             itemProp="headline"
           >
             {post.title}
           </h1>
-          <p className="text-lg text-slate-300 mb-10 leading-relaxed" itemProp="description">
+          <p className="mt-6 mb-10 text-lg text-ink-soft leading-relaxed" itemProp="description">
             {post.description}
           </p>
 
@@ -165,42 +166,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <BlogContent source={post.content} />
           </div>
 
-          <div className="mt-12 pt-8 border-t border-slate-800 space-y-6">
+          <div className="mt-12 space-y-6 border-t border-line pt-8">
             {relatedLanding ? (
-              <div className="rounded-2xl border border-slate-700/80 bg-slate-900/50 p-6">
-                <p className="text-xs font-mono uppercase tracking-wider text-cyan-400/90 mb-2">
-                  {locale === 'en' ? 'Related service' : 'Servicio relacionado'}
-                </p>
+              <Card>
+                <p className="text-sm text-ink-muted">{copy.relatedService}</p>
                 <Link
                   href={`/${locale}/${relatedLanding.slugs[locale]}`}
-                  className="text-lg font-semibold text-white hover:text-cyan-400 transition-colors"
+                  className="mt-2 inline-flex text-lg font-semibold text-ink hover:text-accent transition-colors"
                 >
-                  {relatedLanding.serviceName[locale]} →
+                  {relatedLanding.serviceName[locale]}
+                  <span aria-hidden>&nbsp;→</span>
                 </Link>
-                <p className="text-sm text-slate-400 mt-2 leading-relaxed">
-                  {relatedLanding.content[locale].intro.slice(0, 140)}…
+                <p className="mt-2 text-base text-ink-soft leading-relaxed">
+                  {relatedLanding.content[locale].intro.slice(0, RELATED_INTRO_LENGTH)}…
                 </p>
-              </div>
+              </Card>
             ) : null}
 
-            <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-blue-950/40 via-slate-900/80 to-cyan-950/30 p-6 sm:p-8">
-              <h2 className="text-xl font-bold text-white mb-2">
-                {locale === 'en' ? 'Ready to unblock your roadmap?' : '¿Listo para desbloquear tu roadmap?'}
-              </h2>
-              <p className="text-sm text-slate-300 mb-5 leading-relaxed">
-                {locale === 'en'
-                  ? 'Book a free 15-minute call. We will review goals, flag technical risks early, and outline a realistic delivery plan.'
-                  : 'Agenda una llamada gratuita de 15 minutos. Revisamos objetivos, riesgos técnicos y un plan de entrega realista.'}
-              </p>
-              <a
-                href="https://calendly.com/mackewinsson/exploring-call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 border border-cyan-400/40 min-h-12"
-              >
-                {locale === 'en' ? 'Book a 15-Min Call' : 'Agendar llamada de 15 min'}
-              </a>
-            </div>
+            <Card>
+              <h2 className="text-xl font-bold text-ink">{copy.ctaTitle}</h2>
+              <p className="mt-2 text-base text-ink-soft leading-relaxed">{copy.ctaBody}</p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <ButtonLink href={`/${locale}#${HOME_ANCHORS.contact}`}>{hero.ctaPrimary}</ButtonLink>
+                <ButtonLink href={CALENDLY_DISCOVERY_URL} variant="secondary">
+                  {hero.ctaSecondary}
+                </ButtonLink>
+              </div>
+            </Card>
           </div>
         </Container>
       </article>
