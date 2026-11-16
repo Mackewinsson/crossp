@@ -12,12 +12,12 @@ Always run `npm run build` before committing. Fix any build/lint/type errors fir
 
 ### Schema
 See `scripts/schema.sql`
-- `leads` — name, email (unique), source, language, created_at
+- `leads` — name, email (unique), source, language, notes (the optional project message from the form), created_at
 - `email_templates` — `welcome` template with `{{name}}` / `{{email}}`
 
 ### Public lead capture
-- Forms post to `POST /api/leads` with `{ name, email, source?, language? }`
-- `LeadEmailForm` defaults to `/api/leads` (optional `webhookUrl` still supported)
+- Forms post to `POST /api/leads` with `{ name, email, message?, source?, language? }`; `message` is stored in `leads.notes` and appended on repeat submissions
+- `LeadForm` (`src/components/lead/LeadForm.tsx`) is the form; `LeadEmailForm` wraps it in a section. Both default to `/api/leads` (optional `webhookUrl` still supported)
 
 ### Admin
 - `/admin` dashboard
