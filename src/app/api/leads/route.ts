@@ -9,6 +9,10 @@ import {
   type LeadLanguage,
 } from '@/emails/leadEmails';
 
+const MAX_MESSAGE_LENGTH = 2000;
+// A returning lead keeps earlier messages; new ones are appended after this.
+const NOTE_SEPARATOR = '\n\n---\n\n';
+
 function getResend() {
   const key = process.env.RESEND_API_KEY;
   if (!key) return null;
@@ -26,6 +30,9 @@ export async function POST(request: Request) {
     const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
     const source = typeof body.source === 'string' ? body.source.trim() : 'website';
     const language: LeadLanguage = body.language === 'en' ? 'en' : 'es';
+    const message =
+      typeof body.message === 'string' ? body.message.trim().slice(0, MAX_MESSAGE_LENGTH) : '';
+    const notes = message || null;
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required' }, { status: 400 });
@@ -47,12 +54,17 @@ export async function POST(request: Request) {
 
     const sql = getSql();
     await sql`
-      INSERT INTO leads (name, email, source, language)
-      VALUES (${name}, ${email}, ${source}, ${language})
+      INSERT INTO leads (name, email, source, language, notes)
+      VALUES (${name}, ${email}, ${source}, ${language}, ${notes})
       ON CONFLICT (email) DO UPDATE SET
         name = EXCLUDED.name,
         source = EXCLUDED.source,
-        language = EXCLUDED.language
+        language = EXCLUDED.language,
+        notes = CASE
+          WHEN EXCLUDED.notes IS NULL THEN leads.notes
+          WHEN leads.notes IS NULL OR leads.notes = '' THEN EXCLUDED.notes
+          ELSE leads.notes || ${NOTE_SEPARATOR}::text || EXCLUDED.notes
+        END
       RETURNING id
     `;
 
@@ -111,6 +123,7 @@ export async function POST(request: Request) {
             email,
             source,
             language,
+            message,
             adminUrl: `${siteUrl}/admin/leads`,
           }),
         });
