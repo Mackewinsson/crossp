@@ -12,6 +12,7 @@ import {
   SITE_NAME,
   SITE_TAGLINE,
   absoluteUrl,
+  defaultOgImage,
   getSiteUrl,
 } from "@/lib/seo";
 
@@ -52,6 +53,9 @@ export const metadata: Metadata = {
       en: '/en',
       'x-default': '/es',
     },
+    types: {
+      'text/plain': absoluteUrl('/llms.txt'),
+    },
   },
   openGraph: {
     type: 'website',
@@ -61,14 +65,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} — ${SITE_TAGLINE}`,
     description: DEFAULT_DESCRIPTION,
-    images: [
-      {
-        url: absoluteUrl('/og.png'),
-        width: 1200,
-        height: 630,
-        alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
-      },
-    ],
+    images: [defaultOgImage()],
   },
   twitter: {
     card: 'summary_large_image',
@@ -89,6 +86,13 @@ export const metadata: Metadata = {
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? {
+          other: {
+            'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
+          },
+        }
+      : {}),
   },
   appleWebApp: {
     capable: true,
@@ -112,6 +116,9 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <SiteJsonLd />
+        {/* Discoverable by AI crawlers (llmstxt.org) */}
+        <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+        <link rel="alternate" type="text/plain" title="llms-full.txt" href="/llms-full.txt" />
         {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}

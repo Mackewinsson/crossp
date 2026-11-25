@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
-import { absoluteUrl } from '@/lib/seo';
+import { absoluteUrl, defaultOgImage } from '@/lib/seo';
+
+const TITLE = 'Automatiza tu negocio con IA (n8n + OpenAI)';
+const DESCRIPTION =
+  'Taller intensivo para automatizar procesos con n8n y OpenAI sin programar. Ahorra horas cada semana con flujos listos para usar.';
 
 export const metadata: Metadata = {
-  title: 'Automatiza tu negocio con IA (n8n + OpenAI)',
-  description:
-    'Taller intensivo para automatizar procesos con n8n y OpenAI sin programar. Ahorra horas cada semana con flujos listos para usar.',
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    'automatización con IA',
+    'n8n',
+    'OpenAI',
+    'taller IA',
+    'ConaiSoft',
+  ],
   alternates: {
     canonical: '/automatiza-ia',
   },
@@ -14,6 +24,14 @@ export const metadata: Metadata = {
       'Aprende n8n + OpenAI en un taller intensivo y automatiza procesos clave sin programar.',
     url: absoluteUrl('/automatiza-ia'),
     locale: 'es_ES',
+    images: [defaultOgImage(TITLE)],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Automatiza tu negocio con IA | ConaiSoft',
+    description: DESCRIPTION,
+    images: [absoluteUrl('/og.png')],
   },
   robots: {
     index: true,

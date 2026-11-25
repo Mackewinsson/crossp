@@ -25,18 +25,23 @@ See `scripts/schema.sql`
 - `/admin/users` list + manual create (`src/app/admin/users/actions.ts`)
 - Access: Clerk signed-in user with `publicMetadata.role === "admin"` **or** email in `ADMIN_EMAILS` / `ADMIN_EMAIL`
 
-### SEO / Search Console
-- `src/app/sitemap.ts` → `/sitemap.xml`
-- `src/app/robots.ts` → `/robots.txt` (blocks `/admin`, `/api`, auth)
-- `public/llms.txt` → AI crawler summary
-- Root metadata includes Open Graph, Twitter, and optional `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`
-- JSON-LD: Organization + WebSite + ProfessionalService
+### SEO / Search Console / AI discovery
+- `src/app/sitemap.ts` → `/sitemap.xml` (locales, landings, blog; hreflang alternates)
+- `src/app/robots.ts` → `/robots.txt` (blocks `/admin`, `/api`, auth; allows major AI crawlers)
+- `src/app/llms.txt/route.ts` → `/llms.txt` (llmstxt.org summary; generated from landings + site copy)
+- `src/app/llms-full.txt/route.ts` → `/llms-full.txt` (services + full blog index for assistants)
+- `src/app/manifest.ts` → `/manifest.webmanifest`
+- Root metadata: Open Graph, Twitter, optional `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` + `NEXT_PUBLIC_BING_SITE_VERIFICATION`
+- JSON-LD: Organization + WebSite + ProfessionalService; FAQ / Article / Breadcrumb / CollectionPage on key pages
 
-To verify in Google Search Console:
-1. Set `NEXT_PUBLIC_SITE_URL` to your live domain
-2. Add property → URL prefix or Domain
-3. Verification: paste meta token into `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` (or upload HTML file / DNS TXT)
-4. Submit sitemap: `https://YOUR_DOMAIN/sitemap.xml`
+To verify & index in Google Search Console:
+1. Set `NEXT_PUBLIC_SITE_URL=https://www.conaisoft.com` (www host — apex redirects)
+2. Add property → URL prefix `https://www.conaisoft.com` or Domain `conaisoft.com`
+3. Verification: paste meta token into `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` (or HTML file / DNS TXT)
+4. Deploy, confirm `<meta name="google-site-verification">` on a public page
+5. Submit sitemap: `https://www.conaisoft.com/sitemap.xml`
+6. Optional: URL Inspection → Request indexing for `/es` and top landings
+7. Optional Bing: set `NEXT_PUBLIC_BING_SITE_VERIFICATION` and submit the same sitemap
 
 ### Env
 Copy `.env.example` → `.env.local`. Neon project: `conaisoft` (`long-sound-52673896`).

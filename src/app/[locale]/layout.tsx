@@ -5,6 +5,7 @@ import {
   SITE_NAME,
   SITE_TAGLINE,
   absoluteUrl,
+  defaultOgImage,
 } from '@/lib/seo';
 
 type LocaleLayoutProps = {
@@ -43,10 +44,14 @@ export async function generateMetadata({
       url: absoluteUrl(path),
       locale: isSpanish ? 'es_ES' : 'en_US',
       alternateLocale: isSpanish ? ['en_US'] : ['es_ES'],
+      images: [defaultOgImage(title)],
+      type: 'website',
     },
     twitter: {
+      card: 'summary_large_image',
       title,
       description,
+      images: [absoluteUrl('/og.png')],
     },
   };
 }
