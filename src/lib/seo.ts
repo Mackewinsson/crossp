@@ -1,6 +1,22 @@
 export const SITE_NAME = 'ConaiSoft';
 export const SITE_TAGLINE = 'Software & AI Engineering Partner';
 
+/** Square logo (≥112px) for Organization / publisher schema. */
+export const SITE_LOGO_PATH = '/img/logo/light.png';
+
+/** Default social share image (Open Graph / Twitter). */
+export const SITE_OG_IMAGE_PATH = '/og.png';
+
+export const SITE_KNOWS_ABOUT = [
+  'Custom software development',
+  'Dedicated development teams',
+  'Legacy software rebuild',
+  'AI agents and RAG pipelines',
+  'Next.js and React SaaS',
+  'React Native mobile apps',
+  'Nearshore software engineering',
+] as const;
+
 // Vercel's domain config redirects the apex (conaisoft.com) to www.conaisoft.com
 // at the edge (307, before Next.js runs). Canonical/OG/sitemap/robots URLs must
 // point at the same host that is actually served, or Google treats them as a
@@ -33,10 +49,22 @@ export const SEO_KEYWORDS = [
   'AI agents',
   'React Native',
   'software consultancy',
+  'nearshore software development',
+  'desarrollo de software a medida',
+  'automatización con IA',
 ];
 
 export function absoluteUrl(path = '/') {
   const base = getSiteUrl();
   if (!path || path === '/') return base;
   return `${base}${path.startsWith('/') ? path : `/${path}`}`;
+}
+
+export function defaultOgImage(alt = `${SITE_NAME} — ${SITE_TAGLINE}`) {
+  return {
+    url: absoluteUrl(SITE_OG_IMAGE_PATH),
+    width: 1200,
+    height: 630,
+    alt,
+  };
 }

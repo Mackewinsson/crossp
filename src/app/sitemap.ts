@@ -1,11 +1,12 @@
 import type { MetadataRoute } from 'next';
 import { SEO_LANDINGS, type LandingLocale } from '@/data/seo-landings';
 import { getSitemapPosts } from '@/lib/blog';
-import { getSiteUrl } from '@/lib/seo';
+import { absoluteUrl, getSiteUrl } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();
   const lastModified = new Date();
+  const ogImage = absoluteUrl('/og.png');
 
   const seoLandingRoutes: MetadataRoute.Sitemap = SEO_LANDINGS.flatMap((landing) => {
     const locales: LandingLocale[] = ['es', 'en'];
@@ -40,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           'x-default': `${siteUrl}/es`,
         },
       },
+      images: [ogImage],
     },
     {
       url: `${siteUrl}/en`,
@@ -53,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           'x-default': `${siteUrl}/es`,
         },
       },
+      images: [ogImage],
     },
     {
       url: `${siteUrl}/crea-tu-software`,

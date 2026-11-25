@@ -17,7 +17,13 @@ import {
 import { SEO_LANDINGS } from '@/data/seo-landings';
 import { formatDate } from '@/lib/dates';
 import { getDictionary } from '@/lib/i18n';
-import { absoluteUrl, getSiteUrl, SITE_NAME } from '@/lib/seo';
+import {
+  SITE_LOGO_PATH,
+  SITE_NAME,
+  absoluteUrl,
+  defaultOgImage,
+  getSiteUrl,
+} from '@/lib/seo';
 import { CALENDLY_DISCOVERY_URL, HOME_ANCHORS } from '@/lib/site';
 
 type BlogPostPageProps = {
@@ -67,10 +73,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt || post.publishedAt,
       tags: post.tags,
+      images: [defaultOgImage(post.title)],
+      locale: locale === 'es' ? 'es_ES' : 'en_US',
     },
     twitter: {
+      card: 'summary_large_image',
       title: post.title,
       description: post.description,
+      images: [absoluteUrl('/og.png')],
     },
   };
 }
@@ -89,6 +99,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ? SEO_LANDINGS.find((item) => item.id === relatedLandingId)
     : undefined;
 
+  const articleUrl = absoluteUrl(path);
   const articleLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -96,6 +107,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     description: post.description,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,
+    image: absoluteUrl('/og.png'),
     author: {
       '@type': 'Organization',
       name: SITE_NAME,
@@ -105,10 +117,44 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       '@type': 'Organization',
       name: SITE_NAME,
       url: siteUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: absoluteUrl(SITE_LOGO_PATH),
+        width: 500,
+        height: 500,
+      },
     },
-    mainEntityOfPage: absoluteUrl(path),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': articleUrl,
+    },
     inLanguage: locale,
     keywords: post.tags.join(', '),
+  };
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: SITE_NAME,
+        item: absoluteUrl(`/${locale}`),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: absoluteUrl(`/${locale}/blog`),
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: articleUrl,
+      },
+    ],
   };
 
   const faqLd = faqItems
@@ -132,6 +178,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <BlogShell locale={locale}>
       <JsonLd data={articleLd} />
+      <JsonLd data={breadcrumbLd} />
       {faqLd ? <JsonLd data={faqLd} /> : null}
 
       <article className="border-b border-line" itemScope itemType="https://schema.org/Article">

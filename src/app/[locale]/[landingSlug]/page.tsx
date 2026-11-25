@@ -7,7 +7,7 @@ import {
   getLandingPath,
   type LandingLocale,
 } from '@/data/seo-landings';
-import { absoluteUrl } from '@/lib/seo';
+import { absoluteUrl, defaultOgImage } from '@/lib/seo';
 
 type LandingPageProps = {
   params: Promise<{ locale: string; landingSlug: string }>;
@@ -54,10 +54,13 @@ export async function generateMetadata({
       type: 'website',
       locale: locale === 'es' ? 'es_ES' : 'en_US',
       alternateLocale: [alternateLocale === 'es' ? 'es_ES' : 'en_US'],
+      images: [defaultOgImage(content.metaTitle)],
     },
     twitter: {
+      card: 'summary_large_image',
       title: content.metaTitle,
       description: content.metaDescription,
+      images: [absoluteUrl('/og.png')],
     },
   };
 }
